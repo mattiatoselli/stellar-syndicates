@@ -1,0 +1,371 @@
+[
+    {
+        "name": "Gold",
+        "base_price": 2500,
+        "description": "A precious metal highly valued for electronics and currency.",
+        "prospection_chance": 5,
+        "type": "basic"
+    },
+    {
+        "name": "Silver",
+        "base_price": 200,
+        "description": "A versatile metal used in industry, jewelry, and currency.",
+        "prospection_chance": 10,
+        "type": "basic"
+    },
+    {
+        "name": "Tantalum",
+        "base_price": 1200,
+        "description": "A rare metal essential for high-performance electronics.",
+        "prospection_chance": 3,
+        "type": "basic"
+    },
+    {
+        "name": "Osmium",
+        "base_price": 5000,
+        "description": "One of the densest metals, used in scientific applications.",
+        "prospection_chance": 2,
+        "type": "basic"
+    },
+    {
+        "name": "Palladium",
+        "base_price": 2200,
+        "description": "A critical metal in catalytic converters and electronics.",
+        "prospection_chance": 4,
+        "type": "basic"
+    },
+    {
+        "name": "Iron Ore",
+        "base_price": 80,
+        "description": "A common ore used in the production of steel.",
+        "prospection_chance": 20,
+        "type": "basic"
+    },
+    {
+        "name": "Copper",
+        "base_price": 50,
+        "description": "A highly conductive metal used in electrical components.",
+        "prospection_chance": 15,
+        "type": "basic"
+    },
+    {
+        "name": "Uranium",
+        "base_price": 3000,
+        "description": "A radioactive element essential for nuclear energy.",
+        "prospection_chance": 3,
+        "type": "basic"
+    },
+    {
+        "name": "Lithium",
+        "base_price": 900,
+        "description": "A lightweight metal critical for batteries and energy storage.",
+        "prospection_chance": 6,
+        "type": "basic"
+    },
+    {
+        "name": "Platinum",
+        "base_price": 2000,
+        "description": "A valuable metal used in jewelry and industrial processes.",
+        "prospection_chance": 5,
+        "type": "basic"
+    },
+    {
+        "name": "Oil",
+        "base_price": 100,
+        "description": "A critical resource for energy and industrial production.",
+        "prospection_chance": 12,
+        "type": "basic"
+    },
+    {
+        "name": "Water",
+        "base_price": 2,
+        "description": "A basic necessity for life and agriculture.",
+        "prospection_chance": 25,
+        "type": "basic"
+    },
+    {
+        "name": "Nickel",
+        "base_price": 100,
+        "description": "A versatile metal commonly used in alloys and batteries.",
+        "prospection_chance": 15,
+        "type": "basic"
+    },
+    {
+        "name": "Cobalt",
+        "base_price": 350,
+        "description": "A crucial element for high-strength alloys and magnetic materials.",
+        "prospection_chance": 10,
+        "type": "basic"
+    },
+    {
+        "name": "Zinc",
+        "base_price": 75,
+        "description": "A common metal used in galvanizing steel and various alloys.",
+        "prospection_chance": 18,
+        "type": "basic"
+    },
+    {
+        "name": "Titanium",
+        "base_price": 800,
+        "description": "A lightweight and strong metal ideal for aerospace and medical applications.",
+        "prospection_chance": 6,
+        "type": "basic"
+    },
+    {
+        "name": "Quartz",
+        "base_price": 40,
+        "description": "A crystalline mineral used in glassmaking and electronics.",
+        "prospection_chance": 20,
+        "type": "basic"
+    },
+    {
+        "name": "Sulfur",
+        "base_price": 50,
+        "description": "A non-metal used in fertilizers, chemicals, and explosives.",
+        "prospection_chance": 22,
+        "type": "basic"
+    },
+    {
+        "name": "Salt",
+        "base_price": 15,
+        "description": "A mineral widely used for preservation, seasoning, and industrial processes.",
+        "prospection_chance": 30,
+        "type": "basic"
+    },
+    {
+        "name": "Bauxite",
+        "base_price": 90,
+        "description": "An ore of aluminum, critical for lightweight material production.",
+        "prospection_chance": 12,
+        "type": "basic"
+    },
+    {
+        "name": "Helium-3",
+        "base_price": 4000,
+        "description": "An isotope of helium essential for advanced energy applications.",
+        "prospection_chance": 1,
+        "type": "basic"
+    },
+    {
+        "name": "Carbon",
+        "base_price": 25,
+        "description": "A basic building block of life and a key component in alloys and fuel.",
+        "prospection_chance": 28,
+        "type": "basic"
+    },
+    {
+        "name": "Cotton",
+        "base_price": 12,
+        "description": "A fibrous crop used in textiles and industrial applications.",
+        "prospection_chance": 25,
+        "type": "basic"
+    },
+    {
+        "name": "Coffee Beans",
+        "base_price": 50,
+        "description": "A luxury crop valued for its stimulating properties.",
+        "prospection_chance": 18,
+        "type": "basic"
+    },
+    {
+        "name": "Tobacco",
+        "base_price": 35,
+        "description": "A high-value crop used in recreational and medicinal products.",
+        "prospection_chance": 20,
+        "type": "basic"
+    },
+    {
+        "name": "Algae",
+        "base_price": 20,
+        "description": "A fast-growing biomass used in food, fuel, and bioengineering.",
+        "prospection_chance": 22,
+        "type": "basic"
+    },
+    {
+        "name": "Spices",
+        "base_price": 45,
+        "description": "A collection of aromatic substances used to flavor food.",
+        "prospection_chance": 16,
+        "type": "basic"
+    },
+        {
+            "name": "Steel",
+            "base_price": 400,
+            "description": "An alloy used extensively in construction and manufacturing.",
+            "type": "Industrial",
+            "requirements": [
+                { "material": "Iron Ore", "quantity": 2 },
+                { "material": "Carbon", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Aluminum",
+            "base_price": 600,
+            "description": "A lightweight metal essential for aerospace and transportation.",
+            "type": "Industrial",
+            "requirements": [
+                { "material": "Bauxite", "quantity": 3 },
+                { "material": "Carbon", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Biofuel",
+            "base_price": 300,
+            "description": "A renewable energy source derived from organic materials.",
+            "type": "Energy",
+            "requirements": [
+                { "material": "Corn", "quantity": 2 },
+                { "material": "Algae", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Plastic",
+            "base_price": 250,
+            "description": "A versatile synthetic material used in countless applications.",
+            "type": "Industrial",
+            "requirements": [
+                { "material": "Oil", "quantity": 2 },
+                { "material": "Carbon", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Jewelry",
+            "base_price": 7000,
+            "description": "Luxury items crafted with precious metals and stones.",
+            "type": "Luxury",
+            "requirements": [
+                { "material": "Gold", "quantity": 1 },
+                { "material": "Platinum", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Electronics",
+            "base_price": 1200,
+            "description": "Devices essential for communication and computing.",
+            "type": "Industrial",
+            "requirements": [
+                { "material": "Copper", "quantity": 1 },
+                { "material": "Tantalum", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Glass",
+            "base_price": 120,
+            "description": "A transparent material used in construction and optics.",
+            "type": "Industrial",
+            "requirements": [
+                { "material": "Quartz", "quantity": 2 },
+                { "material": "Carbon", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Fertilizer",
+            "base_price": 100,
+            "description": "A chemical compound that boosts agricultural yields.",
+            "type": "Agricultural",
+            "requirements": [
+                { "material": "Sulfur", "quantity": 1 },
+                { "material": "Water", "quantity": 2 }
+            ]
+        },
+        {
+            "name": "Luxury Fabrics",
+            "base_price": 400,
+            "description": "High-end textiles made from natural fibers.",
+            "type": "Luxury",
+            "requirements": [
+                { "material": "Cotton", "quantity": 2 },
+                { "material": "Spices", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Nuclear Fuel",
+            "base_price": 9000,
+            "description": "Highly refined fuel used in advanced energy reactors.",
+            "type": "Energy",
+            "requirements": [
+                { "material": "Uranium", "quantity": 2 },
+                { "material": "Helium-3", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Synthetic Fiber",
+            "base_price": 350,
+            "description": "A lightweight and durable material used in clothing and industrial applications.",
+            "type": "Industrial",
+            "requirements": [
+                { "material": "Oil", "quantity": 1 },
+                { "material": "Cotton", "quantity": 2 }
+            ]
+        },
+        {
+            "name": "Carbon Fiber",
+            "base_price": 1000,
+            "description": "A high-strength, lightweight material ideal for aerospace and advanced engineering.",
+            "type": "Industrial",
+            "requirements": [
+                { "material": "Carbon", "quantity": 3 },
+                { "material": "Oil", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Medical Supplies",
+            "base_price": 600,
+            "description": "Essential equipment and pharmaceuticals for healthcare.",
+            "type": "Medical",
+            "requirements": [
+                { "material": "Herbs", "quantity": 2 },
+                { "material": "Water", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Optical Lenses",
+            "base_price": 700,
+            "description": "Precision glass components used in telescopes, cameras, and microscopes.",
+            "type": "Technology",
+            "requirements": [
+                { "material": "Quartz", "quantity": 2 },
+                { "material": "Carbon", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Advanced Alloys",
+            "base_price": 5000,
+            "description": "Specialized metals combining strength and flexibility for high-tech industries.",
+            "type": "Industrial",
+            "requirements": [
+                { "material": "Tantalum", "quantity": 2 },
+                { "material": "Osmium", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Food Rations",
+            "base_price": 50,
+            "description": "Packaged, long-lasting food supplies for space travel or emergencies.",
+            "type": "Agricultural",
+            "requirements": [
+                { "material": "Grain", "quantity": 2 },
+                { "material": "Water", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Perfume",
+            "base_price": 200,
+            "description": "A luxury product crafted from rare floral essences and oils.",
+            "type": "Luxury",
+            "requirements": [
+                { "material": "Flowers", "quantity": 2 },
+                { "material": "Oil", "quantity": 1 }
+            ]
+        },
+        {
+            "name": "Energy Cells",
+            "base_price": 1200,
+            "description": "Portable energy storage used to power small devices or vehicles.",
+            "type": "Energy",
+            "requirements": [
+                { "material": "Lithium", "quantity": 2 },
+                { "material": "Helium-3", "quantity": 1 }
+            ]
+        }
+]
