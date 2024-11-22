@@ -29,19 +29,14 @@ class PlanetSeeder extends Seeder
             'Radioactive Planet'
         ];
 
-        // Carichiamo i dati delle stelle
         $stars = Star::all();
 
-        // Carichiamo i nomi dei pianeti dal file JSON
         $planetNames = json_decode(File::get(database_path('data/planets.json')), true);
 
-        // Cicliamo su tutte le stelle per assegnare i pianeti
         foreach ($stars as $star) {
-            // Numero casuale di pianeti tra 0 e 7
             $numPlanets = rand(0, 7);
-            $usedDistances = []; // Array per tenere traccia delle distanze già utilizzate
+            $usedDistances = [];
 
-            // Cicliamo per creare i pianeti
             for ($i = 0; $i < $numPlanets; $i++) {
                 $planetType = $planetTypes[array_rand($planetTypes)];
 

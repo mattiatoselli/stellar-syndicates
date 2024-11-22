@@ -13,3 +13,6 @@ Route::get('/v1/planets/list', \App\Http\Controllers\V1\Planets\PlanetsListContr
 
 //resources
 Route::get('/v1/resources/list', \App\Http\Controllers\V1\Resources\ResourceListController::class);
+
+//admin
+Route::get('/v1/admin/generatedeposit', \App\Http\Controllers\V1\Admin\GenerateDepositsController::class);
