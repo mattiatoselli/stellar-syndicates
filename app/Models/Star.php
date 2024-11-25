@@ -12,6 +12,11 @@ class Star extends Model
     protected $hidden = [];
     protected $table = 'stars';
 
+    public function planets()
+    {
+        return $this->hasMany(Planet::class);
+    }
+
     protected static function boot()
     {
         parent::boot();

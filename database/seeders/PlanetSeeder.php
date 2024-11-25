@@ -40,7 +40,7 @@ class PlanetSeeder extends Seeder
             for ($i = 0; $i < $numPlanets; $i++) {
                 $planetType = $planetTypes[array_rand($planetTypes)];
 
-                $planetName = array_shift($planetNames); 
+                $planetName = array_shift($planetNames);
 
                 do {
                     $distanceFromStar = rand(1, 500);
