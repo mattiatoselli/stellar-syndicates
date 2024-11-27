@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\V1\Stars;
+namespace App\Http\Controllers\V1\Travels;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{Ship, UserShip, Planet, Star, CargoItem, Resource};
@@ -23,7 +23,7 @@ class TravelController extends Controller
         }
 
         $validated = $request->validate([
-            'user_ship_id' => 'required|exists:ships,id',
+            'user_ship_id' => 'required|exists:users_ships,id',
             'planet_id' => 'required|exists:planets,id',
         ]);
 
@@ -71,6 +71,10 @@ class TravelController extends Controller
             return response()->json(['error' => 'Not enough water in cargo for the travel.'], 422);
         }
 
-        return ['message' => 'ok'];
+        //ship will be moved to the new planet.
+        //there will be one minute more of travel time to simulate the moving beetween planets
+        //this is also because we want to avoid instantaneous travels beetween planets of the same system
+
+        return [];
     }
 }

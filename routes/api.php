@@ -25,3 +25,12 @@ Route::get('/v1/ships/status', \App\Http\Controllers\V1\Ships\ShipStatusControll
 
 //admin
 Route::get('/v1/admin/generatedeposit', \App\Http\Controllers\V1\Admin\GenerateDepositsController::class);
+Route::get('/v1/admin/generatemarkets', \App\Http\Controllers\V1\Admin\GenerateMarketsController::class);
+
+//markets
+Route::post('/v1/market/buy', \App\Http\Controllers\V1\Markets\BuyController::class);
+
+//travels
+Route::post('/v1/travels/land', \App\Http\Controllers\V1\Travels\LandOnPlanetController::class);
+
+
