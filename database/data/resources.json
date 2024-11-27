@@ -10,7 +10,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "3"
     },
     {
         "id": "2",
@@ -23,7 +24,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "9"
     },
     {
         "id": "3",
@@ -36,7 +38,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "3"
     },
     {
         "id": "4",
@@ -49,7 +52,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "4"
     },
     {
         "id": "5",
@@ -62,7 +66,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "2"
     },
     {
         "id": "6",
@@ -75,7 +80,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "40"
     },
     {
         "id": "7",
@@ -88,7 +94,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "30"
     },
     {
         "id": "8",
@@ -101,7 +108,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "8"
     },
     {
         "id": "9",
@@ -114,7 +122,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "15"
     },
     {
         "id": "10",
@@ -127,7 +136,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "5"
     },
     {
         "id": "11",
@@ -140,7 +150,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "18"
     },
     {
         "id": "12",
@@ -153,7 +164,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "100"
     },
     {
         "id": "13",
@@ -166,7 +178,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "25"
     },
     {
         "id": "14",
@@ -179,7 +192,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "10"
     },
     {
         "id": "15",
@@ -192,7 +206,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "12"
     },
     {
         "id": "16",
@@ -205,7 +220,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "5"
     },
     {
         "id": "17",
@@ -218,7 +234,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "15"
     },
     {
         "id": "18",
@@ -231,7 +248,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "20"
     },
     {
         "id": "19",
@@ -244,7 +262,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "22"
     },
     {
         "id": "20",
@@ -257,7 +276,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "22"
     },
     {
         "id": "21",
@@ -270,7 +290,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "0.1"
     },
     {
         "id": "22",
@@ -283,7 +304,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "50"
     },
     {
         "id": "23",
@@ -296,7 +318,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "50"
     },
     {
         "id": "24",
@@ -309,7 +332,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "20"
     },
     {
         "id": "25",
@@ -322,7 +346,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "15"
     },
     {
         "id": "26",
@@ -335,7 +360,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "25"
     },
     {
         "id": "27",
@@ -348,7 +374,8 @@
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z"
+        "updated_at": "2024-11-21T15:20:36.000000Z",
+        "rate_per_100k_population": "3"
     },
     {
         "id": "28",
@@ -361,7 +388,8 @@
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z"
+        "updated_at": "2024-11-21T15:27:49.000000Z",
+        "rate_per_100k_population": "25"
     },
     {
         "id": "29",
@@ -374,7 +402,8 @@
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z"
+        "updated_at": "2024-11-21T15:27:49.000000Z",
+        "rate_per_100k_population": "55"
     },
     {
         "id": "30",
@@ -387,7 +416,8 @@
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z"
+        "updated_at": "2024-11-21T15:27:49.000000Z",
+        "rate_per_100k_population": "50"
     },
     {
         "id": "31",
@@ -400,7 +430,8 @@
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z"
+        "updated_at": "2024-11-21T15:27:49.000000Z",
+        "rate_per_100k_population": "8"
     },
     {
         "id": "32",
@@ -413,7 +444,8 @@
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z"
+        "updated_at": "2024-11-21T15:27:49.000000Z",
+        "rate_per_100k_population": "50"
     },
     {
         "id": "33",
@@ -426,7 +458,8 @@
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z"
+        "updated_at": "2024-11-21T15:27:49.000000Z",
+        "rate_per_100k_population": "56"
     },
     {
         "id": "34",
@@ -439,7 +472,8 @@
         "first_base_resource_quantity": 2,
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z"
+        "updated_at": "2024-11-21T15:27:49.000000Z",
+        "rate_per_100k_population": "80"
     },
     {
         "id": "35",
@@ -452,7 +486,8 @@
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z"
+        "updated_at": "2024-11-21T15:27:49.000000Z",
+        "rate_per_100k_population": "15"
     },
     {
         "id": "36",
@@ -465,7 +500,8 @@
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z"
+        "updated_at": "2024-11-21T15:27:49.000000Z",
+        "rate_per_100k_population": "100"
     },
     {
         "id": "37",
@@ -478,7 +514,8 @@
         "first_base_resource_quantity": 2,
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z"
+        "updated_at": "2024-11-21T15:27:49.000000Z",
+        "rate_per_100k_population": "43"
     },
     {
         "id": "38",
@@ -491,7 +528,8 @@
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z"
+        "updated_at": "2024-11-21T15:27:49.000000Z",
+        "rate_per_100k_population": "22"
     },
     {
         "id": "39",
@@ -504,7 +542,8 @@
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z"
+        "updated_at": "2024-11-21T15:27:49.000000Z",
+        "rate_per_100k_population": "9"
     },
     {
         "id": "40",
@@ -517,7 +556,8 @@
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z"
+        "updated_at": "2024-11-21T15:27:49.000000Z",
+        "rate_per_100k_population": "24"
     },
     {
         "id": "41",
@@ -530,188 +570,7 @@
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z"
-    },
-    {
-        "id": "42",
-        "name": "Steel",
-        "base_price": 400,
-        "description": "An alloy used extensively in construction and manufacturing.",
-        "prospection_chance": null,
-        "first_base_resource_id": 6,
-        "second_base_resource_id": 22,
-        "first_base_resource_quantity": 2,
-        "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:29:34.000000Z",
-        "updated_at": "2024-11-21T15:29:34.000000Z"
-    },
-    {
-        "id": "43",
-        "name": "Aluminum",
-        "base_price": 600,
-        "description": "A lightweight metal essential for aerospace and transportation.",
-        "prospection_chance": null,
-        "first_base_resource_id": 20,
-        "second_base_resource_id": 22,
-        "first_base_resource_quantity": 3,
-        "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:29:34.000000Z",
-        "updated_at": "2024-11-21T15:29:34.000000Z"
-    },
-    {
-        "id": "44",
-        "name": "Plastic",
-        "base_price": 250,
-        "description": "A versatile synthetic material used in countless applications.",
-        "prospection_chance": null,
-        "first_base_resource_id": 11,
-        "second_base_resource_id": 22,
-        "first_base_resource_quantity": 2,
-        "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:29:34.000000Z",
-        "updated_at": "2024-11-21T15:29:34.000000Z"
-    },
-    {
-        "id": "45",
-        "name": "Jewelry",
-        "base_price": 7000,
-        "description": "Luxury items crafted with precious metals and stones.",
-        "prospection_chance": null,
-        "first_base_resource_id": 1,
-        "second_base_resource_id": 10,
-        "first_base_resource_quantity": 1,
-        "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:29:34.000000Z",
-        "updated_at": "2024-11-21T15:29:34.000000Z"
-    },
-    {
-        "id": "46",
-        "name": "Electronics",
-        "base_price": 1200,
-        "description": "Devices essential for communication and computing.",
-        "prospection_chance": null,
-        "first_base_resource_id": 7,
-        "second_base_resource_id": 3,
-        "first_base_resource_quantity": 1,
-        "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:29:34.000000Z",
-        "updated_at": "2024-11-21T15:29:34.000000Z"
-    },
-    {
-        "id": "47",
-        "name": "Glass",
-        "base_price": 120,
-        "description": "A transparent material used in construction and optics.",
-        "prospection_chance": null,
-        "first_base_resource_id": 17,
-        "second_base_resource_id": 22,
-        "first_base_resource_quantity": 2,
-        "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:29:34.000000Z",
-        "updated_at": "2024-11-21T15:29:34.000000Z"
-    },
-    {
-        "id": "48",
-        "name": "Fertilizer",
-        "base_price": 100,
-        "description": "A chemical compound that boosts agricultural yields.",
-        "prospection_chance": null,
-        "first_base_resource_id": 18,
-        "second_base_resource_id": 12,
-        "first_base_resource_quantity": 1,
-        "second_base_resource_quantity": 2,
-        "created_at": "2024-11-21T15:29:34.000000Z",
-        "updated_at": "2024-11-21T15:29:34.000000Z"
-    },
-    {
-        "id": "49",
-        "name": "Luxury Fabrics",
-        "base_price": 400,
-        "description": "High-end textiles made from natural fibers.",
-        "prospection_chance": null,
-        "first_base_resource_id": 23,
-        "second_base_resource_id": 27,
-        "first_base_resource_quantity": 2,
-        "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:29:34.000000Z",
-        "updated_at": "2024-11-21T15:29:34.000000Z"
-    },
-    {
-        "id": "50",
-        "name": "Nuclear Fuel",
-        "base_price": 9000,
-        "description": "Highly refined fuel used in advanced energy reactors.",
-        "prospection_chance": null,
-        "first_base_resource_id": 8,
-        "second_base_resource_id": 21,
-        "first_base_resource_quantity": 2,
-        "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:29:34.000000Z",
-        "updated_at": "2024-11-21T15:29:34.000000Z"
-    },
-    {
-        "id": "51",
-        "name": "Synthetic Fiber",
-        "base_price": 350,
-        "description": "A lightweight and durable material used in clothing and industrial applications.",
-        "prospection_chance": null,
-        "first_base_resource_id": 11,
-        "second_base_resource_id": 23,
-        "first_base_resource_quantity": 1,
-        "second_base_resource_quantity": 2,
-        "created_at": "2024-11-21T15:29:34.000000Z",
-        "updated_at": "2024-11-21T15:29:34.000000Z"
-    },
-    {
-        "id": "52",
-        "name": "Carbon Fiber",
-        "base_price": 1000,
-        "description": "A high-strength, lightweight material ideal for aerospace and advanced engineering.",
-        "prospection_chance": null,
-        "first_base_resource_id": 22,
-        "second_base_resource_id": 11,
-        "first_base_resource_quantity": 3,
-        "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:29:34.000000Z",
-        "updated_at": "2024-11-21T15:29:34.000000Z"
-    },
-    {
-        "id": "53",
-        "name": "Optical Lenses",
-        "base_price": 700,
-        "description": "Precision glass components used in telescopes, cameras, and microscopes.",
-        "prospection_chance": null,
-        "first_base_resource_id": 17,
-        "second_base_resource_id": 22,
-        "first_base_resource_quantity": 2,
-        "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:29:34.000000Z",
-        "updated_at": "2024-11-21T15:29:34.000000Z"
-    },
-    {
-        "id": "54",
-        "name": "Advanced Alloys",
-        "base_price": 5000,
-        "description": "Specialized metals combining strength and flexibility for high-tech industries.",
-        "prospection_chance": null,
-        "first_base_resource_id": 3,
-        "second_base_resource_id": 4,
-        "first_base_resource_quantity": 2,
-        "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:29:34.000000Z",
-        "updated_at": "2024-11-21T15:29:34.000000Z"
-    },
-    {
-        "id": "55",
-        "name": "Energy Cells",
-        "base_price": 1200,
-        "description": "Portable energy storage used to power small devices or vehicles.",
-        "prospection_chance": null,
-        "first_base_resource_id": 9,
-        "second_base_resource_id": 21,
-        "first_base_resource_quantity": 2,
-        "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:29:34.000000Z",
-        "updated_at": "2024-11-21T15:29:34.000000Z"
+        "updated_at": "2024-11-21T15:27:49.000000Z",
+        "rate_per_100k_population": "15"
     }
 ]

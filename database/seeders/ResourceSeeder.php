@@ -17,8 +17,6 @@ class ResourceSeeder extends Seeder
      */
     public function run()
     {
-
-
         $json = File::get(database_path('data\resources.json'));
         $resources = json_decode($json, true);
         Resource::truncate();
