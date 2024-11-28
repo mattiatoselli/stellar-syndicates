@@ -21,7 +21,11 @@ class LandOnPlanetController extends Controller
 
         $validated = $request->validate(['user_ship_id' => 'required|exists:users_ships,id',]);
         UserShip::where('user_id', $user->id)
-            ->whereNotIn('status', ['stand-by', 'landed'])
+            ->whereIn('status', ['loading'])
+            ->where('end_of_operation_time', '<=', now())
+            ->update(['status' => 'landed', "end_of_operation_time" => null]);
+        UserShip::where('user_id', $user->id)
+            ->whereIn('status', ['traveling', 'delivering'])
             ->where('end_of_operation_time', '<=', now())
             ->update(['status' => 'stand-by', "end_of_operation_time" => null]);
         $ship = UserShip::where('id', $validated['user_ship_id'])

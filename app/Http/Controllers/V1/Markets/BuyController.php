@@ -4,9 +4,9 @@ namespace App\Http\Controllers\V1\Markets;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\AuthenticationRegisterRequest;
-use App\Models\{User, Market, Planet, Resource, UserShip, CargoItem};
+use App\Models\{User, Market, Planet, Resource, UserShip, Ship, CargoItem};
 use App\Services\MarketService;
-
+use Illuminate\Support\Facades\Schema;
 class BuyController extends Controller
 {
     protected $MarketService;
@@ -20,7 +20,7 @@ class BuyController extends Controller
     {
         $validated = $request->validate([
             'user_ship_id' => 'required|exists:users_ships,id',
-            'resource_id' => 'required|exists:resources,name',
+            'resource_id' => 'required|exists:resources,id',
             'quantity' => 'required|integer|min:1'
         ]);
 
@@ -28,6 +28,15 @@ class BuyController extends Controller
         if($user == null) {
             return response()->json(['error' => 'Provide authentication token in the authorization header, format should be "Bearer <auth_token>"'], 401);
         }
+
+        UserShip::where('user_id', $user->id)
+            ->whereIn('status', ['loading'])
+            ->where('end_of_operation_time', '<=', now())
+            ->update(['status' => 'landed', "end_of_operation_time" => null]);
+        UserShip::where('user_id', $user->id)
+            ->whereIn('status', ['traveling', 'delivering'])
+            ->where('end_of_operation_time', '<=', now())
+            ->update(['status' => 'stand-by', "end_of_operation_time" => null]);
 
         $user_ship = UserShip::where("user_id", $user->id)
                         ->where('id', $validated['user_ship_id'])
@@ -64,8 +73,8 @@ class BuyController extends Controller
         }
 
         //check if ship has enough cargo space
-        $cargo_left_space = $ship->cargo - CargoItem::where('user_ship_id', $user_ship->id)->sum();
-        if($cargo_left_space <= 0) {
+        $cargo_left_space = $ship_model->cargo - CargoItem::where('user_ship_id', $user_ship->id)->sum('quantity');
+        if($cargo_left_space < $validated['quantity']) {
             return response()->json(['error' => 'Not enough space left in cargo.'], 422);
         }
 
@@ -78,20 +87,25 @@ class BuyController extends Controller
             $cargo_item->resource_id = $resource->id;
             $cargo_item->quantity = 0;
         }
-        $cargo_item->quantity += $validated['quantity'];
-
+        
+        $cargo_item->quantity = $cargo_item->quantity + $validated['quantity'];
         $user->credits -= $price['buy']*$validated['quantity'];
 
         $user_ship->status = 'loading';
-        $load_seconds = $validated['quantity']/$ship->cargo_speed*10;
+        $load_seconds = $validated['quantity']/$ship_model->cargo_speed*60;
         $user_ship->end_of_operation_time = now()->addSeconds($load_seconds);
 
-        $market->stock =- $validated['quantity'];
+        $market->stock = $market->stock - $validated['quantity'];
 
         //flash into the db
         $user_ship->save();
         $user->save();
         $cargo_item->save();
         $market->save();
+        return [
+            "user" => $user,
+            "ship" => $user_ship,
+            "cargo" => CargoItem::all(),
+        ];
     }
 }

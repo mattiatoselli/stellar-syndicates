@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cargo_items', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('user_ship_id')->constrained('users_ships')->onDelete('cascade');
             $table->foreignId('resource_id')->constrained('resources')->onDelete('cascade');
             $table->unsignedBigInteger('quantity');
