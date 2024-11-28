@@ -104,8 +104,8 @@ class BuyController extends Controller
         $market->save();
         return [
             "user" => $user,
-            "ship" => $user_ship,
-            "cargo" => CargoItem::all(),
+            "ship" => array_merge($user_ship->toArray(), $ship_model->toArray()),
+            "cargo" => $user_ship->cargo_items,
         ];
     }
 }
