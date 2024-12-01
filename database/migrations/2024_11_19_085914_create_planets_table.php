@@ -20,7 +20,6 @@ return new class extends Migration
             $table->float('distance_from_star');
             $table->string('type');
             $table->integer('population');
-            $table->timestamps();
         });
     }
 

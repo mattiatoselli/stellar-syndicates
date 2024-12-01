@@ -17,30 +17,18 @@ class StarSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();
-        $starTypes = [
-            'Yellow Dwarf', 
-            'Red Giant', 
-            'Blue Giant', 
-            'White Dwarf', 
-            'Neutron Star', 
-            'Pulsar', 
-            'Supergiant',
-            'Red Supergiant',
-            'Binary Star',
-            'Brown Dwarf'
-        ];
-
+        Star::truncate();
         $json = File::get(database_path('data\stars.json'));
         $stars = json_decode($json, true);
-        Star::truncate();
         foreach ($stars as $item) {
             $star = new Star([
-                'name' => $item,
-                'type' => $starTypes[array_rand($starTypes)],
-                'x' => $faker->randomFloat(2, -1000, 1000),
-                'y' => $faker->randomFloat(2, -1000, 1000),
-                'z' => $faker->randomFloat(2, -1000, 1000),
+                'name' => $item['name'],
+                'spectrum' => $item['spectrum'],
+                'color' => $item['color'],
+                'temperature' => $item['temperature'],
+                'x' => $item['position']['x'],
+                'y' => $item['position']['y'],
+                'z' => $item['position']['z'],
             ]);
             $star->save();
         }

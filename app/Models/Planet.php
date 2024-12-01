@@ -11,7 +11,8 @@ class Planet extends Model
     protected $keyType = 'string';
     protected $hidden = [];
     protected $table = 'planets';
-
+    public $timestamps = false;
+    
     public function deposits()
     {
         return $this->hasMany(Deposit::class);

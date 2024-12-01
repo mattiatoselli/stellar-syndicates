@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('stars', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name')->unique()->comment('the name of the star');
-            $table->string('type')->comment('type of the star');
+            $table->string('spectrum');
+            $table->string('color');
+            $table->integer('temperature');
             $table->float('x')->comment('x coordinate');
             $table->float('y')->comment('y coordinate');
             $table->float('z')->comment('z coordinate');
-            $table->timestamps();
-
             $table->unique(['x', 'y', 'z']);
         });
     }

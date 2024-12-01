@@ -11,6 +11,7 @@ class Star extends Model
     protected $keyType = 'string';
     protected $hidden = [];
     protected $table = 'stars';
+    public $timestamps = false;
 
     public function planets()
     {
