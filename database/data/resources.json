@@ -9,9 +9,7 @@
         "second_base_resource_id": null,
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
-        "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "3"
+        "rate_per_100k_population": "0.03"
     },
     {
         "id": "2",
@@ -23,9 +21,7 @@
         "second_base_resource_id": null,
         "first_base_resource_quantity": null,
         "second_base_resource_quantity": null,
-        "created_at": "2024-11-21T15:20:36.000000Z",
-        "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "9"
+        "rate_per_100k_population": "0.09"
     },
     {
         "id": "3",
@@ -39,7 +35,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "3"
+        "rate_per_100k_population": "0.03"
     },
     {
         "id": "4",
@@ -53,7 +49,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "4"
+        "rate_per_100k_population": "0.04"
     },
     {
         "id": "5",
@@ -67,7 +63,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "2"
+        "rate_per_100k_population": "0.02"
     },
     {
         "id": "6",
@@ -81,7 +77,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "40"
+        "rate_per_100k_population": "0.4"
     },
     {
         "id": "7",
@@ -95,7 +91,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "30"
+        "rate_per_100k_population": "0.3"
     },
     {
         "id": "8",
@@ -109,7 +105,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "8"
+        "rate_per_100k_population": "0.08"
     },
     {
         "id": "9",
@@ -123,7 +119,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "15"
+        "rate_per_100k_population": "0.15"
     },
     {
         "id": "10",
@@ -137,7 +133,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "5"
+        "rate_per_100k_population": "0.5"
     },
     {
         "id": "11",
@@ -151,7 +147,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "18"
+        "rate_per_100k_population": "0.18"
     },
     {
         "id": "12",
@@ -165,7 +161,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "100"
+        "rate_per_100k_population": "1"
     },
     {
         "id": "13",
@@ -179,7 +175,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "25"
+        "rate_per_100k_population": "0.25"
     },
     {
         "id": "14",
@@ -193,7 +189,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "10"
+        "rate_per_100k_population": "0.1"
     },
     {
         "id": "15",
@@ -207,7 +203,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "12"
+        "rate_per_100k_population": "0.12"
     },
     {
         "id": "16",
@@ -221,7 +217,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "5"
+        "rate_per_100k_population": "0.05"
     },
     {
         "id": "17",
@@ -235,7 +231,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "15"
+        "rate_per_100k_population": "0.15"
     },
     {
         "id": "18",
@@ -249,7 +245,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "20"
+        "rate_per_100k_population": "0.20"
     },
     {
         "id": "19",
@@ -263,7 +259,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "22"
+        "rate_per_100k_population": "0.22"
     },
     {
         "id": "20",
@@ -277,7 +273,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "22"
+        "rate_per_100k_population": "0.22"
     },
     {
         "id": "21",
@@ -291,7 +287,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "0.1"
+        "rate_per_100k_population": "0.01"
     },
     {
         "id": "22",
@@ -305,7 +301,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "50"
+        "rate_per_100k_population": "0.50"
     },
     {
         "id": "23",
@@ -319,7 +315,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "50"
+        "rate_per_100k_population": "0.50"
     },
     {
         "id": "24",
@@ -333,7 +329,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "20"
+        "rate_per_100k_population": "0.20"
     },
     {
         "id": "25",
@@ -347,7 +343,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "15"
+        "rate_per_100k_population": "0.15"
     },
     {
         "id": "26",
@@ -361,7 +357,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "25"
+        "rate_per_100k_population": "0.25"
     },
     {
         "id": "27",
@@ -375,7 +371,7 @@
         "second_base_resource_quantity": null,
         "created_at": "2024-11-21T15:20:36.000000Z",
         "updated_at": "2024-11-21T15:20:36.000000Z",
-        "rate_per_100k_population": "3"
+        "rate_per_100k_population": "0.03"
     },
     {
         "id": "28",
@@ -389,7 +385,7 @@
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
         "updated_at": "2024-11-21T15:27:49.000000Z",
-        "rate_per_100k_population": "25"
+        "rate_per_100k_population": "0.25"
     },
     {
         "id": "29",
@@ -403,7 +399,7 @@
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
         "updated_at": "2024-11-21T15:27:49.000000Z",
-        "rate_per_100k_population": "55"
+        "rate_per_100k_population": "0.55"
     },
     {
         "id": "30",
@@ -417,7 +413,7 @@
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
         "updated_at": "2024-11-21T15:27:49.000000Z",
-        "rate_per_100k_population": "50"
+        "rate_per_100k_population": "0.50"
     },
     {
         "id": "31",
@@ -431,7 +427,7 @@
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
         "updated_at": "2024-11-21T15:27:49.000000Z",
-        "rate_per_100k_population": "8"
+        "rate_per_100k_population": "0.08"
     },
     {
         "id": "32",
@@ -445,7 +441,7 @@
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
         "updated_at": "2024-11-21T15:27:49.000000Z",
-        "rate_per_100k_population": "50"
+        "rate_per_100k_population": "0.50"
     },
     {
         "id": "33",
@@ -459,7 +455,7 @@
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
         "updated_at": "2024-11-21T15:27:49.000000Z",
-        "rate_per_100k_population": "56"
+        "rate_per_100k_population": "0.56"
     },
     {
         "id": "34",
@@ -473,7 +469,7 @@
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
         "updated_at": "2024-11-21T15:27:49.000000Z",
-        "rate_per_100k_population": "80"
+        "rate_per_100k_population": "0.80"
     },
     {
         "id": "35",
@@ -487,7 +483,7 @@
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
         "updated_at": "2024-11-21T15:27:49.000000Z",
-        "rate_per_100k_population": "15"
+        "rate_per_100k_population": "0.15"
     },
     {
         "id": "36",
@@ -501,7 +497,7 @@
         "second_base_resource_quantity": 1,
         "created_at": "2024-11-21T15:27:49.000000Z",
         "updated_at": "2024-11-21T15:27:49.000000Z",
-        "rate_per_100k_population": "100"
+        "rate_per_100k_population": "1"
     },
     {
         "id": "37",
@@ -513,9 +509,7 @@
         "second_base_resource_id": 23,
         "first_base_resource_quantity": 2,
         "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z",
-        "rate_per_100k_population": "43"
+        "rate_per_100k_population": "0.43"
     },
     {
         "id": "38",
@@ -527,9 +521,7 @@
         "second_base_resource_id": 11,
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z",
-        "rate_per_100k_population": "22"
+        "rate_per_100k_population": "0.22"
     },
     {
         "id": "39",
@@ -541,9 +533,7 @@
         "second_base_resource_id": 22,
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z",
-        "rate_per_100k_population": "9"
+        "rate_per_100k_population": "0.09"
     },
     {
         "id": "40",
@@ -555,9 +545,7 @@
         "second_base_resource_id": 4,
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z",
-        "rate_per_100k_population": "24"
+        "rate_per_100k_population": "0.24"
     },
     {
         "id": "41",
@@ -569,8 +557,6 @@
         "second_base_resource_id": 21,
         "first_base_resource_quantity": 1,
         "second_base_resource_quantity": 1,
-        "created_at": "2024-11-21T15:27:49.000000Z",
-        "updated_at": "2024-11-21T15:27:49.000000Z",
-        "rate_per_100k_population": "15"
+        "rate_per_100k_population": "0.15"
     }
 ]

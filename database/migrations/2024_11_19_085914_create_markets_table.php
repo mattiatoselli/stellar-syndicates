@@ -19,7 +19,6 @@ return new class extends Migration
             $table->foreignId('planet_id')->constrained('planets')->onDelete('cascade');
             $table->unsignedBigInteger('stock')->default(0)->comment('this is the stock of this resource');
             $table->unsignedBigInteger('base_production')->default(0)->comment('to simulate the base production of the planet, it will decrease over time to simulate the depletion of resources and allow the market to be influenced by players');
-            $table->timestamps();
         });
     }
 

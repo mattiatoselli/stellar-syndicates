@@ -20,6 +20,18 @@ class ResourceSeeder extends Seeder
         $json = File::get(database_path('data\resources.json'));
         $resources = json_decode($json, true);
         Resource::truncate();
-        Resource::insert($resources);
+        foreach($resources as $item) {
+            Resource::insert([
+                "id" =>  $item['id'],
+                "name" =>  $item['name'],
+                "base_price" =>  $item['base_price'],
+                "description" =>  $item['description'],
+                "prospection_chance" =>  $item['prospection_chance'],
+                "first_base_resource_id" =>  $item['first_base_resource_id'],
+                "second_base_resource_id" =>  $item['second_base_resource_id'],
+                "first_base_resource_quantity" =>  $item['first_base_resource_quantity'],
+                "rate_per_100k_population" => $item["rate_per_100k_population"],
+            ]);
+        }
     }
 }

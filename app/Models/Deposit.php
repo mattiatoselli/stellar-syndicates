@@ -11,6 +11,7 @@ class Deposit extends Model
     protected $keyType = 'string';
     protected $hidden = [];
     protected $table = 'deposits';
+    public $timestamps = false;
 
     protected static function boot()
     {

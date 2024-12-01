@@ -18,6 +18,11 @@ class Planet extends Model
         return $this->hasMany(Deposit::class);
     }
 
+    public function markets()
+    {
+        return $this->hasMany(Market::class);
+    }
+
     protected static function boot()
     {
         parent::boot();

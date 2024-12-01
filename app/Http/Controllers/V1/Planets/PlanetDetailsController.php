@@ -25,11 +25,6 @@ class PlanetDetailsController extends Controller
         }
         $resources = Resource::all();
         $market = [];
-        if($planet->type != "Terrestrial Planet") {
-            $planet->market = $market;
-            $planet->deposits = Deposit::where('planet_id', $planet->id)->where('status', '!=', 'hidden')->get();
-            return $planet;
-        }
         foreach ($resources as $item) {
             $market[] = $this->MarketService->getMarketPrice($planet, $item);
         }

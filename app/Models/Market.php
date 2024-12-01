@@ -9,4 +9,5 @@ class Market extends Model
 {
     protected $hidden = [];
     protected $table = 'markets';
+    public $timestamps = false;
 }

@@ -10,4 +10,5 @@ class Resource extends Model
     protected $keyType = 'string';
     protected $hidden = [];
     protected $table = 'resources';
+    public $timestamps = false;
 }

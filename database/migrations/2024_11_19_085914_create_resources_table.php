@@ -21,8 +21,7 @@ return new class extends Migration
             $table->foreignId('second_base_resource_id')->nullable()->constrained('resources')->onDelete('cascade');
             $table->integer('first_base_resource_quantity')->nullable();
             $table->integer('second_base_resource_quantity')->nullable();
-            $table->float('rate_per_100k_population', 8, 2)->default(0)->after('name');
-            $table->timestamps();
+            $table->float('rate_per_100k_population', 8, 2)->default(0);
         });
     }
 
