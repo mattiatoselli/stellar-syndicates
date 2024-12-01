@@ -5,13 +5,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{Ship, UserShip, Planet, Star, CargoItem, Resource};
 use Illuminate\Support\Facades\Auth;
-
+use App\Services\ShipService;
 
 /**
  * 
  */
 class LandOnPlanetController extends Controller
 {
+    public function __construct()
+    {
+        $this->ShipService = $ShipService;
+    }
+
     public function __invoke(Request $request)
     {
         $user = auth('sanctum')->user();
@@ -20,14 +25,9 @@ class LandOnPlanetController extends Controller
         }
 
         $validated = $request->validate(['user_ship_id' => 'required|exists:users_ships,id',]);
-        UserShip::where('user_id', $user->id)
-            ->whereIn('status', ['loading'])
-            ->where('end_of_operation_time', '<=', now())
-            ->update(['status' => 'landed', "end_of_operation_time" => null]);
-        UserShip::where('user_id', $user->id)
-            ->whereIn('status', ['traveling', 'delivering'])
-            ->where('end_of_operation_time', '<=', now())
-            ->update(['status' => 'stand-by', "end_of_operation_time" => null]);
+        
+        $this->ShipService->synchronize();
+
         $ship = UserShip::where('id', $validated['user_ship_id'])
                     ->where('user_id', $user->id)
                     ->first();

@@ -12,6 +12,11 @@ class Planet extends Model
     protected $hidden = [];
     protected $table = 'planets';
 
+    public function deposits()
+    {
+        return $this->hasMany(Deposit::class);
+    }
+
     protected static function boot()
     {
         parent::boot();

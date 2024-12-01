@@ -32,5 +32,6 @@ Route::post('/v1/market/buy', \App\Http\Controllers\V1\Markets\BuyController::cl
 
 //travels
 Route::post('/v1/travels/land', \App\Http\Controllers\V1\Travels\LandOnPlanetController::class);
+Route::get('/v1/travels/info', \App\Http\Controllers\V1\Travels\TravelDetailsController::class);
 
 

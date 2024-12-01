@@ -35,6 +35,7 @@ class PlanetDetailsController extends Controller
         }
         $planet->market = $market;
         $planet->deposits = Deposit::where('planet_id', $planet->id)->where('status', '!=', 'hidden')->get();
+
         return $planet;
     }
 }

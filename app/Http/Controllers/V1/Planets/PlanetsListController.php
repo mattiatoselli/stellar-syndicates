@@ -9,11 +9,6 @@ class PlanetsListController extends Controller
 {
     public function __invoke()
     {
-        $planets = Planet::all();
-        foreach ($planets as &$planet) {
-            $planet->deposits = Deposit::where('planet_id', $planet->id)->where('status', '!=', 'hidden')->get();
-        }
-
-        return $planets;
+        return Planet::orderBy('population', 'desc')->paginate(100);
     }
 }
