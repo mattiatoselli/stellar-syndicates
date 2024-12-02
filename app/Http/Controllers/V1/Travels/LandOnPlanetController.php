@@ -12,7 +12,7 @@ use App\Services\ShipService;
  */
 class LandOnPlanetController extends Controller
 {
-    public function __construct()
+    public function __construct(ShipService $ShipService)
     {
         $this->ShipService = $ShipService;
     }
@@ -31,10 +31,8 @@ class LandOnPlanetController extends Controller
         $ship = UserShip::where('id', $validated['user_ship_id'])
                     ->where('user_id', $user->id)
                     ->first();
-
-        $planet = Planet::where('id', $ship->planet_location_id)->first();
-        if($planet->type != "Terrestrial Planet") {
-            return response()->json(['You can land only on terrestrial planets'], 422);
+        if($ship->status != 'stand-by') {
+            return response()->json(['error' => 'Only ships in stand-by can land on a planet'], 422);
         }
         $ship->status = 'landed';
         $ship->end_of_operation_time = null;

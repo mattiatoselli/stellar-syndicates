@@ -22,7 +22,7 @@ Route::get('/v1/resources/list', \App\Http\Controllers\V1\Resources\ResourceList
 Route::get('/v1/ships/list', \App\Http\Controllers\V1\Ships\ShipListController::class);
 Route::post('/v1/ships/buy', \App\Http\Controllers\V1\Ships\BuyShipController::class);
 Route::get('/v1/ships/status', \App\Http\Controllers\V1\Ships\ShipStatusController::class);
-
+Route::post('/v1/ships/refuel', \App\Http\Controllers\V1\Ships\RefuelShipController::class);
 //admin
 Route::get('/v1/admin/generatedeposit', \App\Http\Controllers\V1\Admin\GenerateDepositsController::class);
 Route::get('/v1/admin/generatemarkets', \App\Http\Controllers\V1\Admin\GenerateMarketsController::class);

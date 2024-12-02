@@ -9,7 +9,6 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    // database/migrations/xxxx_xx_xx_create_planets_table.php
 
     public function up()
     {
@@ -17,6 +16,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('ship_id')->constrained('ships')->onDelete('cascade');
+            $table->integer('fuel')->default(0);
             $table->foreignId('star_location_id')->constrained('stars')->onDelete('cascade');
             $table->foreignId('planet_location_id')->constrained('planets')->onDelete('cascade');
             $table->string('status');
