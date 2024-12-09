@@ -1,0 +1,122 @@
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": "71ff81a3-47e5-426e-892f-553517c18c8c",
+            "name": "Sun",
+            "spectrum": "G2V",
+            "color": "Yellow",
+            "temperature": 5778,
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        {
+            "id": "6c57f015-e077-4db8-874a-b138b2ec3528",
+            "name": "Proxima Centauri",
+            "spectrum": "M5.5V",
+            "color": "Red",
+            "temperature": 3042,
+            "x": -1.546,
+            "y": -3.582,
+            "z": 0.059
+        },
+        {
+            "id": "ebeff2ac-9847-40eb-8856-659fc9e5b2f1",
+            "name": "Alpha Centauri",
+            "spectrum": "G2V",
+            "color": "Yellow",
+            "temperature": 5790,
+            "x": -1.602,
+            "y": -3.711,
+            "z": 0.063
+        },
+        {
+            "id": "3b0bd572-c0d8-40d7-b7d5-65a038a9bf61",
+            "name": "Barnard's Star",
+            "spectrum": "M4V",
+            "color": "Red",
+            "temperature": 3134,
+            "x": 1.834,
+            "y": -5.578,
+            "z": -0.006
+        },
+        {
+            "id": "8e831af8-773c-491c-b0fb-919c937398f7",
+            "name": "Wolf 359",
+            "spectrum": "M6V",
+            "color": "Red",
+            "temperature": 2800,
+            "x": -7.502,
+            "y": 1.727,
+            "z": 0.105
+        },
+        {
+            "id": "4a35b003-fd54-4a54-b776-a1024cb1f2c2",
+            "name": "Lalande 21185",
+            "spectrum": "M2V",
+            "color": "Red",
+            "temperature": 3400,
+            "x": 7.877,
+            "y": -1.881,
+            "z": -0.152
+        },
+        {
+            "id": "95593133-0529-44ea-b5f7-cfede7b9a1cb",
+            "name": "Sirius A",
+            "spectrum": "A1V",
+            "color": "White-bluish",
+            "temperature": 9940,
+            "x": -8.505,
+            "y": 1.462,
+            "z": -0.556
+        },
+        {
+            "id": "90ab146c-04a2-43b3-81a9-6012bb39fbd7",
+            "name": "Luyten 726-8",
+            "spectrum": "M5.5V",
+            "color": "Red",
+            "temperature": 2950,
+            "x": 8.521,
+            "y": -1.753,
+            "z": 0.076
+        },
+        {
+            "id": "beeb1c72-604a-4a6b-87c0-5a7573fecd7b",
+            "name": "Ross 154",
+            "spectrum": "M3.5V",
+            "color": "Red",
+            "temperature": 3250,
+            "x": -1.2,
+            "y": 9.58,
+            "z": -0.134
+        }
+    ],
+    "first_page_url": "http://127.0.0.1:8000/api/v1/stars/list?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "http://127.0.0.1:8000/api/v1/stars/list?page=1",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "http://127.0.0.1:8000/api/v1/stars/list?page=1",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "http://127.0.0.1:8000/api/v1/stars/list",
+    "per_page": 100,
+    "prev_page_url": null,
+    "to": 9,
+    "total": 9
+}

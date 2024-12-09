@@ -7,9 +7,14 @@ use App\Models\{Star, Planet};
 
 class StarsListController extends Controller
 {
+    /**
+     * List Stars.
+     * Returns the list of the stars in the universe.
+     * List is paginated.
+     * @responseFile storage/responses/stars.json
+     */
     public function __invoke()
     {
-        return Star::with('planets')->get();
-
+        return Star::paginate(100);
     }
 }

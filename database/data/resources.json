@@ -2,7 +2,7 @@
     {
         "id": "1",
         "name": "Gold",
-        "base_price": 2500,
+        "base_price": 600,
         "description": "A precious metal highly valued for electronics and currency.",
         "prospection_chance": 5,
         "first_base_resource_id": null,
@@ -14,7 +14,7 @@
     {
         "id": "2",
         "name": "Silver",
-        "base_price": 200,
+        "base_price": 450,
         "description": "A versatile metal used in industry, jewelry, and currency.",
         "prospection_chance": 10,
         "first_base_resource_id": null,
@@ -26,7 +26,7 @@
     {
         "id": "3",
         "name": "Tantalum",
-        "base_price": 1200,
+        "base_price": 360,
         "description": "A rare metal essential for high-performance electronics.",
         "prospection_chance": 3,
         "first_base_resource_id": null,
@@ -40,7 +40,7 @@
     {
         "id": "4",
         "name": "Osmium",
-        "base_price": 5000,
+        "base_price": 500,
         "description": "One of the densest metals, used in scientific applications.",
         "prospection_chance": 2,
         "first_base_resource_id": null,
@@ -54,7 +54,7 @@
     {
         "id": "5",
         "name": "Palladium",
-        "base_price": 2200,
+        "base_price": 320,
         "description": "A critical metal in catalytic converters and electronics.",
         "prospection_chance": 4,
         "first_base_resource_id": null,
@@ -68,7 +68,7 @@
     {
         "id": "6",
         "name": "Iron Ore",
-        "base_price": 80,
+        "base_price": 90,
         "description": "A common ore used in the production of steel.",
         "prospection_chance": 20,
         "first_base_resource_id": null,
@@ -82,7 +82,7 @@
     {
         "id": "7",
         "name": "Copper",
-        "base_price": 50,
+        "base_price": 100,
         "description": "A highly conductive metal used in electrical components.",
         "prospection_chance": 15,
         "first_base_resource_id": null,
@@ -96,7 +96,7 @@
     {
         "id": "8",
         "name": "Uranium",
-        "base_price": 3000,
+        "base_price": 300,
         "description": "A radioactive element essential for nuclear energy.",
         "prospection_chance": 3,
         "first_base_resource_id": null,
@@ -110,7 +110,7 @@
     {
         "id": "9",
         "name": "Lithium",
-        "base_price": 900,
+        "base_price": 450,
         "description": "A lightweight metal critical for batteries and energy storage.",
         "prospection_chance": 6,
         "first_base_resource_id": null,
@@ -124,7 +124,7 @@
     {
         "id": "10",
         "name": "Platinum",
-        "base_price": 2000,
+        "base_price": 500,
         "description": "A valuable metal used in jewelry and industrial processes.",
         "prospection_chance": 5,
         "first_base_resource_id": null,
@@ -152,7 +152,7 @@
     {
         "id": "12",
         "name": "Water",
-        "base_price": 2,
+        "base_price": 80,
         "description": "A basic necessity for life and agriculture.",
         "prospection_chance": 25,
         "first_base_resource_id": null,
@@ -194,7 +194,7 @@
     {
         "id": "15",
         "name": "Zinc",
-        "base_price": 75,
+        "base_price": 120,
         "description": "A common metal used in galvanizing steel and various alloys.",
         "prospection_chance": 18,
         "first_base_resource_id": null,
@@ -208,7 +208,7 @@
     {
         "id": "16",
         "name": "Titanium",
-        "base_price": 800,
+        "base_price": 250,
         "description": "A lightweight and strong metal ideal for aerospace and medical applications.",
         "prospection_chance": 6,
         "first_base_resource_id": null,
@@ -264,7 +264,7 @@
     {
         "id": "20",
         "name": "Bauxite",
-        "base_price": 90,
+        "base_price": 150,
         "description": "An ore of aluminum, critical for lightweight material production.",
         "prospection_chance": 12,
         "first_base_resource_id": null,
@@ -278,7 +278,7 @@
     {
         "id": "21",
         "name": "Helium-3",
-        "base_price": 4000,
+        "base_price": 400,
         "description": "An isotope of helium essential for advanced energy applications.",
         "prospection_chance": 1,
         "first_base_resource_id": null,
@@ -306,7 +306,7 @@
     {
         "id": "23",
         "name": "Cotton",
-        "base_price": 12,
+        "base_price": 25,
         "description": "A fibrous crop used in textiles and industrial applications.",
         "prospection_chance": 25,
         "first_base_resource_id": null,
@@ -381,8 +381,8 @@
         "prospection_chance": null,
         "first_base_resource_id": 6,
         "second_base_resource_id": 22,
-        "first_base_resource_quantity": 1,
-        "second_base_resource_quantity": 1,
+        "first_base_resource_quantity": "1",
+        "second_base_resource_quantity": "1",
         "created_at": "2024-11-21T15:27:49.000000Z",
         "updated_at": "2024-11-21T15:27:49.000000Z",
         "rate_per_100k_population": "0.25"
@@ -395,8 +395,8 @@
         "prospection_chance": null,
         "first_base_resource_id": 20,
         "second_base_resource_id": 22,
-        "first_base_resource_quantity": 1,
-        "second_base_resource_quantity": 1,
+        "first_base_resource_quantity": "1",
+        "second_base_resource_quantity": "1",
         "created_at": "2024-11-21T15:27:49.000000Z",
         "updated_at": "2024-11-21T15:27:49.000000Z",
         "rate_per_100k_population": "0.55"
@@ -418,7 +418,7 @@
     {
         "id": "31",
         "name": "Jewelry",
-        "base_price": 7000,
+        "base_price": 2000,
         "description": "Luxury items crafted with precious metals and stones.",
         "prospection_chance": null,
         "first_base_resource_id": 1,
@@ -460,7 +460,7 @@
     {
         "id": "34",
         "name": "Fertilizer",
-        "base_price": 100,
+        "base_price": 210,
         "description": "A chemical compound that boosts agricultural yields.",
         "prospection_chance": null,
         "first_base_resource_id": 18,
@@ -488,7 +488,7 @@
     {
         "id": "36",
         "name": "Nuclear Fuel",
-        "base_price": 9000,
+        "base_price": 1900,
         "description": "Highly refined fuel used in advanced energy reactors.",
         "prospection_chance": null,
         "first_base_resource_id": 8,
@@ -538,7 +538,7 @@
     {
         "id": "40",
         "name": "Advanced Alloys",
-        "base_price": 5000,
+        "base_price": 1800,
         "description": "Specialized metals combining strength and flexibility for high-tech industries.",
         "prospection_chance": null,
         "first_base_resource_id": 3,

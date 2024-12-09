@@ -17,6 +17,12 @@ class PlanetDetailsController extends Controller
     }
 
 
+    /**
+     * Planet's details.
+     * Returns the planet's details, with his market, and deposits.
+     * @urlParam $id required. Planets's Id. Example: a6863bac-d92f-4500-942f-9c04e4528a2e
+     * @responseFile storage/responses/planet_details.json
+     */
     public function __invoke(string $id)
     {
         $planet = Planet::find($id);

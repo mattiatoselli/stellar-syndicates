@@ -1,0 +1,3793 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Laravel Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+            </style>
+
+    <script>
+        var tryItOutBaseUrl = "http://localhost";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-4.38.0.js"></script>
+
+    <script src="../docs/js/theme-default-4.38.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image"/>
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                    <ul id="tocify-header-introduction" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="introduction">
+                    <a href="#introduction">Introduction</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-authenticating-requests" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authenticating-requests">
+                    <a href="#authenticating-requests">Authenticating requests</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-endpoints" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-authentication-register">
+                                <a href="#endpoints-POSTapi-v1-authentication-register">Register a new account.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-authentication-user">
+                                <a href="#endpoints-GETapi-v1-authentication-user">Get User details.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-stars-list">
+                                <a href="#endpoints-GETapi-v1-stars-list">List Stars.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-stars--id-">
+                                <a href="#endpoints-GETapi-v1-stars--id-">Star's details.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-planets--id-">
+                                <a href="#endpoints-GETapi-v1-planets--id-">Planet's details.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-resources-list">
+                                <a href="#endpoints-GETapi-v1-resources-list">Resources and goods list.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-ships-list">
+                                <a href="#endpoints-GETapi-v1-ships-list">Ship's Available.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-ships-buy">
+                                <a href="#endpoints-POSTapi-v1-ships-buy">Handle the ship purchase request.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-ships-status">
+                                <a href="#endpoints-GETapi-v1-ships-status">GET api/v1/ships/status</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-ships-refuel">
+                                <a href="#endpoints-POSTapi-v1-ships-refuel">Handle the ship purchase request.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-ships-mine">
+                                <a href="#endpoints-POSTapi-v1-ships-mine">extract resources</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-market-buy">
+                                <a href="#endpoints-POSTapi-v1-market-buy">POST api/v1/market/buy</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-market-sell">
+                                <a href="#endpoints-POSTapi-v1-market-sell">POST api/v1/market/sell</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-travels-land">
+                                <a href="#endpoints-POSTapi-v1-travels-land">POST api/v1/travels/land</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-travels-takeoff">
+                                <a href="#endpoints-POSTapi-v1-travels-takeoff">POST api/v1/travels/takeoff</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-travels-info">
+                                <a href="#endpoints-GETapi-v1-travels-info">GET api/v1/travels/info</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+            </div>
+
+    <ul class="toc-footer" id="toc-footer">
+                    <li style="padding-bottom: 5px;"><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li style="padding-bottom: 5px;"><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+    </ul>
+
+    <ul class="toc-footer" id="last-updated">
+        <li>Last updated: December 9, 2024</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<aside>
+    <strong>Base URL</strong>: <code>http://localhost</code>
+</aside>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+<p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
+<p>You can get your bearer token once you subscribe an account by using the register API.</b>.</p>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+                                <h2 id="endpoints-POSTapi-v1-authentication-register">Register a new account.</h2>
+
+<p>
+</p>
+
+<p>Once you register a new account you will receive some credits to start.
+The API returns the user's data, and your id_number. This is your token and should be provided in order to access to every
+resource. Please note that there is no way of recovering your token, and that your token is the only way to identify you, so if you give your token to someone, that user will be able to act as you in Stellar Syndicates.
+Tokens will never expire.</p>
+
+<span id="example-requests-POSTapi-v1-authentication-register">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/authentication/register" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"username\": \"iceman29\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/authentication/register"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "username": "iceman29"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-authentication-register">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;user&quot;: {
+        &quot;username&quot;: &quot;iceman29&quot;,
+        &quot;credits&quot;: 25000,
+        &quot;id&quot;: &quot;5897a0c5-af0a-46d6-8c6c-c35214265bc9&quot;,
+        &quot;updated_at&quot;: &quot;2024-12-03T13:52:53.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2024-12-03T13:52:53.000000Z&quot;
+    },
+    &quot;id_number&quot;: &quot;2|pwM3dAdtW4LmwNRXOsqYwjf9HDab3TcrTqcsgCDLb0b078bb&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-authentication-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-authentication-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-authentication-register"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-authentication-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-authentication-register">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-authentication-register" data-method="POST"
+      data-path="api/v1/authentication/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-authentication-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-authentication-register"
+                    onclick="tryItOut('POSTapi-v1-authentication-register');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-authentication-register"
+                    onclick="cancelTryOut('POSTapi-v1-authentication-register');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-authentication-register"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/authentication/register</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-authentication-register"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-authentication-register"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>username</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="username"                data-endpoint="POSTapi-v1-authentication-register"
+               value="iceman29"
+               data-component="body">
+    <br>
+<p>required. Your username. Example: <code>iceman29</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-GETapi-v1-authentication-user">Get User details.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Returns data about the currently logged user.</p>
+
+<span id="example-requests-GETapi-v1-authentication-user">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/authentication/user" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/authentication/user"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-authentication-user">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-authentication-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-authentication-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-authentication-user"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-authentication-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-authentication-user">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-authentication-user" data-method="GET"
+      data-path="api/v1/authentication/user"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-authentication-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-authentication-user"
+                    onclick="tryItOut('GETapi-v1-authentication-user');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-authentication-user"
+                    onclick="cancelTryOut('GETapi-v1-authentication-user');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-authentication-user"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/authentication/user</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-authentication-user"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-authentication-user"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-authentication-user"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-GETapi-v1-stars-list">List Stars.</h2>
+
+<p>
+</p>
+
+<p>Returns the list of the stars in the universe.
+List is paginated.</p>
+
+<span id="example-requests-GETapi-v1-stars-list">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/stars/list" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/stars/list"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-stars-list">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;current_page&quot;: 1,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: &quot;71ff81a3-47e5-426e-892f-553517c18c8c&quot;,
+            &quot;name&quot;: &quot;Sun&quot;,
+            &quot;spectrum&quot;: &quot;G2V&quot;,
+            &quot;color&quot;: &quot;Yellow&quot;,
+            &quot;temperature&quot;: 5778,
+            &quot;x&quot;: 0,
+            &quot;y&quot;: 0,
+            &quot;z&quot;: 0
+        },
+        {
+            &quot;id&quot;: &quot;6c57f015-e077-4db8-874a-b138b2ec3528&quot;,
+            &quot;name&quot;: &quot;Proxima Centauri&quot;,
+            &quot;spectrum&quot;: &quot;M5.5V&quot;,
+            &quot;color&quot;: &quot;Red&quot;,
+            &quot;temperature&quot;: 3042,
+            &quot;x&quot;: -1.546,
+            &quot;y&quot;: -3.582,
+            &quot;z&quot;: 0.059
+        },
+        {
+            &quot;id&quot;: &quot;ebeff2ac-9847-40eb-8856-659fc9e5b2f1&quot;,
+            &quot;name&quot;: &quot;Alpha Centauri&quot;,
+            &quot;spectrum&quot;: &quot;G2V&quot;,
+            &quot;color&quot;: &quot;Yellow&quot;,
+            &quot;temperature&quot;: 5790,
+            &quot;x&quot;: -1.602,
+            &quot;y&quot;: -3.711,
+            &quot;z&quot;: 0.063
+        },
+        {
+            &quot;id&quot;: &quot;3b0bd572-c0d8-40d7-b7d5-65a038a9bf61&quot;,
+            &quot;name&quot;: &quot;Barnard&#039;s Star&quot;,
+            &quot;spectrum&quot;: &quot;M4V&quot;,
+            &quot;color&quot;: &quot;Red&quot;,
+            &quot;temperature&quot;: 3134,
+            &quot;x&quot;: 1.834,
+            &quot;y&quot;: -5.578,
+            &quot;z&quot;: -0.006
+        },
+        {
+            &quot;id&quot;: &quot;8e831af8-773c-491c-b0fb-919c937398f7&quot;,
+            &quot;name&quot;: &quot;Wolf 359&quot;,
+            &quot;spectrum&quot;: &quot;M6V&quot;,
+            &quot;color&quot;: &quot;Red&quot;,
+            &quot;temperature&quot;: 2800,
+            &quot;x&quot;: -7.502,
+            &quot;y&quot;: 1.727,
+            &quot;z&quot;: 0.105
+        },
+        {
+            &quot;id&quot;: &quot;4a35b003-fd54-4a54-b776-a1024cb1f2c2&quot;,
+            &quot;name&quot;: &quot;Lalande 21185&quot;,
+            &quot;spectrum&quot;: &quot;M2V&quot;,
+            &quot;color&quot;: &quot;Red&quot;,
+            &quot;temperature&quot;: 3400,
+            &quot;x&quot;: 7.877,
+            &quot;y&quot;: -1.881,
+            &quot;z&quot;: -0.152
+        },
+        {
+            &quot;id&quot;: &quot;95593133-0529-44ea-b5f7-cfede7b9a1cb&quot;,
+            &quot;name&quot;: &quot;Sirius A&quot;,
+            &quot;spectrum&quot;: &quot;A1V&quot;,
+            &quot;color&quot;: &quot;White-bluish&quot;,
+            &quot;temperature&quot;: 9940,
+            &quot;x&quot;: -8.505,
+            &quot;y&quot;: 1.462,
+            &quot;z&quot;: -0.556
+        },
+        {
+            &quot;id&quot;: &quot;90ab146c-04a2-43b3-81a9-6012bb39fbd7&quot;,
+            &quot;name&quot;: &quot;Luyten 726-8&quot;,
+            &quot;spectrum&quot;: &quot;M5.5V&quot;,
+            &quot;color&quot;: &quot;Red&quot;,
+            &quot;temperature&quot;: 2950,
+            &quot;x&quot;: 8.521,
+            &quot;y&quot;: -1.753,
+            &quot;z&quot;: 0.076
+        },
+        {
+            &quot;id&quot;: &quot;beeb1c72-604a-4a6b-87c0-5a7573fecd7b&quot;,
+            &quot;name&quot;: &quot;Ross 154&quot;,
+            &quot;spectrum&quot;: &quot;M3.5V&quot;,
+            &quot;color&quot;: &quot;Red&quot;,
+            &quot;temperature&quot;: 3250,
+            &quot;x&quot;: -1.2,
+            &quot;y&quot;: 9.58,
+            &quot;z&quot;: -0.134
+        }
+    ],
+    &quot;first_page_url&quot;: &quot;http://127.0.0.1:8000/api/v1/stars/list?page=1&quot;,
+    &quot;from&quot;: 1,
+    &quot;last_page&quot;: 1,
+    &quot;last_page_url&quot;: &quot;http://127.0.0.1:8000/api/v1/stars/list?page=1&quot;,
+    &quot;links&quot;: [
+        {
+            &quot;url&quot;: null,
+            &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+            &quot;active&quot;: false
+        },
+        {
+            &quot;url&quot;: &quot;http://127.0.0.1:8000/api/v1/stars/list?page=1&quot;,
+            &quot;label&quot;: &quot;1&quot;,
+            &quot;active&quot;: true
+        },
+        {
+            &quot;url&quot;: null,
+            &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+            &quot;active&quot;: false
+        }
+    ],
+    &quot;next_page_url&quot;: null,
+    &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/stars/list&quot;,
+    &quot;per_page&quot;: 100,
+    &quot;prev_page_url&quot;: null,
+    &quot;to&quot;: 9,
+    &quot;total&quot;: 9
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-stars-list" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-stars-list"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-stars-list"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-stars-list" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-stars-list">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-stars-list" data-method="GET"
+      data-path="api/v1/stars/list"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-stars-list', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-stars-list"
+                    onclick="tryItOut('GETapi-v1-stars-list');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-stars-list"
+                    onclick="cancelTryOut('GETapi-v1-stars-list');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-stars-list"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/stars/list</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-stars-list"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-stars-list"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-GETapi-v1-stars--id-">Star&#039;s details.</h2>
+
+<p>
+</p>
+
+<p>Returns the star's details with the planets orbiting around the star.</p>
+
+<span id="example-requests-GETapi-v1-stars--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/stars/71ff81a3-47e5-426e-892f-553517c18c8c" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/stars/71ff81a3-47e5-426e-892f-553517c18c8c"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-stars--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;id&quot;: &quot;71ff81a3-47e5-426e-892f-553517c18c8c&quot;,
+    &quot;name&quot;: &quot;Sun&quot;,
+    &quot;spectrum&quot;: &quot;G2V&quot;,
+    &quot;color&quot;: &quot;Yellow&quot;,
+    &quot;temperature&quot;: 5778,
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0,
+    &quot;z&quot;: 0,
+    &quot;planets&quot;: [
+        {
+            &quot;id&quot;: &quot;ca6850ce-dae8-44d3-bd5c-45fbc0d52b20&quot;,
+            &quot;star_id&quot;: &quot;71ff81a3-47e5-426e-892f-553517c18c8c&quot;,
+            &quot;name&quot;: &quot;Mercury&quot;,
+            &quot;distance_from_star&quot;: 0.39,
+            &quot;type&quot;: &quot;Rocky&quot;,
+            &quot;population&quot;: 0
+        },
+        {
+            &quot;id&quot;: &quot;1fe7c9c5-586f-4a34-b6b8-2b4a9d2ba6ee&quot;,
+            &quot;star_id&quot;: &quot;71ff81a3-47e5-426e-892f-553517c18c8c&quot;,
+            &quot;name&quot;: &quot;Venus&quot;,
+            &quot;distance_from_star&quot;: 0.72,
+            &quot;type&quot;: &quot;Rocky&quot;,
+            &quot;population&quot;: 0
+        },
+        {
+            &quot;id&quot;: &quot;fcc94a4e-3b46-4432-9615-430a4f6a5364&quot;,
+            &quot;star_id&quot;: &quot;71ff81a3-47e5-426e-892f-553517c18c8c&quot;,
+            &quot;name&quot;: &quot;Earth&quot;,
+            &quot;distance_from_star&quot;: 1,
+            &quot;type&quot;: &quot;Terrestrial Planet&quot;,
+            &quot;population&quot;: 5332283954
+        },
+        {
+            &quot;id&quot;: &quot;11ee7208-7044-47af-bef2-71b5832e4d89&quot;,
+            &quot;star_id&quot;: &quot;71ff81a3-47e5-426e-892f-553517c18c8c&quot;,
+            &quot;name&quot;: &quot;Mars&quot;,
+            &quot;distance_from_star&quot;: 1.52,
+            &quot;type&quot;: &quot;Rocky&quot;,
+            &quot;population&quot;: 331790370
+        },
+        {
+            &quot;id&quot;: &quot;26f5e1dd-aa8a-4445-8750-1d9aae04d68a&quot;,
+            &quot;star_id&quot;: &quot;71ff81a3-47e5-426e-892f-553517c18c8c&quot;,
+            &quot;name&quot;: &quot;Jupiter&quot;,
+            &quot;distance_from_star&quot;: 5.2,
+            &quot;type&quot;: &quot;Gas giant&quot;,
+            &quot;population&quot;: 0
+        },
+        {
+            &quot;id&quot;: &quot;da567bc8-8cc8-4c95-8d32-cafb6eb18bee&quot;,
+            &quot;star_id&quot;: &quot;71ff81a3-47e5-426e-892f-553517c18c8c&quot;,
+            &quot;name&quot;: &quot;Saturn&quot;,
+            &quot;distance_from_star&quot;: 9.58,
+            &quot;type&quot;: &quot;Gas giant&quot;,
+            &quot;population&quot;: 0
+        },
+        {
+            &quot;id&quot;: &quot;2f6fe7a4-6b4a-4a57-9fe7-e73b9f5382f9&quot;,
+            &quot;star_id&quot;: &quot;71ff81a3-47e5-426e-892f-553517c18c8c&quot;,
+            &quot;name&quot;: &quot;Uranus&quot;,
+            &quot;distance_from_star&quot;: 19.22,
+            &quot;type&quot;: &quot;Ice giant&quot;,
+            &quot;population&quot;: 0
+        },
+        {
+            &quot;id&quot;: &quot;ab6a547e-7036-47ca-8a53-86237cb339db&quot;,
+            &quot;star_id&quot;: &quot;71ff81a3-47e5-426e-892f-553517c18c8c&quot;,
+            &quot;name&quot;: &quot;Neptune&quot;,
+            &quot;distance_from_star&quot;: 30.05,
+            &quot;type&quot;: &quot;Ice giant&quot;,
+            &quot;population&quot;: 0
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-stars--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-stars--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-stars--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-stars--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-stars--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-stars--id-" data-method="GET"
+      data-path="api/v1/stars/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-stars--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-stars--id-"
+                    onclick="tryItOut('GETapi-v1-stars--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-stars--id-"
+                    onclick="cancelTryOut('GETapi-v1-stars--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-stars--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/stars/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-stars--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-stars--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-v1-stars--id-"
+               value="71ff81a3-47e5-426e-892f-553517c18c8c"
+               data-component="url">
+    <br>
+<p>required. Star's Id. Example: <code>71ff81a3-47e5-426e-892f-553517c18c8c</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-GETapi-v1-planets--id-">Planet&#039;s details.</h2>
+
+<p>
+</p>
+
+<p>Returns the planet's details, with his market, and deposits.</p>
+
+<span id="example-requests-GETapi-v1-planets--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/planets/a6863bac-d92f-4500-942f-9c04e4528a2e" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/planets/a6863bac-d92f-4500-942f-9c04e4528a2e"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-planets--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+    &quot;star_id&quot;: &quot;cdd5bc22-a483-4b0c-b969-9af98ad3483b&quot;,
+    &quot;name&quot;: &quot;Alpha Centauri Bb&quot;,
+    &quot;distance_from_star&quot;: 0.04,
+    &quot;type&quot;: &quot;Rocky&quot;,
+    &quot;population&quot;: 5408310956,
+    &quot;market&quot;: [
+        {
+            &quot;resource_id&quot;: &quot;1&quot;,
+            &quot;resource&quot;: &quot;Gold&quot;,
+            &quot;stock&quot;: 107,
+            &quot;production&quot;: 1623,
+            &quot;consume&quot;: 1623,
+            &quot;buy&quot;: 581,
+            &quot;sell&quot;: 575
+        },
+        {
+            &quot;resource_id&quot;: &quot;2&quot;,
+            &quot;resource&quot;: &quot;Silver&quot;,
+            &quot;stock&quot;: 690,
+            &quot;production&quot;: 4868,
+            &quot;consume&quot;: 4868,
+            &quot;buy&quot;: 419,
+            &quot;sell&quot;: 414
+        },
+        {
+            &quot;resource_id&quot;: &quot;3&quot;,
+            &quot;resource&quot;: &quot;Tantalum&quot;,
+            &quot;stock&quot;: 353,
+            &quot;production&quot;: 1623,
+            &quot;consume&quot;: 1623,
+            &quot;buy&quot;: 321,
+            &quot;sell&quot;: 318
+        },
+        {
+            &quot;resource_id&quot;: &quot;4&quot;,
+            &quot;resource&quot;: &quot;Osmium&quot;,
+            &quot;stock&quot;: 845,
+            &quot;production&quot;: 2164,
+            &quot;consume&quot;: 2164,
+            &quot;buy&quot;: 403,
+            &quot;sell&quot;: 399
+        },
+        {
+            &quot;resource_id&quot;: &quot;5&quot;,
+            &quot;resource&quot;: &quot;Palladium&quot;,
+            &quot;stock&quot;: 708,
+            &quot;production&quot;: 723,
+            &quot;consume&quot;: 1082,
+            &quot;buy&quot;: 269,
+            &quot;sell&quot;: 266
+        },
+        {
+            &quot;resource_id&quot;: &quot;6&quot;,
+            &quot;resource&quot;: &quot;Iron Ore&quot;,
+            &quot;stock&quot;: 391,
+            &quot;production&quot;: 21634,
+            &quot;consume&quot;: 21634,
+            &quot;buy&quot;: 90,
+            &quot;sell&quot;: 89
+        },
+        {
+            &quot;resource_id&quot;: &quot;7&quot;,
+            &quot;resource&quot;: &quot;Copper&quot;,
+            &quot;stock&quot;: 131,
+            &quot;production&quot;: 16225,
+            &quot;consume&quot;: 16225,
+            &quot;buy&quot;: 100,
+            &quot;sell&quot;: 99
+        },
+        {
+            &quot;resource_id&quot;: &quot;8&quot;,
+            &quot;resource&quot;: &quot;Uranium&quot;,
+            &quot;stock&quot;: 906,
+            &quot;production&quot;: 3955,
+            &quot;consume&quot;: 4327,
+            &quot;buy&quot;: 282,
+            &quot;sell&quot;: 279
+        },
+        {
+            &quot;resource_id&quot;: &quot;9&quot;,
+            &quot;resource&quot;: &quot;Lithium&quot;,
+            &quot;stock&quot;: 838,
+            &quot;production&quot;: 11752,
+            &quot;consume&quot;: 8113,
+            &quot;buy&quot;: 326,
+            &quot;sell&quot;: 323
+        },
+        {
+            &quot;resource_id&quot;: &quot;10&quot;,
+            &quot;resource&quot;: &quot;Platinum&quot;,
+            &quot;stock&quot;: 545,
+            &quot;production&quot;: 36267,
+            &quot;consume&quot;: 27042,
+            &quot;buy&quot;: 410,
+            &quot;sell&quot;: 406
+        },
+        {
+            &quot;resource_id&quot;: &quot;11&quot;,
+            &quot;resource&quot;: &quot;Oil&quot;,
+            &quot;stock&quot;: 193,
+            &quot;production&quot;: 13081,
+            &quot;consume&quot;: 9735,
+            &quot;buy&quot;: 82,
+            &quot;sell&quot;: 82
+        },
+        {
+            &quot;resource_id&quot;: &quot;12&quot;,
+            &quot;resource&quot;: &quot;Water&quot;,
+            &quot;stock&quot;: 924,
+            &quot;production&quot;: 38638,
+            &quot;consume&quot;: 54084,
+            &quot;buy&quot;: 91,
+            &quot;sell&quot;: 90
+        },
+        {
+            &quot;resource_id&quot;: &quot;13&quot;,
+            &quot;resource&quot;: &quot;Nickel&quot;,
+            &quot;stock&quot;: 429,
+            &quot;production&quot;: 78,
+            &quot;consume&quot;: 13521,
+            &quot;buy&quot;: 149,
+            &quot;sell&quot;: 147
+        },
+        {
+            &quot;resource_id&quot;: &quot;14&quot;,
+            &quot;resource&quot;: &quot;Cobalt&quot;,
+            &quot;stock&quot;: 730,
+            &quot;production&quot;: 5409,
+            &quot;consume&quot;: 5409,
+            &quot;buy&quot;: 327,
+            &quot;sell&quot;: 324
+        },
+        {
+            &quot;resource_id&quot;: &quot;15&quot;,
+            &quot;resource&quot;: &quot;Zinc&quot;,
+            &quot;stock&quot;: 425,
+            &quot;production&quot;: 6490,
+            &quot;consume&quot;: 6490,
+            &quot;buy&quot;: 117,
+            &quot;sell&quot;: 115
+        },
+        {
+            &quot;resource_id&quot;: &quot;16&quot;,
+            &quot;resource&quot;: &quot;Titanium&quot;,
+            &quot;stock&quot;: 230,
+            &quot;production&quot;: 4042,
+            &quot;consume&quot;: 2705,
+            &quot;buy&quot;: 178,
+            &quot;sell&quot;: 176
+        },
+        {
+            &quot;resource_id&quot;: &quot;17&quot;,
+            &quot;resource&quot;: &quot;Quartz&quot;,
+            &quot;stock&quot;: 995,
+            &quot;production&quot;: 5280,
+            &quot;consume&quot;: 8113,
+            &quot;buy&quot;: 45,
+            &quot;sell&quot;: 45
+        },
+        {
+            &quot;resource_id&quot;: &quot;18&quot;,
+            &quot;resource&quot;: &quot;Sulfur&quot;,
+            &quot;stock&quot;: 134,
+            &quot;production&quot;: 13467,
+            &quot;consume&quot;: 10817,
+            &quot;buy&quot;: 44,
+            &quot;sell&quot;: 44
+        },
+        {
+            &quot;resource_id&quot;: &quot;19&quot;,
+            &quot;resource&quot;: &quot;Salt&quot;,
+            &quot;stock&quot;: 830,
+            &quot;production&quot;: 11899,
+            &quot;consume&quot;: 11899,
+            &quot;buy&quot;: 15,
+            &quot;sell&quot;: 15
+        },
+        {
+            &quot;resource_id&quot;: &quot;20&quot;,
+            &quot;resource&quot;: &quot;Bauxite&quot;,
+            &quot;stock&quot;: 618,
+            &quot;production&quot;: 9256,
+            &quot;consume&quot;: 11899,
+            &quot;buy&quot;: 163,
+            &quot;sell&quot;: 162
+        },
+        {
+            &quot;resource_id&quot;: &quot;21&quot;,
+            &quot;resource&quot;: &quot;Helium-3&quot;,
+            &quot;stock&quot;: 418,
+            &quot;production&quot;: 618,
+            &quot;consume&quot;: 541,
+            &quot;buy&quot;: 218,
+            &quot;sell&quot;: 216
+        },
+        {
+            &quot;resource_id&quot;: &quot;22&quot;,
+            &quot;resource&quot;: &quot;Carbon&quot;,
+            &quot;stock&quot;: 696,
+            &quot;production&quot;: 27042,
+            &quot;consume&quot;: 27042,
+            &quot;buy&quot;: 25,
+            &quot;sell&quot;: 25
+        },
+        {
+            &quot;resource_id&quot;: &quot;23&quot;,
+            &quot;resource&quot;: &quot;Cotton&quot;,
+            &quot;stock&quot;: 787,
+            &quot;production&quot;: 2801,
+            &quot;consume&quot;: 27042,
+            &quot;buy&quot;: 36,
+            &quot;sell&quot;: 36
+        },
+        {
+            &quot;resource_id&quot;: &quot;24&quot;,
+            &quot;resource&quot;: &quot;Coffee Beans&quot;,
+            &quot;stock&quot;: 340,
+            &quot;production&quot;: 10817,
+            &quot;consume&quot;: 10817,
+            &quot;buy&quot;: 50,
+            &quot;sell&quot;: 49
+        },
+        {
+            &quot;resource_id&quot;: &quot;25&quot;,
+            &quot;resource&quot;: &quot;Tobacco&quot;,
+            &quot;stock&quot;: 229,
+            &quot;production&quot;: 8113,
+            &quot;consume&quot;: 8113,
+            &quot;buy&quot;: 35,
+            &quot;sell&quot;: 35
+        },
+        {
+            &quot;resource_id&quot;: &quot;26&quot;,
+            &quot;resource&quot;: &quot;Algae&quot;,
+            &quot;stock&quot;: 353,
+            &quot;production&quot;: 13435,
+            &quot;consume&quot;: 13521,
+            &quot;buy&quot;: 20,
+            &quot;sell&quot;: 20
+        },
+        {
+            &quot;resource_id&quot;: &quot;27&quot;,
+            &quot;resource&quot;: &quot;Spices&quot;,
+            &quot;stock&quot;: 517,
+            &quot;production&quot;: 284,
+            &quot;consume&quot;: 1623,
+            &quot;buy&quot;: 57,
+            &quot;sell&quot;: 56
+        },
+        {
+            &quot;resource_id&quot;: &quot;28&quot;,
+            &quot;resource&quot;: &quot;Steel&quot;,
+            &quot;stock&quot;: 662,
+            &quot;production&quot;: 13521,
+            &quot;consume&quot;: 13521,
+            &quot;buy&quot;: 391,
+            &quot;sell&quot;: 387
+        },
+        {
+            &quot;resource_id&quot;: &quot;29&quot;,
+            &quot;resource&quot;: &quot;Aluminum&quot;,
+            &quot;stock&quot;: 461,
+            &quot;production&quot;: 33733,
+            &quot;consume&quot;: 29746,
+            &quot;buy&quot;: 556,
+            &quot;sell&quot;: 550
+        },
+        {
+            &quot;resource_id&quot;: &quot;30&quot;,
+            &quot;resource&quot;: &quot;Plastic&quot;,
+            &quot;stock&quot;: 377,
+            &quot;production&quot;: 27042,
+            &quot;consume&quot;: 27042,
+            &quot;buy&quot;: 249,
+            &quot;sell&quot;: 246
+        },
+        {
+            &quot;resource_id&quot;: &quot;31&quot;,
+            &quot;resource&quot;: &quot;Jewelry&quot;,
+            &quot;stock&quot;: 756,
+            &quot;production&quot;: 1102,
+            &quot;consume&quot;: 4327,
+            &quot;buy&quot;: 2571,
+            &quot;sell&quot;: 2545
+        },
+        {
+            &quot;resource_id&quot;: &quot;32&quot;,
+            &quot;resource&quot;: &quot;Electronics&quot;,
+            &quot;stock&quot;: 641,
+            &quot;production&quot;: 27042,
+            &quot;consume&quot;: 27042,
+            &quot;buy&quot;: 1186,
+            &quot;sell&quot;: 1174
+        },
+        {
+            &quot;resource_id&quot;: &quot;33&quot;,
+            &quot;resource&quot;: &quot;Glass&quot;,
+            &quot;stock&quot;: 222,
+            &quot;production&quot;: 30287,
+            &quot;consume&quot;: 30287,
+            &quot;buy&quot;: 120,
+            &quot;sell&quot;: 119
+        },
+        {
+            &quot;resource_id&quot;: &quot;34&quot;,
+            &quot;resource&quot;: &quot;Fertilizer&quot;,
+            &quot;stock&quot;: 187,
+            &quot;production&quot;: 42440,
+            &quot;consume&quot;: 43267,
+            &quot;buy&quot;: 212,
+            &quot;sell&quot;: 210
+        },
+        {
+            &quot;resource_id&quot;: &quot;35&quot;,
+            &quot;resource&quot;: &quot;Luxury Fabrics&quot;,
+            &quot;stock&quot;: 966,
+            &quot;production&quot;: 6638,
+            &quot;consume&quot;: 8113,
+            &quot;buy&quot;: 413,
+            &quot;sell&quot;: 409
+        },
+        {
+            &quot;resource_id&quot;: &quot;36&quot;,
+            &quot;resource&quot;: &quot;Nuclear Fuel&quot;,
+            &quot;stock&quot;: 903,
+            &quot;production&quot;: 54084,
+            &quot;consume&quot;: 54084,
+            &quot;buy&quot;: 1885,
+            &quot;sell&quot;: 1866
+        },
+        {
+            &quot;resource_id&quot;: &quot;37&quot;,
+            &quot;resource&quot;: &quot;Synthetic Fiber&quot;,
+            &quot;stock&quot;: 518,
+            &quot;production&quot;: 27725,
+            &quot;consume&quot;: 23256,
+            &quot;buy&quot;: 313,
+            &quot;sell&quot;: 310
+        },
+        {
+            &quot;resource_id&quot;: &quot;38&quot;,
+            &quot;resource&quot;: &quot;Carbon Fiber&quot;,
+            &quot;stock&quot;: 239,
+            &quot;production&quot;: 11899,
+            &quot;consume&quot;: 11899,
+            &quot;buy&quot;: 990,
+            &quot;sell&quot;: 981
+        },
+        {
+            &quot;resource_id&quot;: &quot;39&quot;,
+            &quot;resource&quot;: &quot;Optical Lenses&quot;,
+            &quot;stock&quot;: 337,
+            &quot;production&quot;: 4868,
+            &quot;consume&quot;: 4868,
+            &quot;buy&quot;: 676,
+            &quot;sell&quot;: 670
+        },
+        {
+            &quot;resource_id&quot;: &quot;40&quot;,
+            &quot;resource&quot;: &quot;Advanced Alloys&quot;,
+            &quot;stock&quot;: 666,
+            &quot;production&quot;: 12980,
+            &quot;consume&quot;: 12980,
+            &quot;buy&quot;: 1754,
+            &quot;sell&quot;: 1737
+        },
+        {
+            &quot;resource_id&quot;: &quot;41&quot;,
+            &quot;resource&quot;: &quot;Energy Cells&quot;,
+            &quot;stock&quot;: 147,
+            &quot;production&quot;: 8113,
+            &quot;consume&quot;: 8113,
+            &quot;buy&quot;: 1190,
+            &quot;sell&quot;: 1178
+        }
+    ],
+    &quot;deposits&quot;: [
+        {
+            &quot;id&quot;: &quot;b90e61de-ebb6-498b-8013-ffd6caee919b&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 11,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 128819,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;904e4004-953b-440f-8699-79fffd019a2d&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 2,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 768238,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;3787865f-59c1-49c4-ad60-47e630ffb3a5&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 11,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 1024133,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;554f27da-cad2-4226-b876-f13e5fbd267b&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 11,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 248746,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;577c9ae1-7660-4774-84b3-b5fe369b9f6b&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 21,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 54834,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;343ccad2-3b75-44ac-8cba-9ca48497fece&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 6,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 994620,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;7e1529d4-6b24-4086-a846-4a2571517f38&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 26,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 756712,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;179ebe59-36e6-49c2-94d8-97dcdc1aa848&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 20,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 1006239,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;3c2f2d78-9294-429b-af2c-d245d4500829&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 24,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 1301944,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;49270d7b-29c5-48f6-ac14-3643a503e440&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 17,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 736622,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;d9db3edf-e27b-40e0-8415-bae84c4ed9b3&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 21,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 65980,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;b468ac4a-b098-47ca-a7e3-156b42963619&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 20,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 838428,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;40d91599-d180-4caa-8d6b-edebbbc4b03d&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 24,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 1066638,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;d3226741-89ec-4df5-98c9-66a0e2edc848&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 1,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 334877,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;49123bc7-15e9-47e3-b08e-79f25bdc1c88&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 10,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 448572,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;d2bd21d3-d1bc-4e51-bcb6-cdbc8a0e565a&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 19,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 352891,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;afb03483-f932-4734-b256-2dd3773c0066&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 19,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 2123773,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;9b70771a-f522-42c2-b134-a8224ffea49e&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 21,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 34729,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;b6d04e32-58c6-426d-b8eb-87c2ef5893d3&quot;,
+            &quot;planet_id&quot;: &quot;a6863bac-d92f-4500-942f-9c04e4528a2e&quot;,
+            &quot;resource_id&quot;: 21,
+            &quot;status&quot;: &quot;discovered&quot;,
+            &quot;discovered_by&quot;: null,
+            &quot;quantity&quot;: 10174,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-planets--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-planets--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-planets--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-planets--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-planets--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-planets--id-" data-method="GET"
+      data-path="api/v1/planets/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-planets--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-planets--id-"
+                    onclick="tryItOut('GETapi-v1-planets--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-planets--id-"
+                    onclick="cancelTryOut('GETapi-v1-planets--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-planets--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/planets/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-planets--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-planets--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-v1-planets--id-"
+               value="a6863bac-d92f-4500-942f-9c04e4528a2e"
+               data-component="url">
+    <br>
+<p>required. Planets's Id. Example: <code>a6863bac-d92f-4500-942f-9c04e4528a2e</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-GETapi-v1-resources-list">Resources and goods list.</h2>
+
+<p>
+</p>
+
+<p>returns the list of base resources and of the goods available in the game</p>
+
+<span id="example-requests-GETapi-v1-resources-list">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/resources/list" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/resources/list"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-resources-list">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">[
+    {
+        &quot;id&quot;: &quot;1&quot;,
+        &quot;name&quot;: &quot;Gold&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 600,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;2&quot;,
+        &quot;name&quot;: &quot;Silver&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 450,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;3&quot;,
+        &quot;name&quot;: &quot;Tantalum&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 360,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;4&quot;,
+        &quot;name&quot;: &quot;Osmium&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 500,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;5&quot;,
+        &quot;name&quot;: &quot;Palladium&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 320,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;6&quot;,
+        &quot;name&quot;: &quot;Iron Ore&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 90,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;7&quot;,
+        &quot;name&quot;: &quot;Copper&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 100,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;8&quot;,
+        &quot;name&quot;: &quot;Uranium&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 300,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;9&quot;,
+        &quot;name&quot;: &quot;Lithium&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 450,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;10&quot;,
+        &quot;name&quot;: &quot;Platinum&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 500,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;11&quot;,
+        &quot;name&quot;: &quot;Oil&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 100,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;12&quot;,
+        &quot;name&quot;: &quot;Water&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 80,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;13&quot;,
+        &quot;name&quot;: &quot;Nickel&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 100,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;14&quot;,
+        &quot;name&quot;: &quot;Cobalt&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 350,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;15&quot;,
+        &quot;name&quot;: &quot;Zinc&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 120,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;16&quot;,
+        &quot;name&quot;: &quot;Titanium&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 250,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;17&quot;,
+        &quot;name&quot;: &quot;Quartz&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 40,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;18&quot;,
+        &quot;name&quot;: &quot;Sulfur&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 50,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;19&quot;,
+        &quot;name&quot;: &quot;Salt&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 15,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;20&quot;,
+        &quot;name&quot;: &quot;Bauxite&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 150,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;21&quot;,
+        &quot;name&quot;: &quot;Helium-3&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 400,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;22&quot;,
+        &quot;name&quot;: &quot;Carbon&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 25,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;23&quot;,
+        &quot;name&quot;: &quot;Cotton&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 25,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;24&quot;,
+        &quot;name&quot;: &quot;Coffee Beans&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 50,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;25&quot;,
+        &quot;name&quot;: &quot;Tobacco&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 35,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;26&quot;,
+        &quot;name&quot;: &quot;Algae&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 20,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;27&quot;,
+        &quot;name&quot;: &quot;Spices&quot;,
+        &quot;raw_material&quot;: &quot;true&quot;,
+        &quot;first_resource&quot;: null,
+        &quot;second_resource&quot;: null,
+        &quot;first_base_resource_quantity&quot;: null,
+        &quot;second_base_resource_quantity&quot;: null,
+        &quot;base_price&quot;: 45,
+        &quot;added_value&quot;: 0
+    },
+    {
+        &quot;id&quot;: &quot;28&quot;,
+        &quot;name&quot;: &quot;Steel&quot;,
+        &quot;raw_material&quot;: &quot;false&quot;,
+        &quot;first_resource&quot;: &quot;Iron Ore&quot;,
+        &quot;second_resource&quot;: &quot;Carbon&quot;,
+        &quot;first_base_resource_quantity&quot;: 1,
+        &quot;second_base_resource_quantity&quot;: 1,
+        &quot;base_price&quot;: 400,
+        &quot;added_value&quot;: 285
+    },
+    {
+        &quot;id&quot;: &quot;29&quot;,
+        &quot;name&quot;: &quot;Aluminum&quot;,
+        &quot;raw_material&quot;: &quot;false&quot;,
+        &quot;first_resource&quot;: &quot;Bauxite&quot;,
+        &quot;second_resource&quot;: &quot;Carbon&quot;,
+        &quot;first_base_resource_quantity&quot;: 1,
+        &quot;second_base_resource_quantity&quot;: 1,
+        &quot;base_price&quot;: 600,
+        &quot;added_value&quot;: 425
+    },
+    {
+        &quot;id&quot;: &quot;30&quot;,
+        &quot;name&quot;: &quot;Plastic&quot;,
+        &quot;raw_material&quot;: &quot;false&quot;,
+        &quot;first_resource&quot;: &quot;Oil&quot;,
+        &quot;second_resource&quot;: &quot;Carbon&quot;,
+        &quot;first_base_resource_quantity&quot;: 1,
+        &quot;second_base_resource_quantity&quot;: 1,
+        &quot;base_price&quot;: 250,
+        &quot;added_value&quot;: 125
+    },
+    {
+        &quot;id&quot;: &quot;31&quot;,
+        &quot;name&quot;: &quot;Jewelry&quot;,
+        &quot;raw_material&quot;: &quot;false&quot;,
+        &quot;first_resource&quot;: &quot;Gold&quot;,
+        &quot;second_resource&quot;: &quot;Platinum&quot;,
+        &quot;first_base_resource_quantity&quot;: 1,
+        &quot;second_base_resource_quantity&quot;: 1,
+        &quot;base_price&quot;: 2000,
+        &quot;added_value&quot;: 900
+    },
+    {
+        &quot;id&quot;: &quot;32&quot;,
+        &quot;name&quot;: &quot;Electronics&quot;,
+        &quot;raw_material&quot;: &quot;false&quot;,
+        &quot;first_resource&quot;: &quot;Copper&quot;,
+        &quot;second_resource&quot;: &quot;Tantalum&quot;,
+        &quot;first_base_resource_quantity&quot;: 1,
+        &quot;second_base_resource_quantity&quot;: 1,
+        &quot;base_price&quot;: 1200,
+        &quot;added_value&quot;: 740
+    },
+    {
+        &quot;id&quot;: &quot;33&quot;,
+        &quot;name&quot;: &quot;Glass&quot;,
+        &quot;raw_material&quot;: &quot;false&quot;,
+        &quot;first_resource&quot;: &quot;Quartz&quot;,
+        &quot;second_resource&quot;: &quot;Carbon&quot;,
+        &quot;first_base_resource_quantity&quot;: 1,
+        &quot;second_base_resource_quantity&quot;: 1,
+        &quot;base_price&quot;: 120,
+        &quot;added_value&quot;: 55
+    },
+    {
+        &quot;id&quot;: &quot;34&quot;,
+        &quot;name&quot;: &quot;Fertilizer&quot;,
+        &quot;raw_material&quot;: &quot;false&quot;,
+        &quot;first_resource&quot;: &quot;Sulfur&quot;,
+        &quot;second_resource&quot;: &quot;Water&quot;,
+        &quot;first_base_resource_quantity&quot;: 2,
+        &quot;second_base_resource_quantity&quot;: 1,
+        &quot;base_price&quot;: 210,
+        &quot;added_value&quot;: 80
+    },
+    {
+        &quot;id&quot;: &quot;35&quot;,
+        &quot;name&quot;: &quot;Luxury Fabrics&quot;,
+        &quot;raw_material&quot;: &quot;false&quot;,
+        &quot;first_resource&quot;: &quot;Cotton&quot;,
+        &quot;second_resource&quot;: &quot;Spices&quot;,
+        &quot;first_base_resource_quantity&quot;: 1,
+        &quot;second_base_resource_quantity&quot;: 1,
+        &quot;base_price&quot;: 400,
+        &quot;added_value&quot;: 330
+    },
+    {
+        &quot;id&quot;: &quot;36&quot;,
+        &quot;name&quot;: &quot;Nuclear Fuel&quot;,
+        &quot;raw_material&quot;: &quot;false&quot;,
+        &quot;first_resource&quot;: &quot;Uranium&quot;,
+        &quot;second_resource&quot;: &quot;Helium-3&quot;,
+        &quot;first_base_resource_quantity&quot;: 1,
+        &quot;second_base_resource_quantity&quot;: 1,
+        &quot;base_price&quot;: 1900,
+        &quot;added_value&quot;: 1200
+    },
+    {
+        &quot;id&quot;: &quot;37&quot;,
+        &quot;name&quot;: &quot;Synthetic Fiber&quot;,
+        &quot;raw_material&quot;: &quot;false&quot;,
+        &quot;first_resource&quot;: &quot;Oil&quot;,
+        &quot;second_resource&quot;: &quot;Cotton&quot;,
+        &quot;first_base_resource_quantity&quot;: 2,
+        &quot;second_base_resource_quantity&quot;: 1,
+        &quot;base_price&quot;: 350,
+        &quot;added_value&quot;: 225
+    },
+    {
+        &quot;id&quot;: &quot;38&quot;,
+        &quot;name&quot;: &quot;Carbon Fiber&quot;,
+        &quot;raw_material&quot;: &quot;false&quot;,
+        &quot;first_resource&quot;: &quot;Carbon&quot;,
+        &quot;second_resource&quot;: &quot;Oil&quot;,
+        &quot;first_base_resource_quantity&quot;: 1,
+        &quot;second_base_resource_quantity&quot;: 1,
+        &quot;base_price&quot;: 1000,
+        &quot;added_value&quot;: 875
+    },
+    {
+        &quot;id&quot;: &quot;39&quot;,
+        &quot;name&quot;: &quot;Optical Lenses&quot;,
+        &quot;raw_material&quot;: &quot;false&quot;,
+        &quot;first_resource&quot;: &quot;Quartz&quot;,
+        &quot;second_resource&quot;: &quot;Carbon&quot;,
+        &quot;first_base_resource_quantity&quot;: 1,
+        &quot;second_base_resource_quantity&quot;: 1,
+        &quot;base_price&quot;: 700,
+        &quot;added_value&quot;: 635
+    },
+    {
+        &quot;id&quot;: &quot;40&quot;,
+        &quot;name&quot;: &quot;Advanced Alloys&quot;,
+        &quot;raw_material&quot;: &quot;false&quot;,
+        &quot;first_resource&quot;: &quot;Tantalum&quot;,
+        &quot;second_resource&quot;: &quot;Osmium&quot;,
+        &quot;first_base_resource_quantity&quot;: 1,
+        &quot;second_base_resource_quantity&quot;: 1,
+        &quot;base_price&quot;: 1800,
+        &quot;added_value&quot;: 940
+    },
+    {
+        &quot;id&quot;: &quot;41&quot;,
+        &quot;name&quot;: &quot;Energy Cells&quot;,
+        &quot;raw_material&quot;: &quot;false&quot;,
+        &quot;first_resource&quot;: &quot;Lithium&quot;,
+        &quot;second_resource&quot;: &quot;Helium-3&quot;,
+        &quot;first_base_resource_quantity&quot;: 1,
+        &quot;second_base_resource_quantity&quot;: 1,
+        &quot;base_price&quot;: 1200,
+        &quot;added_value&quot;: 350
+    }
+]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-resources-list" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-resources-list"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-resources-list"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-resources-list" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-resources-list">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-resources-list" data-method="GET"
+      data-path="api/v1/resources/list"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-resources-list', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-resources-list"
+                    onclick="tryItOut('GETapi-v1-resources-list');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-resources-list"
+                    onclick="cancelTryOut('GETapi-v1-resources-list');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-resources-list"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/resources/list</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-resources-list"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-resources-list"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-GETapi-v1-ships-list">Ship&#039;s Available.</h2>
+
+<p>
+</p>
+
+<p>Returns the list of the available ships for purchase.</p>
+
+<span id="example-requests-GETapi-v1-ships-list">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/ships/list" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/ships/list"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-ships-list">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">[
+    {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Explorer Mk I&quot;,
+        &quot;description&quot;: &quot;A versatile exploration ship designed for long-range surveys and resource scouting. Popular among independent prospectors.&quot;,
+        &quot;price&quot;: 15000,
+        &quot;hull&quot;: 250,
+        &quot;damage&quot;: 50,
+        &quot;survey&quot;: 90,
+        &quot;mining_speed&quot;: 5,
+        &quot;cargo&quot;: 100,
+        &quot;cargo_speed&quot;: 50,
+        &quot;speed&quot;: 80,
+        &quot;fuel_capacity&quot;: 100,
+        &quot;fuel_distance_ratio&quot;: 10,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    },
+    {
+        &quot;id&quot;: 2,
+        &quot;name&quot;: &quot;Hauler XL&quot;,
+        &quot;description&quot;: &quot;A heavy-duty cargo ship built for massive transport operations. Its robust cargo hold comes at the expense of speed.&quot;,
+        &quot;price&quot;: 40000,
+        &quot;hull&quot;: 500,
+        &quot;damage&quot;: 30,
+        &quot;survey&quot;: 0,
+        &quot;mining_speed&quot;: 0,
+        &quot;cargo&quot;: 1000,
+        &quot;cargo_speed&quot;: 20,
+        &quot;speed&quot;: 40,
+        &quot;fuel_capacity&quot;: 100,
+        &quot;fuel_distance_ratio&quot;: 25,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    },
+    {
+        &quot;id&quot;: 3,
+        &quot;name&quot;: &quot;Starlight Cruiser&quot;,
+        &quot;description&quot;: &quot;A multi-role cruiser with balanced stats, capable of light combat and resource transportation.&quot;,
+        &quot;price&quot;: 30000,
+        &quot;hull&quot;: 400,
+        &quot;damage&quot;: 100,
+        &quot;survey&quot;: 10,
+        &quot;mining_speed&quot;: 30,
+        &quot;cargo&quot;: 200,
+        &quot;cargo_speed&quot;: 40,
+        &quot;speed&quot;: 70,
+        &quot;fuel_capacity&quot;: 100,
+        &quot;fuel_distance_ratio&quot;: 20,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    },
+    {
+        &quot;id&quot;: 4,
+        &quot;name&quot;: &quot;Battlehawk&quot;,
+        &quot;description&quot;: &quot;A high-speed combat ship with enhanced hull strength and advanced weaponry systems.&quot;,
+        &quot;price&quot;: 50000,
+        &quot;hull&quot;: 600,
+        &quot;damage&quot;: 250,
+        &quot;survey&quot;: 1,
+        &quot;mining_speed&quot;: 0,
+        &quot;cargo&quot;: 50,
+        &quot;cargo_speed&quot;: 10,
+        &quot;speed&quot;: 90,
+        &quot;fuel_capacity&quot;: 100,
+        &quot;fuel_distance_ratio&quot;: 30,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    },
+    {
+        &quot;id&quot;: 5,
+        &quot;name&quot;: &quot;Surveyor Alpha&quot;,
+        &quot;description&quot;: &quot;A specialized ship for planetary surveys, ideal for discovering new resources and anomalies.&quot;,
+        &quot;price&quot;: 18000,
+        &quot;hull&quot;: 200,
+        &quot;damage&quot;: 20,
+        &quot;survey&quot;: 120,
+        &quot;mining_speed&quot;: 10,
+        &quot;cargo&quot;: 80,
+        &quot;cargo_speed&quot;: 30,
+        &quot;speed&quot;: 60,
+        &quot;fuel_capacity&quot;: 100,
+        &quot;fuel_distance_ratio&quot;: 12,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    },
+    {
+        &quot;id&quot;: 6,
+        &quot;name&quot;: &quot;Titan Cargo Master&quot;,
+        &quot;description&quot;: &quot;The ultimate cargo hauler, designed for maximum load capacity and interstellar trading.&quot;,
+        &quot;price&quot;: 80000,
+        &quot;hull&quot;: 700,
+        &quot;damage&quot;: 20,
+        &quot;survey&quot;: 5,
+        &quot;mining_speed&quot;: 10,
+        &quot;cargo&quot;: 5000,
+        &quot;cargo_speed&quot;: 15,
+        &quot;speed&quot;: 30,
+        &quot;fuel_capacity&quot;: 100,
+        &quot;fuel_distance_ratio&quot;: 50,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    },
+    {
+        &quot;id&quot;: 7,
+        &quot;name&quot;: &quot;Astro Miner X&quot;,
+        &quot;description&quot;: &quot;A premium mining ship capable of handling extreme environments and extracting rare materials.&quot;,
+        &quot;price&quot;: 45000,
+        &quot;hull&quot;: 400,
+        &quot;damage&quot;: 50,
+        &quot;survey&quot;: 15,
+        &quot;mining_speed&quot;: 150,
+        &quot;cargo&quot;: 400,
+        &quot;cargo_speed&quot;: 35,
+        &quot;speed&quot;: 60,
+        &quot;fuel_capacity&quot;: 100,
+        &quot;fuel_distance_ratio&quot;: 18,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    },
+    {
+        &quot;id&quot;: 8,
+        &quot;name&quot;: &quot;GeoScanner Pro-7&quot;,
+        &quot;description&quot;: &quot;An advanced prospecting vessel equipped with high-precision sensors to locate rare resources with unparalleled efficiency.&quot;,
+        &quot;price&quot;: 120000,
+        &quot;hull&quot;: 400,
+        &quot;damage&quot;: 20,
+        &quot;survey&quot;: 300,
+        &quot;mining_speed&quot;: 50,
+        &quot;cargo&quot;: 150,
+        &quot;cargo_speed&quot;: 40,
+        &quot;speed&quot;: 60,
+        &quot;fuel_capacity&quot;: 100,
+        &quot;fuel_distance_ratio&quot;: 20,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    },
+    {
+        &quot;id&quot;: 9,
+        &quot;name&quot;: &quot;Miner&#039;s Edge XL&quot;,
+        &quot;description&quot;: &quot;A hybrid ship designed for both resource prospection and efficient mining in hostile environments.&quot;,
+        &quot;price&quot;: 150000,
+        &quot;hull&quot;: 500,
+        &quot;damage&quot;: 40,
+        &quot;survey&quot;: 250,
+        &quot;mining_speed&quot;: 150,
+        &quot;cargo&quot;: 300,
+        &quot;cargo_speed&quot;: 45,
+        &quot;speed&quot;: 55,
+        &quot;fuel_capacity&quot;: 100,
+        &quot;fuel_distance_ratio&quot;: 25,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    },
+    {
+        &quot;id&quot;: 10,
+        &quot;name&quot;: &quot;OreSeeker Elite&quot;,
+        &quot;description&quot;: &quot;A high-end prospecting ship tailored for deep space surveys and exploration of untapped resource deposits.&quot;,
+        &quot;price&quot;: 180000,
+        &quot;hull&quot;: 450,
+        &quot;damage&quot;: 30,
+        &quot;survey&quot;: 350,
+        &quot;mining_speed&quot;: 60,
+        &quot;cargo&quot;: 200,
+        &quot;cargo_speed&quot;: 50,
+        &quot;speed&quot;: 70,
+        &quot;fuel_capacity&quot;: 100,
+        &quot;fuel_distance_ratio&quot;: 22,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    },
+    {
+        &quot;id&quot;: 11,
+        &quot;name&quot;: &quot;Terra Extractor T-9&quot;,
+        &quot;description&quot;: &quot;A specialized mining vessel with unparalleled resource extraction capabilities, ideal for large-scale operations.&quot;,
+        &quot;price&quot;: 200000,
+        &quot;hull&quot;: 600,
+        &quot;damage&quot;: 50,
+        &quot;survey&quot;: 200,
+        &quot;mining_speed&quot;: 300,
+        &quot;cargo&quot;: 500,
+        &quot;cargo_speed&quot;: 30,
+        &quot;speed&quot;: 50,
+        &quot;fuel_capacity&quot;: 100,
+        &quot;fuel_distance_ratio&quot;: 30,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    },
+    {
+        &quot;id&quot;: 12,
+        &quot;name&quot;: &quot;Lunar Digger 5000&quot;,
+        &quot;description&quot;: &quot;A robust mining ship designed for surface and subsurface resource extraction on planets and moons.&quot;,
+        &quot;price&quot;: 175000,
+        &quot;hull&quot;: 550,
+        &quot;damage&quot;: 25,
+        &quot;survey&quot;: 150,
+        &quot;mining_speed&quot;: 250,
+        &quot;cargo&quot;: 400,
+        &quot;cargo_speed&quot;: 35,
+        &quot;speed&quot;: 45,
+        &quot;fuel_capacity&quot;: 100,
+        &quot;fuel_distance_ratio&quot;: 28,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    },
+    {
+        &quot;id&quot;: 13,
+        &quot;name&quot;: &quot;DeepCore Surveyor&quot;,
+        &quot;description&quot;: &quot;The ultimate prospecting ship, capable of scanning entire planetary systems for rare minerals.&quot;,
+        &quot;price&quot;: 220000,
+        &quot;hull&quot;: 500,
+        &quot;damage&quot;: 10,
+        &quot;survey&quot;: 500,
+        &quot;mining_speed&quot;: 100,
+        &quot;cargo&quot;: 250,
+        &quot;cargo_speed&quot;: 50,
+        &quot;speed&quot;: 65,
+        &quot;fuel_capacity&quot;: 100,
+        &quot;fuel_distance_ratio&quot;: 24,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    },
+    {
+        &quot;id&quot;: 14,
+        &quot;name&quot;: &quot;Asteroid Miner Titan&quot;,
+        &quot;description&quot;: &quot;A massive ship optimized for mining asteroids and extracting valuable minerals at unmatched speeds.&quot;,
+        &quot;price&quot;: 250000,
+        &quot;hull&quot;: 800,
+        &quot;damage&quot;: 70,
+        &quot;survey&quot;: 100,
+        &quot;mining_speed&quot;: 400,
+        &quot;cargo&quot;: 1000,
+        &quot;cargo_speed&quot;: 20,
+        &quot;speed&quot;: 40,
+        &quot;fuel_capacity&quot;: 100,
+        &quot;fuel_distance_ratio&quot;: 35,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    }
+]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-ships-list" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-ships-list"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-ships-list"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-ships-list" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-ships-list">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-ships-list" data-method="GET"
+      data-path="api/v1/ships/list"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-ships-list', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-ships-list"
+                    onclick="tryItOut('GETapi-v1-ships-list');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-ships-list"
+                    onclick="cancelTryOut('GETapi-v1-ships-list');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-ships-list"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/ships/list</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-ships-list"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-ships-list"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-POSTapi-v1-ships-buy">Handle the ship purchase request.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-ships-buy">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/ships/buy" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"ship_id\": \"rerum\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/ships/buy"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "ship_id": "rerum"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-ships-buy">
+</span>
+<span id="execution-results-POSTapi-v1-ships-buy" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-ships-buy"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-ships-buy"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-ships-buy" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-ships-buy">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-ships-buy" data-method="POST"
+      data-path="api/v1/ships/buy"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-ships-buy', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-ships-buy"
+                    onclick="tryItOut('POSTapi-v1-ships-buy');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-ships-buy"
+                    onclick="cancelTryOut('POSTapi-v1-ships-buy');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-ships-buy"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/ships/buy</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-ships-buy"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-ships-buy"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>ship_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="ship_id"                data-endpoint="POSTapi-v1-ships-buy"
+               value="rerum"
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the ships table. Example: <code>rerum</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-GETapi-v1-ships-status">GET api/v1/ships/status</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-ships-status">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/ships/status" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/ships/status"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-ships-status">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;error&quot;: &quot;Provide authentication token in the authorization header, format should be \&quot;Bearer &lt;auth_token&gt;\&quot;&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-ships-status" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-ships-status"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-ships-status"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-ships-status" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-ships-status">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-ships-status" data-method="GET"
+      data-path="api/v1/ships/status"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-ships-status', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-ships-status"
+                    onclick="tryItOut('GETapi-v1-ships-status');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-ships-status"
+                    onclick="cancelTryOut('GETapi-v1-ships-status');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-ships-status"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/ships/status</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-ships-status"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-ships-status"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-POSTapi-v1-ships-refuel">Handle the ship purchase request.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-ships-refuel">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/ships/refuel" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"ship_id\": \"ullam\",
+    \"amount\": 13
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/ships/refuel"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "ship_id": "ullam",
+    "amount": 13
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-ships-refuel">
+</span>
+<span id="execution-results-POSTapi-v1-ships-refuel" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-ships-refuel"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-ships-refuel"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-ships-refuel" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-ships-refuel">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-ships-refuel" data-method="POST"
+      data-path="api/v1/ships/refuel"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-ships-refuel', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-ships-refuel"
+                    onclick="tryItOut('POSTapi-v1-ships-refuel');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-ships-refuel"
+                    onclick="cancelTryOut('POSTapi-v1-ships-refuel');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-ships-refuel"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/ships/refuel</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-ships-refuel"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-ships-refuel"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>ship_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="ship_id"                data-endpoint="POSTapi-v1-ships-refuel"
+               value="ullam"
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the users_ships table. Example: <code>ullam</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="amount"                data-endpoint="POSTapi-v1-ships-refuel"
+               value="13"
+               data-component="body">
+    <br>
+<p>Must be at least 1. Example: <code>13</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-v1-ships-mine">extract resources</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-ships-mine">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/ships/mine" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"ship_id\": \"dolor\",
+    \"amount\": 47,
+    \"deposit_id\": \"ut\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/ships/mine"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "ship_id": "dolor",
+    "amount": 47,
+    "deposit_id": "ut"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-ships-mine">
+</span>
+<span id="execution-results-POSTapi-v1-ships-mine" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-ships-mine"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-ships-mine"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-ships-mine" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-ships-mine">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-ships-mine" data-method="POST"
+      data-path="api/v1/ships/mine"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-ships-mine', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-ships-mine"
+                    onclick="tryItOut('POSTapi-v1-ships-mine');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-ships-mine"
+                    onclick="cancelTryOut('POSTapi-v1-ships-mine');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-ships-mine"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/ships/mine</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-ships-mine"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-ships-mine"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>ship_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="ship_id"                data-endpoint="POSTapi-v1-ships-mine"
+               value="dolor"
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the users_ships table. Example: <code>dolor</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="amount"                data-endpoint="POSTapi-v1-ships-mine"
+               value="47"
+               data-component="body">
+    <br>
+<p>Must be at least 1. Example: <code>47</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>deposit_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="deposit_id"                data-endpoint="POSTapi-v1-ships-mine"
+               value="ut"
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the deposits table. Example: <code>ut</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-v1-market-buy">POST api/v1/market/buy</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-market-buy">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/market/buy" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"user_ship_id\": \"quos\",
+    \"resource_id\": \"expedita\",
+    \"quantity\": 90
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/market/buy"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_ship_id": "quos",
+    "resource_id": "expedita",
+    "quantity": 90
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-market-buy">
+</span>
+<span id="execution-results-POSTapi-v1-market-buy" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-market-buy"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-market-buy"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-market-buy" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-market-buy">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-market-buy" data-method="POST"
+      data-path="api/v1/market/buy"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-market-buy', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-market-buy"
+                    onclick="tryItOut('POSTapi-v1-market-buy');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-market-buy"
+                    onclick="cancelTryOut('POSTapi-v1-market-buy');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-market-buy"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/market/buy</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-market-buy"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-market-buy"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>user_ship_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user_ship_id"                data-endpoint="POSTapi-v1-market-buy"
+               value="quos"
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the users_ships table. Example: <code>quos</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>resource_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="resource_id"                data-endpoint="POSTapi-v1-market-buy"
+               value="expedita"
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the resources table. Example: <code>expedita</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="quantity"                data-endpoint="POSTapi-v1-market-buy"
+               value="90"
+               data-component="body">
+    <br>
+<p>Must be at least 1. Example: <code>90</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-v1-market-sell">POST api/v1/market/sell</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-market-sell">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/market/sell" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"user_ship_id\": \"reprehenderit\",
+    \"resource_id\": \"incidunt\",
+    \"quantity\": 29
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/market/sell"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_ship_id": "reprehenderit",
+    "resource_id": "incidunt",
+    "quantity": 29
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-market-sell">
+</span>
+<span id="execution-results-POSTapi-v1-market-sell" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-market-sell"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-market-sell"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-market-sell" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-market-sell">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-market-sell" data-method="POST"
+      data-path="api/v1/market/sell"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-market-sell', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-market-sell"
+                    onclick="tryItOut('POSTapi-v1-market-sell');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-market-sell"
+                    onclick="cancelTryOut('POSTapi-v1-market-sell');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-market-sell"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/market/sell</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-market-sell"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-market-sell"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>user_ship_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user_ship_id"                data-endpoint="POSTapi-v1-market-sell"
+               value="reprehenderit"
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the users_ships table. Example: <code>reprehenderit</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>resource_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="resource_id"                data-endpoint="POSTapi-v1-market-sell"
+               value="incidunt"
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the resources table. Example: <code>incidunt</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="quantity"                data-endpoint="POSTapi-v1-market-sell"
+               value="29"
+               data-component="body">
+    <br>
+<p>Must be at least 1. Example: <code>29</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-v1-travels-land">POST api/v1/travels/land</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-travels-land">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/travels/land" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"user_ship_id\": \"quia\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/travels/land"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_ship_id": "quia"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-travels-land">
+</span>
+<span id="execution-results-POSTapi-v1-travels-land" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-travels-land"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-travels-land"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-travels-land" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-travels-land">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-travels-land" data-method="POST"
+      data-path="api/v1/travels/land"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-travels-land', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-travels-land"
+                    onclick="tryItOut('POSTapi-v1-travels-land');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-travels-land"
+                    onclick="cancelTryOut('POSTapi-v1-travels-land');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-travels-land"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/travels/land</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-travels-land"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-travels-land"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>user_ship_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user_ship_id"                data-endpoint="POSTapi-v1-travels-land"
+               value="quia"
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the users_ships table. Example: <code>quia</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-v1-travels-takeoff">POST api/v1/travels/takeoff</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-travels-takeoff">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/travels/takeoff" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"user_ship_id\": \"quasi\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/travels/takeoff"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_ship_id": "quasi"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-travels-takeoff">
+</span>
+<span id="execution-results-POSTapi-v1-travels-takeoff" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-travels-takeoff"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-travels-takeoff"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-travels-takeoff" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-travels-takeoff">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-travels-takeoff" data-method="POST"
+      data-path="api/v1/travels/takeoff"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-travels-takeoff', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-travels-takeoff"
+                    onclick="tryItOut('POSTapi-v1-travels-takeoff');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-travels-takeoff"
+                    onclick="cancelTryOut('POSTapi-v1-travels-takeoff');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-travels-takeoff"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/travels/takeoff</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-travels-takeoff"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-travels-takeoff"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>user_ship_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user_ship_id"                data-endpoint="POSTapi-v1-travels-takeoff"
+               value="quasi"
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the users_ships table. Example: <code>quasi</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-GETapi-v1-travels-info">GET api/v1/travels/info</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-travels-info">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/travels/info" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"user_ship_id\": \"aut\",
+    \"planet_id\": \"aliquid\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/travels/info"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_ship_id": "aut",
+    "planet_id": "aliquid"
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-travels-info">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;error&quot;: &quot;Provide authentication token in the authorization header, format should be \&quot;Bearer &lt;auth_token&gt;\&quot;&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-travels-info" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-travels-info"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-travels-info"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-travels-info" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-travels-info">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-travels-info" data-method="GET"
+      data-path="api/v1/travels/info"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-travels-info', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-travels-info"
+                    onclick="tryItOut('GETapi-v1-travels-info');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-travels-info"
+                    onclick="cancelTryOut('GETapi-v1-travels-info');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-travels-info"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/travels/info</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-travels-info"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-travels-info"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>user_ship_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user_ship_id"                data-endpoint="GETapi-v1-travels-info"
+               value="aut"
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the users_ships table. Example: <code>aut</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>planet_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="planet_id"                data-endpoint="GETapi-v1-travels-info"
+               value="aliquid"
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the planets table. Example: <code>aliquid</code></p>
+        </div>
+        </form>
+
+            
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>

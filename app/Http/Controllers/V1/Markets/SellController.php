@@ -7,7 +7,8 @@ use App\Http\Requests\AuthenticationRegisterRequest;
 use App\Models\{User, Market, Planet, Resource, UserShip, Ship, CargoItem};
 use App\Services\{MarketService, ShipService};
 use Illuminate\Support\Facades\Schema;
-class BuyController extends Controller
+
+class SellController extends Controller
 {
     protected $MarketService;
     protected $ShipService;
@@ -33,18 +34,19 @@ class BuyController extends Controller
 
         $this->ShipService->synchronize();
 
-        $user_ship = UserShip::where("user_id", $user->id)
-                        ->where('id', $validated['user_ship_id'])
-                        ->first();
+        $user_ship = UserShip::where("user_id", $user->id)->where('id', $validated['user_ship_id'])->first();
+        
+        if($user_ship == null) {
+            return response()->json(['error' => 'No ship found, please provide the user_ship_id'], 404);
+        }
+        
         $planet = Planet::find($user_ship->planet_location_id);
         $market = Market::where('planet_id', $user_ship->planet_location_id)
                     ->where('resource_id', $validated['resource_id'])->first();
         $resource = Resource::find($validated['resource_id']);
         $ship_model = Ship::find($user_ship->ship_id);
 
-        if($user_ship == null) {
-            return response()->json(['error' => 'No ship found, please provide the user_ship_id'], 404);
-        }
+        
         
         //only landed ships can trade
         if($user_ship->status != 'landed') {
@@ -56,47 +58,34 @@ class BuyController extends Controller
             return response()->json(['error' => 'No market available here, are you in a populated planet?'], 422);
         }
 
-        //check if planet has enough stock
-        if($validated['quantity'] > $market->stock) {
-            return response()->json(['error' => 'Not enough resources stocked in the planenet\'s market.'], 422);
-        }
 
-        //check if the user has enough credits
         $price = $this->MarketService->getMarketPrice($planet, $resource);
-        if($price['buy']*$validated['quantity'] > $user->credits) {
-            return response()->json(['error' => 'Not enough credits.'], 422);
-        }
-
-        //check if ship has enough cargo space
-        $cargo_left_space = $ship_model->cargo - CargoItem::where('user_ship_id', $user_ship->id)->sum('quantity');
-        if($cargo_left_space < $validated['quantity']) {
-            return response()->json(['error' => 'Not enough space left in cargo.'], 422);
-        }
 
         //now that we checked everything, we can begin the cargo operation
-        $cargo_item = CargoItem::where('user_ship_id', $user_ship->id)
-                        ->where('resource_id', $resource->id)->first();
-        if($cargo_item == null) {
-            $cargo_item = new CargoItem();
-            $cargo_item->user_ship_id = $user_ship->id;
-            $cargo_item->resource_id = $resource->id;
-            $cargo_item->quantity = 0;
+        $cargo_item = CargoItem::where('user_ship_id', $user_ship->id)->where('resource_id', $resource->id)->first();
+        if ($cargo_item == null) {
+            return response()->json(["message" => "No resources with that id in cargo."], 422);
         }
-        
-        $cargo_item->quantity = $cargo_item->quantity + $validated['quantity'];
-        $user->credits -= $price['buy']*$validated['quantity'];
-
-        $user_ship->status = 'loading';
+        $cargo_item->quantity = $cargo_item->quantity - $validated['quantity'];
+        $user->credits += $price['sell']*$validated['quantity'];
+        $user_ship->status = 'unloading';
         $load_seconds = $validated['quantity']/$ship_model->cargo_speed*60;
         $user_ship->end_of_operation_time = now()->addSeconds($load_seconds);
+        $market->stock = $market->stock + $validated['quantity'];
 
-        $market->stock = $market->stock - $validated['quantity'];
-
+        if($cargo_item->quantity < 0) {
+            return response()->json(["message" => "Trying to sell more quantity than the amount stored in cargo"], 422);
+        }
         //flash into the db
         $user_ship->save();
         $user->save();
         $cargo_item->save();
         $market->save();
+
+        if($cargo_item->quantity == 0) {
+            $cargo_item->delete();
+        }
+
         return [
             "user" => $user,
             "ship" => array_merge($user_ship->toArray(), $ship_model->toArray()),

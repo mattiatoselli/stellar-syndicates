@@ -1,0 +1,2654 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1/authentication/register:
+    post:
+      summary: 'Register a new account.'
+      operationId: registerANewAccount
+      description: "Once you register a new account you will receive some credits to start.\nThe API returns the user's data, and your id_number. This is your token and should be provided in order to access to every\nresource. Please note that there is no way of recovering your token, and that your token is the only way to identify you, so if you give your token to someone, that user will be able to act as you in Stellar Syndicates.\nTokens will never expire."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  user:
+                    username: iceman29
+                    credits: 25000
+                    id: 5897a0c5-af0a-46d6-8c6c-c35214265bc9
+                    updated_at: '2024-12-03T13:52:53.000000Z'
+                    created_at: '2024-12-03T13:52:53.000000Z'
+                  id_number: 2|pwM3dAdtW4LmwNRXOsqYwjf9HDab3TcrTqcsgCDLb0b078bb
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      username:
+                        type: string
+                        example: iceman29
+                      credits:
+                        type: integer
+                        example: 25000
+                      id:
+                        type: string
+                        example: 5897a0c5-af0a-46d6-8c6c-c35214265bc9
+                      updated_at:
+                        type: string
+                        example: '2024-12-03T13:52:53.000000Z'
+                      created_at:
+                        type: string
+                        example: '2024-12-03T13:52:53.000000Z'
+                  id_number:
+                    type: string
+                    example: 2|pwM3dAdtW4LmwNRXOsqYwjf9HDab3TcrTqcsgCDLb0b078bb
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: 'required. Your username.'
+                  example: iceman29
+                  nullable: false
+      security: []
+  /api/v1/authentication/user:
+    get:
+      summary: 'Get User details.'
+      operationId: getUserDetails
+      description: 'Returns data about the currently logged user.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {  }
+                properties: {  }
+      tags:
+        - Endpoints
+  /api/v1/stars/list:
+    get:
+      summary: 'List Stars.'
+      operationId: listStars
+      description: "Returns the list of the stars in the universe.\nList is paginated."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  current_page: 1
+                  data:
+                    -
+                      id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                      name: Sun
+                      spectrum: G2V
+                      color: Yellow
+                      temperature: 5778
+                      x: 0
+                      'y': 0
+                      z: 0
+                    -
+                      id: 6c57f015-e077-4db8-874a-b138b2ec3528
+                      name: 'Proxima Centauri'
+                      spectrum: M5.5V
+                      color: Red
+                      temperature: 3042
+                      x: -1.546
+                      'y': -3.582
+                      z: 0.059
+                    -
+                      id: ebeff2ac-9847-40eb-8856-659fc9e5b2f1
+                      name: 'Alpha Centauri'
+                      spectrum: G2V
+                      color: Yellow
+                      temperature: 5790
+                      x: -1.602
+                      'y': -3.711
+                      z: 0.063
+                    -
+                      id: 3b0bd572-c0d8-40d7-b7d5-65a038a9bf61
+                      name: "Barnard's Star"
+                      spectrum: M4V
+                      color: Red
+                      temperature: 3134
+                      x: 1.834
+                      'y': -5.578
+                      z: -0.006
+                    -
+                      id: 8e831af8-773c-491c-b0fb-919c937398f7
+                      name: 'Wolf 359'
+                      spectrum: M6V
+                      color: Red
+                      temperature: 2800
+                      x: -7.502
+                      'y': 1.727
+                      z: 0.105
+                    -
+                      id: 4a35b003-fd54-4a54-b776-a1024cb1f2c2
+                      name: 'Lalande 21185'
+                      spectrum: M2V
+                      color: Red
+                      temperature: 3400
+                      x: 7.877
+                      'y': -1.881
+                      z: -0.152
+                    -
+                      id: 95593133-0529-44ea-b5f7-cfede7b9a1cb
+                      name: 'Sirius A'
+                      spectrum: A1V
+                      color: White-bluish
+                      temperature: 9940
+                      x: -8.505
+                      'y': 1.462
+                      z: -0.556
+                    -
+                      id: 90ab146c-04a2-43b3-81a9-6012bb39fbd7
+                      name: 'Luyten 726-8'
+                      spectrum: M5.5V
+                      color: Red
+                      temperature: 2950
+                      x: 8.521
+                      'y': -1.753
+                      z: 0.076
+                    -
+                      id: beeb1c72-604a-4a6b-87c0-5a7573fecd7b
+                      name: 'Ross 154'
+                      spectrum: M3.5V
+                      color: Red
+                      temperature: 3250
+                      x: -1.2
+                      'y': 9.58
+                      z: -0.134
+                  first_page_url: 'http://127.0.0.1:8000/api/v1/stars/list?page=1'
+                  from: 1
+                  last_page: 1
+                  last_page_url: 'http://127.0.0.1:8000/api/v1/stars/list?page=1'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'http://127.0.0.1:8000/api/v1/stars/list?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: null
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: null
+                  path: 'http://127.0.0.1:8000/api/v1/stars/list'
+                  per_page: 100
+                  prev_page_url: null
+                  to: 9
+                  total: 9
+                properties:
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                        name: Sun
+                        spectrum: G2V
+                        color: Yellow
+                        temperature: 5778
+                        x: 0
+                        'y': 0
+                        z: 0
+                      -
+                        id: 6c57f015-e077-4db8-874a-b138b2ec3528
+                        name: 'Proxima Centauri'
+                        spectrum: M5.5V
+                        color: Red
+                        temperature: 3042
+                        x: -1.546
+                        'y': -3.582
+                        z: 0.059
+                      -
+                        id: ebeff2ac-9847-40eb-8856-659fc9e5b2f1
+                        name: 'Alpha Centauri'
+                        spectrum: G2V
+                        color: Yellow
+                        temperature: 5790
+                        x: -1.602
+                        'y': -3.711
+                        z: 0.063
+                      -
+                        id: 3b0bd572-c0d8-40d7-b7d5-65a038a9bf61
+                        name: "Barnard's Star"
+                        spectrum: M4V
+                        color: Red
+                        temperature: 3134
+                        x: 1.834
+                        'y': -5.578
+                        z: -0.006
+                      -
+                        id: 8e831af8-773c-491c-b0fb-919c937398f7
+                        name: 'Wolf 359'
+                        spectrum: M6V
+                        color: Red
+                        temperature: 2800
+                        x: -7.502
+                        'y': 1.727
+                        z: 0.105
+                      -
+                        id: 4a35b003-fd54-4a54-b776-a1024cb1f2c2
+                        name: 'Lalande 21185'
+                        spectrum: M2V
+                        color: Red
+                        temperature: 3400
+                        x: 7.877
+                        'y': -1.881
+                        z: -0.152
+                      -
+                        id: 95593133-0529-44ea-b5f7-cfede7b9a1cb
+                        name: 'Sirius A'
+                        spectrum: A1V
+                        color: White-bluish
+                        temperature: 9940
+                        x: -8.505
+                        'y': 1.462
+                        z: -0.556
+                      -
+                        id: 90ab146c-04a2-43b3-81a9-6012bb39fbd7
+                        name: 'Luyten 726-8'
+                        spectrum: M5.5V
+                        color: Red
+                        temperature: 2950
+                        x: 8.521
+                        'y': -1.753
+                        z: 0.076
+                      -
+                        id: beeb1c72-604a-4a6b-87c0-5a7573fecd7b
+                        name: 'Ross 154'
+                        spectrum: M3.5V
+                        color: Red
+                        temperature: 3250
+                        x: -1.2
+                        'y': 9.58
+                        z: -0.134
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 71ff81a3-47e5-426e-892f-553517c18c8c
+                        name:
+                          type: string
+                          example: Sun
+                        spectrum:
+                          type: string
+                          example: G2V
+                        color:
+                          type: string
+                          example: Yellow
+                        temperature:
+                          type: integer
+                          example: 5778
+                        x:
+                          type: integer
+                          example: 0
+                        'y':
+                          type: integer
+                          example: 0
+                        z:
+                          type: integer
+                          example: 0
+                  first_page_url:
+                    type: string
+                    example: 'http://127.0.0.1:8000/api/v1/stars/list?page=1'
+                  from:
+                    type: integer
+                    example: 1
+                  last_page:
+                    type: integer
+                    example: 1
+                  last_page_url:
+                    type: string
+                    example: 'http://127.0.0.1:8000/api/v1/stars/list?page=1'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://127.0.0.1:8000/api/v1/stars/list?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          example: null
+                        label:
+                          type: string
+                          example: '&laquo; Previous'
+                        active:
+                          type: boolean
+                          example: false
+                  next_page_url:
+                    type: string
+                    example: null
+                  path:
+                    type: string
+                    example: 'http://127.0.0.1:8000/api/v1/stars/list'
+                  per_page:
+                    type: integer
+                    example: 100
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: integer
+                    example: 9
+                  total:
+                    type: integer
+                    example: 9
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/stars/{id}':
+    get:
+      summary: "Star's details."
+      operationId: starsDetails
+      description: "Returns the star's details with the planets orbiting around the star."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                  name: Sun
+                  spectrum: G2V
+                  color: Yellow
+                  temperature: 5778
+                  x: 0
+                  'y': 0
+                  z: 0
+                  planets:
+                    -
+                      id: ca6850ce-dae8-44d3-bd5c-45fbc0d52b20
+                      star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                      name: Mercury
+                      distance_from_star: 0.39
+                      type: Rocky
+                      population: 0
+                    -
+                      id: 1fe7c9c5-586f-4a34-b6b8-2b4a9d2ba6ee
+                      star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                      name: Venus
+                      distance_from_star: 0.72
+                      type: Rocky
+                      population: 0
+                    -
+                      id: fcc94a4e-3b46-4432-9615-430a4f6a5364
+                      star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                      name: Earth
+                      distance_from_star: 1
+                      type: 'Terrestrial Planet'
+                      population: 5332283954
+                    -
+                      id: 11ee7208-7044-47af-bef2-71b5832e4d89
+                      star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                      name: Mars
+                      distance_from_star: 1.52
+                      type: Rocky
+                      population: 331790370
+                    -
+                      id: 26f5e1dd-aa8a-4445-8750-1d9aae04d68a
+                      star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                      name: Jupiter
+                      distance_from_star: 5.2
+                      type: 'Gas giant'
+                      population: 0
+                    -
+                      id: da567bc8-8cc8-4c95-8d32-cafb6eb18bee
+                      star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                      name: Saturn
+                      distance_from_star: 9.58
+                      type: 'Gas giant'
+                      population: 0
+                    -
+                      id: 2f6fe7a4-6b4a-4a57-9fe7-e73b9f5382f9
+                      star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                      name: Uranus
+                      distance_from_star: 19.22
+                      type: 'Ice giant'
+                      population: 0
+                    -
+                      id: ab6a547e-7036-47ca-8a53-86237cb339db
+                      star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                      name: Neptune
+                      distance_from_star: 30.05
+                      type: 'Ice giant'
+                      population: 0
+                properties:
+                  id:
+                    type: string
+                    example: 71ff81a3-47e5-426e-892f-553517c18c8c
+                  name:
+                    type: string
+                    example: Sun
+                  spectrum:
+                    type: string
+                    example: G2V
+                  color:
+                    type: string
+                    example: Yellow
+                  temperature:
+                    type: integer
+                    example: 5778
+                  x:
+                    type: integer
+                    example: 0
+                  'y':
+                    type: integer
+                    example: 0
+                  z:
+                    type: integer
+                    example: 0
+                  planets:
+                    type: array
+                    example:
+                      -
+                        id: ca6850ce-dae8-44d3-bd5c-45fbc0d52b20
+                        star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                        name: Mercury
+                        distance_from_star: 0.39
+                        type: Rocky
+                        population: 0
+                      -
+                        id: 1fe7c9c5-586f-4a34-b6b8-2b4a9d2ba6ee
+                        star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                        name: Venus
+                        distance_from_star: 0.72
+                        type: Rocky
+                        population: 0
+                      -
+                        id: fcc94a4e-3b46-4432-9615-430a4f6a5364
+                        star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                        name: Earth
+                        distance_from_star: 1
+                        type: 'Terrestrial Planet'
+                        population: 5332283954
+                      -
+                        id: 11ee7208-7044-47af-bef2-71b5832e4d89
+                        star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                        name: Mars
+                        distance_from_star: 1.52
+                        type: Rocky
+                        population: 331790370
+                      -
+                        id: 26f5e1dd-aa8a-4445-8750-1d9aae04d68a
+                        star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                        name: Jupiter
+                        distance_from_star: 5.2
+                        type: 'Gas giant'
+                        population: 0
+                      -
+                        id: da567bc8-8cc8-4c95-8d32-cafb6eb18bee
+                        star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                        name: Saturn
+                        distance_from_star: 9.58
+                        type: 'Gas giant'
+                        population: 0
+                      -
+                        id: 2f6fe7a4-6b4a-4a57-9fe7-e73b9f5382f9
+                        star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                        name: Uranus
+                        distance_from_star: 19.22
+                        type: 'Ice giant'
+                        population: 0
+                      -
+                        id: ab6a547e-7036-47ca-8a53-86237cb339db
+                        star_id: 71ff81a3-47e5-426e-892f-553517c18c8c
+                        name: Neptune
+                        distance_from_star: 30.05
+                        type: 'Ice giant'
+                        population: 0
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: ca6850ce-dae8-44d3-bd5c-45fbc0d52b20
+                        star_id:
+                          type: string
+                          example: 71ff81a3-47e5-426e-892f-553517c18c8c
+                        name:
+                          type: string
+                          example: Mercury
+                        distance_from_star:
+                          type: number
+                          example: 0.39
+                        type:
+                          type: string
+                          example: Rocky
+                        population:
+                          type: integer
+                          example: 0
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: "Optional parameter. required. Star's Id."
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: 71ff81a3-47e5-426e-892f-553517c18c8c
+  '/api/v1/planets/{id}':
+    get:
+      summary: "Planet's details."
+      operationId: planetsDetails
+      description: "Returns the planet's details, with his market, and deposits."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                  star_id: cdd5bc22-a483-4b0c-b969-9af98ad3483b
+                  name: 'Alpha Centauri Bb'
+                  distance_from_star: 0.04
+                  type: Rocky
+                  population: 5408310956
+                  market:
+                    -
+                      resource_id: '1'
+                      resource: Gold
+                      stock: 107
+                      production: 1623
+                      consume: 1623
+                      buy: 581
+                      sell: 575
+                    -
+                      resource_id: '2'
+                      resource: Silver
+                      stock: 690
+                      production: 4868
+                      consume: 4868
+                      buy: 419
+                      sell: 414
+                    -
+                      resource_id: '3'
+                      resource: Tantalum
+                      stock: 353
+                      production: 1623
+                      consume: 1623
+                      buy: 321
+                      sell: 318
+                    -
+                      resource_id: '4'
+                      resource: Osmium
+                      stock: 845
+                      production: 2164
+                      consume: 2164
+                      buy: 403
+                      sell: 399
+                    -
+                      resource_id: '5'
+                      resource: Palladium
+                      stock: 708
+                      production: 723
+                      consume: 1082
+                      buy: 269
+                      sell: 266
+                    -
+                      resource_id: '6'
+                      resource: 'Iron Ore'
+                      stock: 391
+                      production: 21634
+                      consume: 21634
+                      buy: 90
+                      sell: 89
+                    -
+                      resource_id: '7'
+                      resource: Copper
+                      stock: 131
+                      production: 16225
+                      consume: 16225
+                      buy: 100
+                      sell: 99
+                    -
+                      resource_id: '8'
+                      resource: Uranium
+                      stock: 906
+                      production: 3955
+                      consume: 4327
+                      buy: 282
+                      sell: 279
+                    -
+                      resource_id: '9'
+                      resource: Lithium
+                      stock: 838
+                      production: 11752
+                      consume: 8113
+                      buy: 326
+                      sell: 323
+                    -
+                      resource_id: '10'
+                      resource: Platinum
+                      stock: 545
+                      production: 36267
+                      consume: 27042
+                      buy: 410
+                      sell: 406
+                    -
+                      resource_id: '11'
+                      resource: Oil
+                      stock: 193
+                      production: 13081
+                      consume: 9735
+                      buy: 82
+                      sell: 82
+                    -
+                      resource_id: '12'
+                      resource: Water
+                      stock: 924
+                      production: 38638
+                      consume: 54084
+                      buy: 91
+                      sell: 90
+                    -
+                      resource_id: '13'
+                      resource: Nickel
+                      stock: 429
+                      production: 78
+                      consume: 13521
+                      buy: 149
+                      sell: 147
+                    -
+                      resource_id: '14'
+                      resource: Cobalt
+                      stock: 730
+                      production: 5409
+                      consume: 5409
+                      buy: 327
+                      sell: 324
+                    -
+                      resource_id: '15'
+                      resource: Zinc
+                      stock: 425
+                      production: 6490
+                      consume: 6490
+                      buy: 117
+                      sell: 115
+                    -
+                      resource_id: '16'
+                      resource: Titanium
+                      stock: 230
+                      production: 4042
+                      consume: 2705
+                      buy: 178
+                      sell: 176
+                    -
+                      resource_id: '17'
+                      resource: Quartz
+                      stock: 995
+                      production: 5280
+                      consume: 8113
+                      buy: 45
+                      sell: 45
+                    -
+                      resource_id: '18'
+                      resource: Sulfur
+                      stock: 134
+                      production: 13467
+                      consume: 10817
+                      buy: 44
+                      sell: 44
+                    -
+                      resource_id: '19'
+                      resource: Salt
+                      stock: 830
+                      production: 11899
+                      consume: 11899
+                      buy: 15
+                      sell: 15
+                    -
+                      resource_id: '20'
+                      resource: Bauxite
+                      stock: 618
+                      production: 9256
+                      consume: 11899
+                      buy: 163
+                      sell: 162
+                    -
+                      resource_id: '21'
+                      resource: Helium-3
+                      stock: 418
+                      production: 618
+                      consume: 541
+                      buy: 218
+                      sell: 216
+                    -
+                      resource_id: '22'
+                      resource: Carbon
+                      stock: 696
+                      production: 27042
+                      consume: 27042
+                      buy: 25
+                      sell: 25
+                    -
+                      resource_id: '23'
+                      resource: Cotton
+                      stock: 787
+                      production: 2801
+                      consume: 27042
+                      buy: 36
+                      sell: 36
+                    -
+                      resource_id: '24'
+                      resource: 'Coffee Beans'
+                      stock: 340
+                      production: 10817
+                      consume: 10817
+                      buy: 50
+                      sell: 49
+                    -
+                      resource_id: '25'
+                      resource: Tobacco
+                      stock: 229
+                      production: 8113
+                      consume: 8113
+                      buy: 35
+                      sell: 35
+                    -
+                      resource_id: '26'
+                      resource: Algae
+                      stock: 353
+                      production: 13435
+                      consume: 13521
+                      buy: 20
+                      sell: 20
+                    -
+                      resource_id: '27'
+                      resource: Spices
+                      stock: 517
+                      production: 284
+                      consume: 1623
+                      buy: 57
+                      sell: 56
+                    -
+                      resource_id: '28'
+                      resource: Steel
+                      stock: 662
+                      production: 13521
+                      consume: 13521
+                      buy: 391
+                      sell: 387
+                    -
+                      resource_id: '29'
+                      resource: Aluminum
+                      stock: 461
+                      production: 33733
+                      consume: 29746
+                      buy: 556
+                      sell: 550
+                    -
+                      resource_id: '30'
+                      resource: Plastic
+                      stock: 377
+                      production: 27042
+                      consume: 27042
+                      buy: 249
+                      sell: 246
+                    -
+                      resource_id: '31'
+                      resource: Jewelry
+                      stock: 756
+                      production: 1102
+                      consume: 4327
+                      buy: 2571
+                      sell: 2545
+                    -
+                      resource_id: '32'
+                      resource: Electronics
+                      stock: 641
+                      production: 27042
+                      consume: 27042
+                      buy: 1186
+                      sell: 1174
+                    -
+                      resource_id: '33'
+                      resource: Glass
+                      stock: 222
+                      production: 30287
+                      consume: 30287
+                      buy: 120
+                      sell: 119
+                    -
+                      resource_id: '34'
+                      resource: Fertilizer
+                      stock: 187
+                      production: 42440
+                      consume: 43267
+                      buy: 212
+                      sell: 210
+                    -
+                      resource_id: '35'
+                      resource: 'Luxury Fabrics'
+                      stock: 966
+                      production: 6638
+                      consume: 8113
+                      buy: 413
+                      sell: 409
+                    -
+                      resource_id: '36'
+                      resource: 'Nuclear Fuel'
+                      stock: 903
+                      production: 54084
+                      consume: 54084
+                      buy: 1885
+                      sell: 1866
+                    -
+                      resource_id: '37'
+                      resource: 'Synthetic Fiber'
+                      stock: 518
+                      production: 27725
+                      consume: 23256
+                      buy: 313
+                      sell: 310
+                    -
+                      resource_id: '38'
+                      resource: 'Carbon Fiber'
+                      stock: 239
+                      production: 11899
+                      consume: 11899
+                      buy: 990
+                      sell: 981
+                    -
+                      resource_id: '39'
+                      resource: 'Optical Lenses'
+                      stock: 337
+                      production: 4868
+                      consume: 4868
+                      buy: 676
+                      sell: 670
+                    -
+                      resource_id: '40'
+                      resource: 'Advanced Alloys'
+                      stock: 666
+                      production: 12980
+                      consume: 12980
+                      buy: 1754
+                      sell: 1737
+                    -
+                      resource_id: '41'
+                      resource: 'Energy Cells'
+                      stock: 147
+                      production: 8113
+                      consume: 8113
+                      buy: 1190
+                      sell: 1178
+                  deposits:
+                    -
+                      id: b90e61de-ebb6-498b-8013-ffd6caee919b
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 11
+                      status: discovered
+                      discovered_by: null
+                      quantity: 128819
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 904e4004-953b-440f-8699-79fffd019a2d
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 2
+                      status: discovered
+                      discovered_by: null
+                      quantity: 768238
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 3787865f-59c1-49c4-ad60-47e630ffb3a5
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 11
+                      status: discovered
+                      discovered_by: null
+                      quantity: 1024133
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 554f27da-cad2-4226-b876-f13e5fbd267b
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 11
+                      status: discovered
+                      discovered_by: null
+                      quantity: 248746
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 577c9ae1-7660-4774-84b3-b5fe369b9f6b
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 21
+                      status: discovered
+                      discovered_by: null
+                      quantity: 54834
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 343ccad2-3b75-44ac-8cba-9ca48497fece
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 6
+                      status: discovered
+                      discovered_by: null
+                      quantity: 994620
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 7e1529d4-6b24-4086-a846-4a2571517f38
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 26
+                      status: discovered
+                      discovered_by: null
+                      quantity: 756712
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 179ebe59-36e6-49c2-94d8-97dcdc1aa848
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 20
+                      status: discovered
+                      discovered_by: null
+                      quantity: 1006239
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 3c2f2d78-9294-429b-af2c-d245d4500829
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 24
+                      status: discovered
+                      discovered_by: null
+                      quantity: 1301944
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 49270d7b-29c5-48f6-ac14-3643a503e440
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 17
+                      status: discovered
+                      discovered_by: null
+                      quantity: 736622
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: d9db3edf-e27b-40e0-8415-bae84c4ed9b3
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 21
+                      status: discovered
+                      discovered_by: null
+                      quantity: 65980
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: b468ac4a-b098-47ca-a7e3-156b42963619
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 20
+                      status: discovered
+                      discovered_by: null
+                      quantity: 838428
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 40d91599-d180-4caa-8d6b-edebbbc4b03d
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 24
+                      status: discovered
+                      discovered_by: null
+                      quantity: 1066638
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: d3226741-89ec-4df5-98c9-66a0e2edc848
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 1
+                      status: discovered
+                      discovered_by: null
+                      quantity: 334877
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 49123bc7-15e9-47e3-b08e-79f25bdc1c88
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 10
+                      status: discovered
+                      discovered_by: null
+                      quantity: 448572
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: d2bd21d3-d1bc-4e51-bcb6-cdbc8a0e565a
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 19
+                      status: discovered
+                      discovered_by: null
+                      quantity: 352891
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: afb03483-f932-4734-b256-2dd3773c0066
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 19
+                      status: discovered
+                      discovered_by: null
+                      quantity: 2123773
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 9b70771a-f522-42c2-b134-a8224ffea49e
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 21
+                      status: discovered
+                      discovered_by: null
+                      quantity: 34729
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: b6d04e32-58c6-426d-b8eb-87c2ef5893d3
+                      planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                      resource_id: 21
+                      status: discovered
+                      discovered_by: null
+                      quantity: 10174
+                      created_at: null
+                      updated_at: null
+                properties:
+                  id:
+                    type: string
+                    example: a6863bac-d92f-4500-942f-9c04e4528a2e
+                  star_id:
+                    type: string
+                    example: cdd5bc22-a483-4b0c-b969-9af98ad3483b
+                  name:
+                    type: string
+                    example: 'Alpha Centauri Bb'
+                  distance_from_star:
+                    type: number
+                    example: 0.04
+                  type:
+                    type: string
+                    example: Rocky
+                  population:
+                    type: integer
+                    example: 5408310956
+                  market:
+                    type: array
+                    example:
+                      -
+                        resource_id: '1'
+                        resource: Gold
+                        stock: 107
+                        production: 1623
+                        consume: 1623
+                        buy: 581
+                        sell: 575
+                      -
+                        resource_id: '2'
+                        resource: Silver
+                        stock: 690
+                        production: 4868
+                        consume: 4868
+                        buy: 419
+                        sell: 414
+                      -
+                        resource_id: '3'
+                        resource: Tantalum
+                        stock: 353
+                        production: 1623
+                        consume: 1623
+                        buy: 321
+                        sell: 318
+                      -
+                        resource_id: '4'
+                        resource: Osmium
+                        stock: 845
+                        production: 2164
+                        consume: 2164
+                        buy: 403
+                        sell: 399
+                      -
+                        resource_id: '5'
+                        resource: Palladium
+                        stock: 708
+                        production: 723
+                        consume: 1082
+                        buy: 269
+                        sell: 266
+                      -
+                        resource_id: '6'
+                        resource: 'Iron Ore'
+                        stock: 391
+                        production: 21634
+                        consume: 21634
+                        buy: 90
+                        sell: 89
+                      -
+                        resource_id: '7'
+                        resource: Copper
+                        stock: 131
+                        production: 16225
+                        consume: 16225
+                        buy: 100
+                        sell: 99
+                      -
+                        resource_id: '8'
+                        resource: Uranium
+                        stock: 906
+                        production: 3955
+                        consume: 4327
+                        buy: 282
+                        sell: 279
+                      -
+                        resource_id: '9'
+                        resource: Lithium
+                        stock: 838
+                        production: 11752
+                        consume: 8113
+                        buy: 326
+                        sell: 323
+                      -
+                        resource_id: '10'
+                        resource: Platinum
+                        stock: 545
+                        production: 36267
+                        consume: 27042
+                        buy: 410
+                        sell: 406
+                      -
+                        resource_id: '11'
+                        resource: Oil
+                        stock: 193
+                        production: 13081
+                        consume: 9735
+                        buy: 82
+                        sell: 82
+                      -
+                        resource_id: '12'
+                        resource: Water
+                        stock: 924
+                        production: 38638
+                        consume: 54084
+                        buy: 91
+                        sell: 90
+                      -
+                        resource_id: '13'
+                        resource: Nickel
+                        stock: 429
+                        production: 78
+                        consume: 13521
+                        buy: 149
+                        sell: 147
+                      -
+                        resource_id: '14'
+                        resource: Cobalt
+                        stock: 730
+                        production: 5409
+                        consume: 5409
+                        buy: 327
+                        sell: 324
+                      -
+                        resource_id: '15'
+                        resource: Zinc
+                        stock: 425
+                        production: 6490
+                        consume: 6490
+                        buy: 117
+                        sell: 115
+                      -
+                        resource_id: '16'
+                        resource: Titanium
+                        stock: 230
+                        production: 4042
+                        consume: 2705
+                        buy: 178
+                        sell: 176
+                      -
+                        resource_id: '17'
+                        resource: Quartz
+                        stock: 995
+                        production: 5280
+                        consume: 8113
+                        buy: 45
+                        sell: 45
+                      -
+                        resource_id: '18'
+                        resource: Sulfur
+                        stock: 134
+                        production: 13467
+                        consume: 10817
+                        buy: 44
+                        sell: 44
+                      -
+                        resource_id: '19'
+                        resource: Salt
+                        stock: 830
+                        production: 11899
+                        consume: 11899
+                        buy: 15
+                        sell: 15
+                      -
+                        resource_id: '20'
+                        resource: Bauxite
+                        stock: 618
+                        production: 9256
+                        consume: 11899
+                        buy: 163
+                        sell: 162
+                      -
+                        resource_id: '21'
+                        resource: Helium-3
+                        stock: 418
+                        production: 618
+                        consume: 541
+                        buy: 218
+                        sell: 216
+                      -
+                        resource_id: '22'
+                        resource: Carbon
+                        stock: 696
+                        production: 27042
+                        consume: 27042
+                        buy: 25
+                        sell: 25
+                      -
+                        resource_id: '23'
+                        resource: Cotton
+                        stock: 787
+                        production: 2801
+                        consume: 27042
+                        buy: 36
+                        sell: 36
+                      -
+                        resource_id: '24'
+                        resource: 'Coffee Beans'
+                        stock: 340
+                        production: 10817
+                        consume: 10817
+                        buy: 50
+                        sell: 49
+                      -
+                        resource_id: '25'
+                        resource: Tobacco
+                        stock: 229
+                        production: 8113
+                        consume: 8113
+                        buy: 35
+                        sell: 35
+                      -
+                        resource_id: '26'
+                        resource: Algae
+                        stock: 353
+                        production: 13435
+                        consume: 13521
+                        buy: 20
+                        sell: 20
+                      -
+                        resource_id: '27'
+                        resource: Spices
+                        stock: 517
+                        production: 284
+                        consume: 1623
+                        buy: 57
+                        sell: 56
+                      -
+                        resource_id: '28'
+                        resource: Steel
+                        stock: 662
+                        production: 13521
+                        consume: 13521
+                        buy: 391
+                        sell: 387
+                      -
+                        resource_id: '29'
+                        resource: Aluminum
+                        stock: 461
+                        production: 33733
+                        consume: 29746
+                        buy: 556
+                        sell: 550
+                      -
+                        resource_id: '30'
+                        resource: Plastic
+                        stock: 377
+                        production: 27042
+                        consume: 27042
+                        buy: 249
+                        sell: 246
+                      -
+                        resource_id: '31'
+                        resource: Jewelry
+                        stock: 756
+                        production: 1102
+                        consume: 4327
+                        buy: 2571
+                        sell: 2545
+                      -
+                        resource_id: '32'
+                        resource: Electronics
+                        stock: 641
+                        production: 27042
+                        consume: 27042
+                        buy: 1186
+                        sell: 1174
+                      -
+                        resource_id: '33'
+                        resource: Glass
+                        stock: 222
+                        production: 30287
+                        consume: 30287
+                        buy: 120
+                        sell: 119
+                      -
+                        resource_id: '34'
+                        resource: Fertilizer
+                        stock: 187
+                        production: 42440
+                        consume: 43267
+                        buy: 212
+                        sell: 210
+                      -
+                        resource_id: '35'
+                        resource: 'Luxury Fabrics'
+                        stock: 966
+                        production: 6638
+                        consume: 8113
+                        buy: 413
+                        sell: 409
+                      -
+                        resource_id: '36'
+                        resource: 'Nuclear Fuel'
+                        stock: 903
+                        production: 54084
+                        consume: 54084
+                        buy: 1885
+                        sell: 1866
+                      -
+                        resource_id: '37'
+                        resource: 'Synthetic Fiber'
+                        stock: 518
+                        production: 27725
+                        consume: 23256
+                        buy: 313
+                        sell: 310
+                      -
+                        resource_id: '38'
+                        resource: 'Carbon Fiber'
+                        stock: 239
+                        production: 11899
+                        consume: 11899
+                        buy: 990
+                        sell: 981
+                      -
+                        resource_id: '39'
+                        resource: 'Optical Lenses'
+                        stock: 337
+                        production: 4868
+                        consume: 4868
+                        buy: 676
+                        sell: 670
+                      -
+                        resource_id: '40'
+                        resource: 'Advanced Alloys'
+                        stock: 666
+                        production: 12980
+                        consume: 12980
+                        buy: 1754
+                        sell: 1737
+                      -
+                        resource_id: '41'
+                        resource: 'Energy Cells'
+                        stock: 147
+                        production: 8113
+                        consume: 8113
+                        buy: 1190
+                        sell: 1178
+                    items:
+                      type: object
+                      properties:
+                        resource_id:
+                          type: string
+                          example: '1'
+                        resource:
+                          type: string
+                          example: Gold
+                        stock:
+                          type: integer
+                          example: 107
+                        production:
+                          type: integer
+                          example: 1623
+                        consume:
+                          type: integer
+                          example: 1623
+                        buy:
+                          type: integer
+                          example: 581
+                        sell:
+                          type: integer
+                          example: 575
+                  deposits:
+                    type: array
+                    example:
+                      -
+                        id: b90e61de-ebb6-498b-8013-ffd6caee919b
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 11
+                        status: discovered
+                        discovered_by: null
+                        quantity: 128819
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 904e4004-953b-440f-8699-79fffd019a2d
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 2
+                        status: discovered
+                        discovered_by: null
+                        quantity: 768238
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 3787865f-59c1-49c4-ad60-47e630ffb3a5
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 11
+                        status: discovered
+                        discovered_by: null
+                        quantity: 1024133
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 554f27da-cad2-4226-b876-f13e5fbd267b
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 11
+                        status: discovered
+                        discovered_by: null
+                        quantity: 248746
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 577c9ae1-7660-4774-84b3-b5fe369b9f6b
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 21
+                        status: discovered
+                        discovered_by: null
+                        quantity: 54834
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 343ccad2-3b75-44ac-8cba-9ca48497fece
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 6
+                        status: discovered
+                        discovered_by: null
+                        quantity: 994620
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 7e1529d4-6b24-4086-a846-4a2571517f38
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 26
+                        status: discovered
+                        discovered_by: null
+                        quantity: 756712
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 179ebe59-36e6-49c2-94d8-97dcdc1aa848
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 20
+                        status: discovered
+                        discovered_by: null
+                        quantity: 1006239
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 3c2f2d78-9294-429b-af2c-d245d4500829
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 24
+                        status: discovered
+                        discovered_by: null
+                        quantity: 1301944
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 49270d7b-29c5-48f6-ac14-3643a503e440
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 17
+                        status: discovered
+                        discovered_by: null
+                        quantity: 736622
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: d9db3edf-e27b-40e0-8415-bae84c4ed9b3
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 21
+                        status: discovered
+                        discovered_by: null
+                        quantity: 65980
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: b468ac4a-b098-47ca-a7e3-156b42963619
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 20
+                        status: discovered
+                        discovered_by: null
+                        quantity: 838428
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 40d91599-d180-4caa-8d6b-edebbbc4b03d
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 24
+                        status: discovered
+                        discovered_by: null
+                        quantity: 1066638
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: d3226741-89ec-4df5-98c9-66a0e2edc848
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 1
+                        status: discovered
+                        discovered_by: null
+                        quantity: 334877
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 49123bc7-15e9-47e3-b08e-79f25bdc1c88
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 10
+                        status: discovered
+                        discovered_by: null
+                        quantity: 448572
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: d2bd21d3-d1bc-4e51-bcb6-cdbc8a0e565a
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 19
+                        status: discovered
+                        discovered_by: null
+                        quantity: 352891
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: afb03483-f932-4734-b256-2dd3773c0066
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 19
+                        status: discovered
+                        discovered_by: null
+                        quantity: 2123773
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 9b70771a-f522-42c2-b134-a8224ffea49e
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 21
+                        status: discovered
+                        discovered_by: null
+                        quantity: 34729
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: b6d04e32-58c6-426d-b8eb-87c2ef5893d3
+                        planet_id: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id: 21
+                        status: discovered
+                        discovered_by: null
+                        quantity: 10174
+                        created_at: null
+                        updated_at: null
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: b90e61de-ebb6-498b-8013-ffd6caee919b
+                        planet_id:
+                          type: string
+                          example: a6863bac-d92f-4500-942f-9c04e4528a2e
+                        resource_id:
+                          type: integer
+                          example: 11
+                        status:
+                          type: string
+                          example: discovered
+                        discovered_by:
+                          type: string
+                          example: null
+                        quantity:
+                          type: integer
+                          example: 128819
+                        created_at:
+                          type: string
+                          example: null
+                        updated_at:
+                          type: string
+                          example: null
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: "Optional parameter. required. Planets's Id."
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: a6863bac-d92f-4500-942f-9c04e4528a2e
+  /api/v1/resources/list:
+    get:
+      summary: 'Resources and goods list.'
+      operationId: resourcesAndGoodsList
+      description: 'returns the list of base resources and of the goods available in the game'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    id: '1'
+                    name: Gold
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 600
+                    added_value: 0
+                  -
+                    id: '2'
+                    name: Silver
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 450
+                    added_value: 0
+                  -
+                    id: '3'
+                    name: Tantalum
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 360
+                    added_value: 0
+                  -
+                    id: '4'
+                    name: Osmium
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 500
+                    added_value: 0
+                  -
+                    id: '5'
+                    name: Palladium
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 320
+                    added_value: 0
+                  -
+                    id: '6'
+                    name: 'Iron Ore'
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 90
+                    added_value: 0
+                  -
+                    id: '7'
+                    name: Copper
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 100
+                    added_value: 0
+                  -
+                    id: '8'
+                    name: Uranium
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 300
+                    added_value: 0
+                  -
+                    id: '9'
+                    name: Lithium
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 450
+                    added_value: 0
+                  -
+                    id: '10'
+                    name: Platinum
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 500
+                    added_value: 0
+                  -
+                    id: '11'
+                    name: Oil
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 100
+                    added_value: 0
+                  -
+                    id: '12'
+                    name: Water
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 80
+                    added_value: 0
+                  -
+                    id: '13'
+                    name: Nickel
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 100
+                    added_value: 0
+                  -
+                    id: '14'
+                    name: Cobalt
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 350
+                    added_value: 0
+                  -
+                    id: '15'
+                    name: Zinc
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 120
+                    added_value: 0
+                  -
+                    id: '16'
+                    name: Titanium
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 250
+                    added_value: 0
+                  -
+                    id: '17'
+                    name: Quartz
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 40
+                    added_value: 0
+                  -
+                    id: '18'
+                    name: Sulfur
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 50
+                    added_value: 0
+                  -
+                    id: '19'
+                    name: Salt
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 15
+                    added_value: 0
+                  -
+                    id: '20'
+                    name: Bauxite
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 150
+                    added_value: 0
+                  -
+                    id: '21'
+                    name: Helium-3
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 400
+                    added_value: 0
+                  -
+                    id: '22'
+                    name: Carbon
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 25
+                    added_value: 0
+                  -
+                    id: '23'
+                    name: Cotton
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 25
+                    added_value: 0
+                  -
+                    id: '24'
+                    name: 'Coffee Beans'
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 50
+                    added_value: 0
+                  -
+                    id: '25'
+                    name: Tobacco
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 35
+                    added_value: 0
+                  -
+                    id: '26'
+                    name: Algae
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 20
+                    added_value: 0
+                  -
+                    id: '27'
+                    name: Spices
+                    raw_material: 'true'
+                    first_resource: null
+                    second_resource: null
+                    first_base_resource_quantity: null
+                    second_base_resource_quantity: null
+                    base_price: 45
+                    added_value: 0
+                  -
+                    id: '28'
+                    name: Steel
+                    raw_material: 'false'
+                    first_resource: 'Iron Ore'
+                    second_resource: Carbon
+                    first_base_resource_quantity: 1
+                    second_base_resource_quantity: 1
+                    base_price: 400
+                    added_value: 285
+                  -
+                    id: '29'
+                    name: Aluminum
+                    raw_material: 'false'
+                    first_resource: Bauxite
+                    second_resource: Carbon
+                    first_base_resource_quantity: 1
+                    second_base_resource_quantity: 1
+                    base_price: 600
+                    added_value: 425
+                  -
+                    id: '30'
+                    name: Plastic
+                    raw_material: 'false'
+                    first_resource: Oil
+                    second_resource: Carbon
+                    first_base_resource_quantity: 1
+                    second_base_resource_quantity: 1
+                    base_price: 250
+                    added_value: 125
+                  -
+                    id: '31'
+                    name: Jewelry
+                    raw_material: 'false'
+                    first_resource: Gold
+                    second_resource: Platinum
+                    first_base_resource_quantity: 1
+                    second_base_resource_quantity: 1
+                    base_price: 2000
+                    added_value: 900
+                  -
+                    id: '32'
+                    name: Electronics
+                    raw_material: 'false'
+                    first_resource: Copper
+                    second_resource: Tantalum
+                    first_base_resource_quantity: 1
+                    second_base_resource_quantity: 1
+                    base_price: 1200
+                    added_value: 740
+                  -
+                    id: '33'
+                    name: Glass
+                    raw_material: 'false'
+                    first_resource: Quartz
+                    second_resource: Carbon
+                    first_base_resource_quantity: 1
+                    second_base_resource_quantity: 1
+                    base_price: 120
+                    added_value: 55
+                  -
+                    id: '34'
+                    name: Fertilizer
+                    raw_material: 'false'
+                    first_resource: Sulfur
+                    second_resource: Water
+                    first_base_resource_quantity: 2
+                    second_base_resource_quantity: 1
+                    base_price: 210
+                    added_value: 80
+                  -
+                    id: '35'
+                    name: 'Luxury Fabrics'
+                    raw_material: 'false'
+                    first_resource: Cotton
+                    second_resource: Spices
+                    first_base_resource_quantity: 1
+                    second_base_resource_quantity: 1
+                    base_price: 400
+                    added_value: 330
+                  -
+                    id: '36'
+                    name: 'Nuclear Fuel'
+                    raw_material: 'false'
+                    first_resource: Uranium
+                    second_resource: Helium-3
+                    first_base_resource_quantity: 1
+                    second_base_resource_quantity: 1
+                    base_price: 1900
+                    added_value: 1200
+                  -
+                    id: '37'
+                    name: 'Synthetic Fiber'
+                    raw_material: 'false'
+                    first_resource: Oil
+                    second_resource: Cotton
+                    first_base_resource_quantity: 2
+                    second_base_resource_quantity: 1
+                    base_price: 350
+                    added_value: 225
+                  -
+                    id: '38'
+                    name: 'Carbon Fiber'
+                    raw_material: 'false'
+                    first_resource: Carbon
+                    second_resource: Oil
+                    first_base_resource_quantity: 1
+                    second_base_resource_quantity: 1
+                    base_price: 1000
+                    added_value: 875
+                  -
+                    id: '39'
+                    name: 'Optical Lenses'
+                    raw_material: 'false'
+                    first_resource: Quartz
+                    second_resource: Carbon
+                    first_base_resource_quantity: 1
+                    second_base_resource_quantity: 1
+                    base_price: 700
+                    added_value: 635
+                  -
+                    id: '40'
+                    name: 'Advanced Alloys'
+                    raw_material: 'false'
+                    first_resource: Tantalum
+                    second_resource: Osmium
+                    first_base_resource_quantity: 1
+                    second_base_resource_quantity: 1
+                    base_price: 1800
+                    added_value: 940
+                  -
+                    id: '41'
+                    name: 'Energy Cells'
+                    raw_material: 'false'
+                    first_resource: Lithium
+                    second_resource: Helium-3
+                    first_base_resource_quantity: 1
+                    second_base_resource_quantity: 1
+                    base_price: 1200
+                    added_value: 350
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/ships/list:
+    get:
+      summary: "Ship's Available."
+      operationId: shipsAvailable
+      description: 'Returns the list of the available ships for purchase.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    id: 1
+                    name: 'Explorer Mk I'
+                    description: 'A versatile exploration ship designed for long-range surveys and resource scouting. Popular among independent prospectors.'
+                    price: 15000
+                    hull: 250
+                    damage: 50
+                    survey: 90
+                    mining_speed: 5
+                    cargo: 100
+                    cargo_speed: 50
+                    speed: 80
+                    fuel_capacity: 100
+                    fuel_distance_ratio: 10
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 2
+                    name: 'Hauler XL'
+                    description: 'A heavy-duty cargo ship built for massive transport operations. Its robust cargo hold comes at the expense of speed.'
+                    price: 40000
+                    hull: 500
+                    damage: 30
+                    survey: 0
+                    mining_speed: 0
+                    cargo: 1000
+                    cargo_speed: 20
+                    speed: 40
+                    fuel_capacity: 100
+                    fuel_distance_ratio: 25
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 3
+                    name: 'Starlight Cruiser'
+                    description: 'A multi-role cruiser with balanced stats, capable of light combat and resource transportation.'
+                    price: 30000
+                    hull: 400
+                    damage: 100
+                    survey: 10
+                    mining_speed: 30
+                    cargo: 200
+                    cargo_speed: 40
+                    speed: 70
+                    fuel_capacity: 100
+                    fuel_distance_ratio: 20
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 4
+                    name: Battlehawk
+                    description: 'A high-speed combat ship with enhanced hull strength and advanced weaponry systems.'
+                    price: 50000
+                    hull: 600
+                    damage: 250
+                    survey: 1
+                    mining_speed: 0
+                    cargo: 50
+                    cargo_speed: 10
+                    speed: 90
+                    fuel_capacity: 100
+                    fuel_distance_ratio: 30
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 5
+                    name: 'Surveyor Alpha'
+                    description: 'A specialized ship for planetary surveys, ideal for discovering new resources and anomalies.'
+                    price: 18000
+                    hull: 200
+                    damage: 20
+                    survey: 120
+                    mining_speed: 10
+                    cargo: 80
+                    cargo_speed: 30
+                    speed: 60
+                    fuel_capacity: 100
+                    fuel_distance_ratio: 12
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 6
+                    name: 'Titan Cargo Master'
+                    description: 'The ultimate cargo hauler, designed for maximum load capacity and interstellar trading.'
+                    price: 80000
+                    hull: 700
+                    damage: 20
+                    survey: 5
+                    mining_speed: 10
+                    cargo: 5000
+                    cargo_speed: 15
+                    speed: 30
+                    fuel_capacity: 100
+                    fuel_distance_ratio: 50
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 7
+                    name: 'Astro Miner X'
+                    description: 'A premium mining ship capable of handling extreme environments and extracting rare materials.'
+                    price: 45000
+                    hull: 400
+                    damage: 50
+                    survey: 15
+                    mining_speed: 150
+                    cargo: 400
+                    cargo_speed: 35
+                    speed: 60
+                    fuel_capacity: 100
+                    fuel_distance_ratio: 18
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 8
+                    name: 'GeoScanner Pro-7'
+                    description: 'An advanced prospecting vessel equipped with high-precision sensors to locate rare resources with unparalleled efficiency.'
+                    price: 120000
+                    hull: 400
+                    damage: 20
+                    survey: 300
+                    mining_speed: 50
+                    cargo: 150
+                    cargo_speed: 40
+                    speed: 60
+                    fuel_capacity: 100
+                    fuel_distance_ratio: 20
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 9
+                    name: "Miner's Edge XL"
+                    description: 'A hybrid ship designed for both resource prospection and efficient mining in hostile environments.'
+                    price: 150000
+                    hull: 500
+                    damage: 40
+                    survey: 250
+                    mining_speed: 150
+                    cargo: 300
+                    cargo_speed: 45
+                    speed: 55
+                    fuel_capacity: 100
+                    fuel_distance_ratio: 25
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 10
+                    name: 'OreSeeker Elite'
+                    description: 'A high-end prospecting ship tailored for deep space surveys and exploration of untapped resource deposits.'
+                    price: 180000
+                    hull: 450
+                    damage: 30
+                    survey: 350
+                    mining_speed: 60
+                    cargo: 200
+                    cargo_speed: 50
+                    speed: 70
+                    fuel_capacity: 100
+                    fuel_distance_ratio: 22
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 11
+                    name: 'Terra Extractor T-9'
+                    description: 'A specialized mining vessel with unparalleled resource extraction capabilities, ideal for large-scale operations.'
+                    price: 200000
+                    hull: 600
+                    damage: 50
+                    survey: 200
+                    mining_speed: 300
+                    cargo: 500
+                    cargo_speed: 30
+                    speed: 50
+                    fuel_capacity: 100
+                    fuel_distance_ratio: 30
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 12
+                    name: 'Lunar Digger 5000'
+                    description: 'A robust mining ship designed for surface and subsurface resource extraction on planets and moons.'
+                    price: 175000
+                    hull: 550
+                    damage: 25
+                    survey: 150
+                    mining_speed: 250
+                    cargo: 400
+                    cargo_speed: 35
+                    speed: 45
+                    fuel_capacity: 100
+                    fuel_distance_ratio: 28
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 13
+                    name: 'DeepCore Surveyor'
+                    description: 'The ultimate prospecting ship, capable of scanning entire planetary systems for rare minerals.'
+                    price: 220000
+                    hull: 500
+                    damage: 10
+                    survey: 500
+                    mining_speed: 100
+                    cargo: 250
+                    cargo_speed: 50
+                    speed: 65
+                    fuel_capacity: 100
+                    fuel_distance_ratio: 24
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 14
+                    name: 'Asteroid Miner Titan'
+                    description: 'A massive ship optimized for mining asteroids and extracting valuable minerals at unmatched speeds.'
+                    price: 250000
+                    hull: 800
+                    damage: 70
+                    survey: 100
+                    mining_speed: 400
+                    cargo: 1000
+                    cargo_speed: 20
+                    speed: 40
+                    fuel_capacity: 100
+                    fuel_distance_ratio: 35
+                    created_at: null
+                    updated_at: null
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/ships/buy:
+    post:
+      summary: 'Handle the ship purchase request.'
+      operationId: handleTheShipPurchaseRequest
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ship_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the ships table.'
+                  example: rerum
+                  nullable: false
+              required:
+                - ship_id
+      security: []
+  /api/v1/ships/status:
+    get:
+      summary: ''
+      operationId: getApiV1ShipsStatus
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'Provide authentication token in the authorization header, format should be "Bearer <auth_token>"'
+                properties:
+                  error:
+                    type: string
+                    example: 'Provide authentication token in the authorization header, format should be "Bearer <auth_token>"'
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/ships/refuel:
+    post:
+      summary: 'Handle the ship purchase request.'
+      operationId: handleTheShipPurchaseRequest
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ship_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the users_ships table.'
+                  example: ullam
+                  nullable: false
+                amount:
+                  type: integer
+                  description: 'Must be at least 1.'
+                  example: 13
+                  nullable: false
+              required:
+                - ship_id
+                - amount
+      security: []
+  /api/v1/ships/mine:
+    post:
+      summary: 'extract resources'
+      operationId: extractResources
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ship_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the users_ships table.'
+                  example: dolor
+                  nullable: false
+                amount:
+                  type: integer
+                  description: 'Must be at least 1.'
+                  example: 47
+                  nullable: false
+                deposit_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the deposits table.'
+                  example: ut
+                  nullable: false
+              required:
+                - ship_id
+                - amount
+                - deposit_id
+      security: []
+  /api/v1/market/buy:
+    post:
+      summary: ''
+      operationId: postApiV1MarketBuy
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_ship_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the users_ships table.'
+                  example: quos
+                  nullable: false
+                resource_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the resources table.'
+                  example: expedita
+                  nullable: false
+                quantity:
+                  type: integer
+                  description: 'Must be at least 1.'
+                  example: 90
+                  nullable: false
+              required:
+                - user_ship_id
+                - resource_id
+                - quantity
+      security: []
+  /api/v1/market/sell:
+    post:
+      summary: ''
+      operationId: postApiV1MarketSell
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_ship_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the users_ships table.'
+                  example: reprehenderit
+                  nullable: false
+                resource_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the resources table.'
+                  example: incidunt
+                  nullable: false
+                quantity:
+                  type: integer
+                  description: 'Must be at least 1.'
+                  example: 29
+                  nullable: false
+              required:
+                - user_ship_id
+                - resource_id
+                - quantity
+      security: []
+  /api/v1/travels/land:
+    post:
+      summary: ''
+      operationId: postApiV1TravelsLand
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_ship_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the users_ships table.'
+                  example: quia
+                  nullable: false
+              required:
+                - user_ship_id
+      security: []
+  /api/v1/travels/takeoff:
+    post:
+      summary: ''
+      operationId: postApiV1TravelsTakeoff
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_ship_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the users_ships table.'
+                  example: quasi
+                  nullable: false
+              required:
+                - user_ship_id
+      security: []
+  /api/v1/travels/info:
+    get:
+      summary: ''
+      operationId: getApiV1TravelsInfo
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'Provide authentication token in the authorization header, format should be "Bearer <auth_token>"'
+                properties:
+                  error:
+                    type: string
+                    example: 'Provide authentication token in the authorization header, format should be "Bearer <auth_token>"'
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_ship_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the users_ships table.'
+                  example: aut
+                  nullable: false
+                planet_id:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the planets table.'
+                  example: aliquid
+                  nullable: false
+              required:
+                - user_ship_id
+                - planet_id
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: 'You can get your bearer token once you subscribe an account by using the register API.</b>.'
+security:
+  -
+    default: []

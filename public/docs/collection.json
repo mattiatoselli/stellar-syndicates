@@ -1,0 +1,637 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "77c63493-ee00-44de-9688-5760302c99c6",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Register a new account.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/authentication\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/authentication\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"username\":\"iceman29\"}"
+                        },
+                        "description": "Once you register a new account you will receive some credits to start.\nThe API returns the user's data, and your id_number. This is your token and should be provided in order to access to every\nresource. Please note that there is no way of recovering your token, and that your token is the only way to identify you, so if you give your token to someone, that user will be able to act as you in Stellar Syndicates.\nTokens will never expire.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\r\n    \"user\": {\r\n        \"username\": \"iceman29\",\r\n        \"credits\": 25000,\r\n        \"id\": \"5897a0c5-af0a-46d6-8c6c-c35214265bc9\",\r\n        \"updated_at\": \"2024-12-03T13:52:53.000000Z\",\r\n        \"created_at\": \"2024-12-03T13:52:53.000000Z\"\r\n    },\r\n    \"id_number\": \"2|pwM3dAdtW4LmwNRXOsqYwjf9HDab3TcrTqcsgCDLb0b078bb\"\r\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get User details.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/authentication\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/authentication\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Returns data about the currently logged user."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "List Stars.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/stars\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/stars\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Returns the list of the stars in the universe.\nList is paginated.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\r\n    \"current_page\": 1,\r\n    \"data\": [\r\n        {\r\n            \"id\": \"71ff81a3-47e5-426e-892f-553517c18c8c\",\r\n            \"name\": \"Sun\",\r\n            \"spectrum\": \"G2V\",\r\n            \"color\": \"Yellow\",\r\n            \"temperature\": 5778,\r\n            \"x\": 0,\r\n            \"y\": 0,\r\n            \"z\": 0\r\n        },\r\n        {\r\n            \"id\": \"6c57f015-e077-4db8-874a-b138b2ec3528\",\r\n            \"name\": \"Proxima Centauri\",\r\n            \"spectrum\": \"M5.5V\",\r\n            \"color\": \"Red\",\r\n            \"temperature\": 3042,\r\n            \"x\": -1.546,\r\n            \"y\": -3.582,\r\n            \"z\": 0.059\r\n        },\r\n        {\r\n            \"id\": \"ebeff2ac-9847-40eb-8856-659fc9e5b2f1\",\r\n            \"name\": \"Alpha Centauri\",\r\n            \"spectrum\": \"G2V\",\r\n            \"color\": \"Yellow\",\r\n            \"temperature\": 5790,\r\n            \"x\": -1.602,\r\n            \"y\": -3.711,\r\n            \"z\": 0.063\r\n        },\r\n        {\r\n            \"id\": \"3b0bd572-c0d8-40d7-b7d5-65a038a9bf61\",\r\n            \"name\": \"Barnard's Star\",\r\n            \"spectrum\": \"M4V\",\r\n            \"color\": \"Red\",\r\n            \"temperature\": 3134,\r\n            \"x\": 1.834,\r\n            \"y\": -5.578,\r\n            \"z\": -0.006\r\n        },\r\n        {\r\n            \"id\": \"8e831af8-773c-491c-b0fb-919c937398f7\",\r\n            \"name\": \"Wolf 359\",\r\n            \"spectrum\": \"M6V\",\r\n            \"color\": \"Red\",\r\n            \"temperature\": 2800,\r\n            \"x\": -7.502,\r\n            \"y\": 1.727,\r\n            \"z\": 0.105\r\n        },\r\n        {\r\n            \"id\": \"4a35b003-fd54-4a54-b776-a1024cb1f2c2\",\r\n            \"name\": \"Lalande 21185\",\r\n            \"spectrum\": \"M2V\",\r\n            \"color\": \"Red\",\r\n            \"temperature\": 3400,\r\n            \"x\": 7.877,\r\n            \"y\": -1.881,\r\n            \"z\": -0.152\r\n        },\r\n        {\r\n            \"id\": \"95593133-0529-44ea-b5f7-cfede7b9a1cb\",\r\n            \"name\": \"Sirius A\",\r\n            \"spectrum\": \"A1V\",\r\n            \"color\": \"White-bluish\",\r\n            \"temperature\": 9940,\r\n            \"x\": -8.505,\r\n            \"y\": 1.462,\r\n            \"z\": -0.556\r\n        },\r\n        {\r\n            \"id\": \"90ab146c-04a2-43b3-81a9-6012bb39fbd7\",\r\n            \"name\": \"Luyten 726-8\",\r\n            \"spectrum\": \"M5.5V\",\r\n            \"color\": \"Red\",\r\n            \"temperature\": 2950,\r\n            \"x\": 8.521,\r\n            \"y\": -1.753,\r\n            \"z\": 0.076\r\n        },\r\n        {\r\n            \"id\": \"beeb1c72-604a-4a6b-87c0-5a7573fecd7b\",\r\n            \"name\": \"Ross 154\",\r\n            \"spectrum\": \"M3.5V\",\r\n            \"color\": \"Red\",\r\n            \"temperature\": 3250,\r\n            \"x\": -1.2,\r\n            \"y\": 9.58,\r\n            \"z\": -0.134\r\n        }\r\n    ],\r\n    \"first_page_url\": \"http:\/\/127.0.0.1:8000\/api\/v1\/stars\/list?page=1\",\r\n    \"from\": 1,\r\n    \"last_page\": 1,\r\n    \"last_page_url\": \"http:\/\/127.0.0.1:8000\/api\/v1\/stars\/list?page=1\",\r\n    \"links\": [\r\n        {\r\n            \"url\": null,\r\n            \"label\": \"&laquo; Previous\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http:\/\/127.0.0.1:8000\/api\/v1\/stars\/list?page=1\",\r\n            \"label\": \"1\",\r\n            \"active\": true\r\n        },\r\n        {\r\n            \"url\": null,\r\n            \"label\": \"Next &raquo;\",\r\n            \"active\": false\r\n        }\r\n    ],\r\n    \"next_page_url\": null,\r\n    \"path\": \"http:\/\/127.0.0.1:8000\/api\/v1\/stars\/list\",\r\n    \"per_page\": 100,\r\n    \"prev_page_url\": null,\r\n    \"to\": 9,\r\n    \"total\": 9\r\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Star's details.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/stars\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/stars\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "71ff81a3-47e5-426e-892f-553517c18c8c",
+                                    "description": "required. Star's Id."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Returns the star's details with the planets orbiting around the star.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\r\n    \"id\": \"71ff81a3-47e5-426e-892f-553517c18c8c\",\r\n    \"name\": \"Sun\",\r\n    \"spectrum\": \"G2V\",\r\n    \"color\": \"Yellow\",\r\n    \"temperature\": 5778,\r\n    \"x\": 0,\r\n    \"y\": 0,\r\n    \"z\": 0,\r\n    \"planets\": [\r\n        {\r\n            \"id\": \"ca6850ce-dae8-44d3-bd5c-45fbc0d52b20\",\r\n            \"star_id\": \"71ff81a3-47e5-426e-892f-553517c18c8c\",\r\n            \"name\": \"Mercury\",\r\n            \"distance_from_star\": 0.39,\r\n            \"type\": \"Rocky\",\r\n            \"population\": 0\r\n        },\r\n        {\r\n            \"id\": \"1fe7c9c5-586f-4a34-b6b8-2b4a9d2ba6ee\",\r\n            \"star_id\": \"71ff81a3-47e5-426e-892f-553517c18c8c\",\r\n            \"name\": \"Venus\",\r\n            \"distance_from_star\": 0.72,\r\n            \"type\": \"Rocky\",\r\n            \"population\": 0\r\n        },\r\n        {\r\n            \"id\": \"fcc94a4e-3b46-4432-9615-430a4f6a5364\",\r\n            \"star_id\": \"71ff81a3-47e5-426e-892f-553517c18c8c\",\r\n            \"name\": \"Earth\",\r\n            \"distance_from_star\": 1,\r\n            \"type\": \"Terrestrial Planet\",\r\n            \"population\": 5332283954\r\n        },\r\n        {\r\n            \"id\": \"11ee7208-7044-47af-bef2-71b5832e4d89\",\r\n            \"star_id\": \"71ff81a3-47e5-426e-892f-553517c18c8c\",\r\n            \"name\": \"Mars\",\r\n            \"distance_from_star\": 1.52,\r\n            \"type\": \"Rocky\",\r\n            \"population\": 331790370\r\n        },\r\n        {\r\n            \"id\": \"26f5e1dd-aa8a-4445-8750-1d9aae04d68a\",\r\n            \"star_id\": \"71ff81a3-47e5-426e-892f-553517c18c8c\",\r\n            \"name\": \"Jupiter\",\r\n            \"distance_from_star\": 5.2,\r\n            \"type\": \"Gas giant\",\r\n            \"population\": 0\r\n        },\r\n        {\r\n            \"id\": \"da567bc8-8cc8-4c95-8d32-cafb6eb18bee\",\r\n            \"star_id\": \"71ff81a3-47e5-426e-892f-553517c18c8c\",\r\n            \"name\": \"Saturn\",\r\n            \"distance_from_star\": 9.58,\r\n            \"type\": \"Gas giant\",\r\n            \"population\": 0\r\n        },\r\n        {\r\n            \"id\": \"2f6fe7a4-6b4a-4a57-9fe7-e73b9f5382f9\",\r\n            \"star_id\": \"71ff81a3-47e5-426e-892f-553517c18c8c\",\r\n            \"name\": \"Uranus\",\r\n            \"distance_from_star\": 19.22,\r\n            \"type\": \"Ice giant\",\r\n            \"population\": 0\r\n        },\r\n        {\r\n            \"id\": \"ab6a547e-7036-47ca-8a53-86237cb339db\",\r\n            \"star_id\": \"71ff81a3-47e5-426e-892f-553517c18c8c\",\r\n            \"name\": \"Neptune\",\r\n            \"distance_from_star\": 30.05,\r\n            \"type\": \"Ice giant\",\r\n            \"population\": 0\r\n        }\r\n    ]\r\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Planet's details.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/planets\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/planets\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+                                    "description": "required. Planets's Id."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Returns the planet's details, with his market, and deposits.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\r\n    \"id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n    \"star_id\": \"cdd5bc22-a483-4b0c-b969-9af98ad3483b\",\r\n    \"name\": \"Alpha Centauri Bb\",\r\n    \"distance_from_star\": 0.04,\r\n    \"type\": \"Rocky\",\r\n    \"population\": 5408310956,\r\n    \"market\": [\r\n        {\r\n            \"resource_id\": \"1\",\r\n            \"resource\": \"Gold\",\r\n            \"stock\": 107,\r\n            \"production\": 1623,\r\n            \"consume\": 1623,\r\n            \"buy\": 581,\r\n            \"sell\": 575\r\n        },\r\n        {\r\n            \"resource_id\": \"2\",\r\n            \"resource\": \"Silver\",\r\n            \"stock\": 690,\r\n            \"production\": 4868,\r\n            \"consume\": 4868,\r\n            \"buy\": 419,\r\n            \"sell\": 414\r\n        },\r\n        {\r\n            \"resource_id\": \"3\",\r\n            \"resource\": \"Tantalum\",\r\n            \"stock\": 353,\r\n            \"production\": 1623,\r\n            \"consume\": 1623,\r\n            \"buy\": 321,\r\n            \"sell\": 318\r\n        },\r\n        {\r\n            \"resource_id\": \"4\",\r\n            \"resource\": \"Osmium\",\r\n            \"stock\": 845,\r\n            \"production\": 2164,\r\n            \"consume\": 2164,\r\n            \"buy\": 403,\r\n            \"sell\": 399\r\n        },\r\n        {\r\n            \"resource_id\": \"5\",\r\n            \"resource\": \"Palladium\",\r\n            \"stock\": 708,\r\n            \"production\": 723,\r\n            \"consume\": 1082,\r\n            \"buy\": 269,\r\n            \"sell\": 266\r\n        },\r\n        {\r\n            \"resource_id\": \"6\",\r\n            \"resource\": \"Iron Ore\",\r\n            \"stock\": 391,\r\n            \"production\": 21634,\r\n            \"consume\": 21634,\r\n            \"buy\": 90,\r\n            \"sell\": 89\r\n        },\r\n        {\r\n            \"resource_id\": \"7\",\r\n            \"resource\": \"Copper\",\r\n            \"stock\": 131,\r\n            \"production\": 16225,\r\n            \"consume\": 16225,\r\n            \"buy\": 100,\r\n            \"sell\": 99\r\n        },\r\n        {\r\n            \"resource_id\": \"8\",\r\n            \"resource\": \"Uranium\",\r\n            \"stock\": 906,\r\n            \"production\": 3955,\r\n            \"consume\": 4327,\r\n            \"buy\": 282,\r\n            \"sell\": 279\r\n        },\r\n        {\r\n            \"resource_id\": \"9\",\r\n            \"resource\": \"Lithium\",\r\n            \"stock\": 838,\r\n            \"production\": 11752,\r\n            \"consume\": 8113,\r\n            \"buy\": 326,\r\n            \"sell\": 323\r\n        },\r\n        {\r\n            \"resource_id\": \"10\",\r\n            \"resource\": \"Platinum\",\r\n            \"stock\": 545,\r\n            \"production\": 36267,\r\n            \"consume\": 27042,\r\n            \"buy\": 410,\r\n            \"sell\": 406\r\n        },\r\n        {\r\n            \"resource_id\": \"11\",\r\n            \"resource\": \"Oil\",\r\n            \"stock\": 193,\r\n            \"production\": 13081,\r\n            \"consume\": 9735,\r\n            \"buy\": 82,\r\n            \"sell\": 82\r\n        },\r\n        {\r\n            \"resource_id\": \"12\",\r\n            \"resource\": \"Water\",\r\n            \"stock\": 924,\r\n            \"production\": 38638,\r\n            \"consume\": 54084,\r\n            \"buy\": 91,\r\n            \"sell\": 90\r\n        },\r\n        {\r\n            \"resource_id\": \"13\",\r\n            \"resource\": \"Nickel\",\r\n            \"stock\": 429,\r\n            \"production\": 78,\r\n            \"consume\": 13521,\r\n            \"buy\": 149,\r\n            \"sell\": 147\r\n        },\r\n        {\r\n            \"resource_id\": \"14\",\r\n            \"resource\": \"Cobalt\",\r\n            \"stock\": 730,\r\n            \"production\": 5409,\r\n            \"consume\": 5409,\r\n            \"buy\": 327,\r\n            \"sell\": 324\r\n        },\r\n        {\r\n            \"resource_id\": \"15\",\r\n            \"resource\": \"Zinc\",\r\n            \"stock\": 425,\r\n            \"production\": 6490,\r\n            \"consume\": 6490,\r\n            \"buy\": 117,\r\n            \"sell\": 115\r\n        },\r\n        {\r\n            \"resource_id\": \"16\",\r\n            \"resource\": \"Titanium\",\r\n            \"stock\": 230,\r\n            \"production\": 4042,\r\n            \"consume\": 2705,\r\n            \"buy\": 178,\r\n            \"sell\": 176\r\n        },\r\n        {\r\n            \"resource_id\": \"17\",\r\n            \"resource\": \"Quartz\",\r\n            \"stock\": 995,\r\n            \"production\": 5280,\r\n            \"consume\": 8113,\r\n            \"buy\": 45,\r\n            \"sell\": 45\r\n        },\r\n        {\r\n            \"resource_id\": \"18\",\r\n            \"resource\": \"Sulfur\",\r\n            \"stock\": 134,\r\n            \"production\": 13467,\r\n            \"consume\": 10817,\r\n            \"buy\": 44,\r\n            \"sell\": 44\r\n        },\r\n        {\r\n            \"resource_id\": \"19\",\r\n            \"resource\": \"Salt\",\r\n            \"stock\": 830,\r\n            \"production\": 11899,\r\n            \"consume\": 11899,\r\n            \"buy\": 15,\r\n            \"sell\": 15\r\n        },\r\n        {\r\n            \"resource_id\": \"20\",\r\n            \"resource\": \"Bauxite\",\r\n            \"stock\": 618,\r\n            \"production\": 9256,\r\n            \"consume\": 11899,\r\n            \"buy\": 163,\r\n            \"sell\": 162\r\n        },\r\n        {\r\n            \"resource_id\": \"21\",\r\n            \"resource\": \"Helium-3\",\r\n            \"stock\": 418,\r\n            \"production\": 618,\r\n            \"consume\": 541,\r\n            \"buy\": 218,\r\n            \"sell\": 216\r\n        },\r\n        {\r\n            \"resource_id\": \"22\",\r\n            \"resource\": \"Carbon\",\r\n            \"stock\": 696,\r\n            \"production\": 27042,\r\n            \"consume\": 27042,\r\n            \"buy\": 25,\r\n            \"sell\": 25\r\n        },\r\n        {\r\n            \"resource_id\": \"23\",\r\n            \"resource\": \"Cotton\",\r\n            \"stock\": 787,\r\n            \"production\": 2801,\r\n            \"consume\": 27042,\r\n            \"buy\": 36,\r\n            \"sell\": 36\r\n        },\r\n        {\r\n            \"resource_id\": \"24\",\r\n            \"resource\": \"Coffee Beans\",\r\n            \"stock\": 340,\r\n            \"production\": 10817,\r\n            \"consume\": 10817,\r\n            \"buy\": 50,\r\n            \"sell\": 49\r\n        },\r\n        {\r\n            \"resource_id\": \"25\",\r\n            \"resource\": \"Tobacco\",\r\n            \"stock\": 229,\r\n            \"production\": 8113,\r\n            \"consume\": 8113,\r\n            \"buy\": 35,\r\n            \"sell\": 35\r\n        },\r\n        {\r\n            \"resource_id\": \"26\",\r\n            \"resource\": \"Algae\",\r\n            \"stock\": 353,\r\n            \"production\": 13435,\r\n            \"consume\": 13521,\r\n            \"buy\": 20,\r\n            \"sell\": 20\r\n        },\r\n        {\r\n            \"resource_id\": \"27\",\r\n            \"resource\": \"Spices\",\r\n            \"stock\": 517,\r\n            \"production\": 284,\r\n            \"consume\": 1623,\r\n            \"buy\": 57,\r\n            \"sell\": 56\r\n        },\r\n        {\r\n            \"resource_id\": \"28\",\r\n            \"resource\": \"Steel\",\r\n            \"stock\": 662,\r\n            \"production\": 13521,\r\n            \"consume\": 13521,\r\n            \"buy\": 391,\r\n            \"sell\": 387\r\n        },\r\n        {\r\n            \"resource_id\": \"29\",\r\n            \"resource\": \"Aluminum\",\r\n            \"stock\": 461,\r\n            \"production\": 33733,\r\n            \"consume\": 29746,\r\n            \"buy\": 556,\r\n            \"sell\": 550\r\n        },\r\n        {\r\n            \"resource_id\": \"30\",\r\n            \"resource\": \"Plastic\",\r\n            \"stock\": 377,\r\n            \"production\": 27042,\r\n            \"consume\": 27042,\r\n            \"buy\": 249,\r\n            \"sell\": 246\r\n        },\r\n        {\r\n            \"resource_id\": \"31\",\r\n            \"resource\": \"Jewelry\",\r\n            \"stock\": 756,\r\n            \"production\": 1102,\r\n            \"consume\": 4327,\r\n            \"buy\": 2571,\r\n            \"sell\": 2545\r\n        },\r\n        {\r\n            \"resource_id\": \"32\",\r\n            \"resource\": \"Electronics\",\r\n            \"stock\": 641,\r\n            \"production\": 27042,\r\n            \"consume\": 27042,\r\n            \"buy\": 1186,\r\n            \"sell\": 1174\r\n        },\r\n        {\r\n            \"resource_id\": \"33\",\r\n            \"resource\": \"Glass\",\r\n            \"stock\": 222,\r\n            \"production\": 30287,\r\n            \"consume\": 30287,\r\n            \"buy\": 120,\r\n            \"sell\": 119\r\n        },\r\n        {\r\n            \"resource_id\": \"34\",\r\n            \"resource\": \"Fertilizer\",\r\n            \"stock\": 187,\r\n            \"production\": 42440,\r\n            \"consume\": 43267,\r\n            \"buy\": 212,\r\n            \"sell\": 210\r\n        },\r\n        {\r\n            \"resource_id\": \"35\",\r\n            \"resource\": \"Luxury Fabrics\",\r\n            \"stock\": 966,\r\n            \"production\": 6638,\r\n            \"consume\": 8113,\r\n            \"buy\": 413,\r\n            \"sell\": 409\r\n        },\r\n        {\r\n            \"resource_id\": \"36\",\r\n            \"resource\": \"Nuclear Fuel\",\r\n            \"stock\": 903,\r\n            \"production\": 54084,\r\n            \"consume\": 54084,\r\n            \"buy\": 1885,\r\n            \"sell\": 1866\r\n        },\r\n        {\r\n            \"resource_id\": \"37\",\r\n            \"resource\": \"Synthetic Fiber\",\r\n            \"stock\": 518,\r\n            \"production\": 27725,\r\n            \"consume\": 23256,\r\n            \"buy\": 313,\r\n            \"sell\": 310\r\n        },\r\n        {\r\n            \"resource_id\": \"38\",\r\n            \"resource\": \"Carbon Fiber\",\r\n            \"stock\": 239,\r\n            \"production\": 11899,\r\n            \"consume\": 11899,\r\n            \"buy\": 990,\r\n            \"sell\": 981\r\n        },\r\n        {\r\n            \"resource_id\": \"39\",\r\n            \"resource\": \"Optical Lenses\",\r\n            \"stock\": 337,\r\n            \"production\": 4868,\r\n            \"consume\": 4868,\r\n            \"buy\": 676,\r\n            \"sell\": 670\r\n        },\r\n        {\r\n            \"resource_id\": \"40\",\r\n            \"resource\": \"Advanced Alloys\",\r\n            \"stock\": 666,\r\n            \"production\": 12980,\r\n            \"consume\": 12980,\r\n            \"buy\": 1754,\r\n            \"sell\": 1737\r\n        },\r\n        {\r\n            \"resource_id\": \"41\",\r\n            \"resource\": \"Energy Cells\",\r\n            \"stock\": 147,\r\n            \"production\": 8113,\r\n            \"consume\": 8113,\r\n            \"buy\": 1190,\r\n            \"sell\": 1178\r\n        }\r\n    ],\r\n    \"deposits\": [\r\n        {\r\n            \"id\": \"b90e61de-ebb6-498b-8013-ffd6caee919b\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 11,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 128819,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"904e4004-953b-440f-8699-79fffd019a2d\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 2,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 768238,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"3787865f-59c1-49c4-ad60-47e630ffb3a5\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 11,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 1024133,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"554f27da-cad2-4226-b876-f13e5fbd267b\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 11,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 248746,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"577c9ae1-7660-4774-84b3-b5fe369b9f6b\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 21,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 54834,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"343ccad2-3b75-44ac-8cba-9ca48497fece\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 6,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 994620,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"7e1529d4-6b24-4086-a846-4a2571517f38\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 26,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 756712,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"179ebe59-36e6-49c2-94d8-97dcdc1aa848\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 20,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 1006239,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"3c2f2d78-9294-429b-af2c-d245d4500829\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 24,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 1301944,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"49270d7b-29c5-48f6-ac14-3643a503e440\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 17,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 736622,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"d9db3edf-e27b-40e0-8415-bae84c4ed9b3\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 21,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 65980,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"b468ac4a-b098-47ca-a7e3-156b42963619\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 20,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 838428,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"40d91599-d180-4caa-8d6b-edebbbc4b03d\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 24,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 1066638,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"d3226741-89ec-4df5-98c9-66a0e2edc848\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 1,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 334877,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"49123bc7-15e9-47e3-b08e-79f25bdc1c88\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 10,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 448572,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"d2bd21d3-d1bc-4e51-bcb6-cdbc8a0e565a\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 19,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 352891,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"afb03483-f932-4734-b256-2dd3773c0066\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 19,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 2123773,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"9b70771a-f522-42c2-b134-a8224ffea49e\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 21,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 34729,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        },\r\n        {\r\n            \"id\": \"b6d04e32-58c6-426d-b8eb-87c2ef5893d3\",\r\n            \"planet_id\": \"a6863bac-d92f-4500-942f-9c04e4528a2e\",\r\n            \"resource_id\": 21,\r\n            \"status\": \"discovered\",\r\n            \"discovered_by\": null,\r\n            \"quantity\": 10174,\r\n            \"created_at\": null,\r\n            \"updated_at\": null\r\n        }\r\n    ]\r\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Resources and goods list.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/resources\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/resources\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "returns the list of base resources and of the goods available in the game",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "[{\"id\":\"1\",\"name\":\"Gold\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":600,\"added_value\":0},{\"id\":\"2\",\"name\":\"Silver\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":450,\"added_value\":0},{\"id\":\"3\",\"name\":\"Tantalum\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":360,\"added_value\":0},{\"id\":\"4\",\"name\":\"Osmium\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":500,\"added_value\":0},{\"id\":\"5\",\"name\":\"Palladium\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":320,\"added_value\":0},{\"id\":\"6\",\"name\":\"Iron Ore\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":90,\"added_value\":0},{\"id\":\"7\",\"name\":\"Copper\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":100,\"added_value\":0},{\"id\":\"8\",\"name\":\"Uranium\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":300,\"added_value\":0},{\"id\":\"9\",\"name\":\"Lithium\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":450,\"added_value\":0},{\"id\":\"10\",\"name\":\"Platinum\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":500,\"added_value\":0},{\"id\":\"11\",\"name\":\"Oil\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":100,\"added_value\":0},{\"id\":\"12\",\"name\":\"Water\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":80,\"added_value\":0},{\"id\":\"13\",\"name\":\"Nickel\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":100,\"added_value\":0},{\"id\":\"14\",\"name\":\"Cobalt\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":350,\"added_value\":0},{\"id\":\"15\",\"name\":\"Zinc\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":120,\"added_value\":0},{\"id\":\"16\",\"name\":\"Titanium\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":250,\"added_value\":0},{\"id\":\"17\",\"name\":\"Quartz\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":40,\"added_value\":0},{\"id\":\"18\",\"name\":\"Sulfur\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":50,\"added_value\":0},{\"id\":\"19\",\"name\":\"Salt\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":15,\"added_value\":0},{\"id\":\"20\",\"name\":\"Bauxite\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":150,\"added_value\":0},{\"id\":\"21\",\"name\":\"Helium-3\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":400,\"added_value\":0},{\"id\":\"22\",\"name\":\"Carbon\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":25,\"added_value\":0},{\"id\":\"23\",\"name\":\"Cotton\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":25,\"added_value\":0},{\"id\":\"24\",\"name\":\"Coffee Beans\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":50,\"added_value\":0},{\"id\":\"25\",\"name\":\"Tobacco\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":35,\"added_value\":0},{\"id\":\"26\",\"name\":\"Algae\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":20,\"added_value\":0},{\"id\":\"27\",\"name\":\"Spices\",\"raw_material\":\"true\",\"first_resource\":null,\"second_resource\":null,\"first_base_resource_quantity\":null,\"second_base_resource_quantity\":null,\"base_price\":45,\"added_value\":0},{\"id\":\"28\",\"name\":\"Steel\",\"raw_material\":\"false\",\"first_resource\":\"Iron Ore\",\"second_resource\":\"Carbon\",\"first_base_resource_quantity\":1,\"second_base_resource_quantity\":1,\"base_price\":400,\"added_value\":285},{\"id\":\"29\",\"name\":\"Aluminum\",\"raw_material\":\"false\",\"first_resource\":\"Bauxite\",\"second_resource\":\"Carbon\",\"first_base_resource_quantity\":1,\"second_base_resource_quantity\":1,\"base_price\":600,\"added_value\":425},{\"id\":\"30\",\"name\":\"Plastic\",\"raw_material\":\"false\",\"first_resource\":\"Oil\",\"second_resource\":\"Carbon\",\"first_base_resource_quantity\":1,\"second_base_resource_quantity\":1,\"base_price\":250,\"added_value\":125},{\"id\":\"31\",\"name\":\"Jewelry\",\"raw_material\":\"false\",\"first_resource\":\"Gold\",\"second_resource\":\"Platinum\",\"first_base_resource_quantity\":1,\"second_base_resource_quantity\":1,\"base_price\":2000,\"added_value\":900},{\"id\":\"32\",\"name\":\"Electronics\",\"raw_material\":\"false\",\"first_resource\":\"Copper\",\"second_resource\":\"Tantalum\",\"first_base_resource_quantity\":1,\"second_base_resource_quantity\":1,\"base_price\":1200,\"added_value\":740},{\"id\":\"33\",\"name\":\"Glass\",\"raw_material\":\"false\",\"first_resource\":\"Quartz\",\"second_resource\":\"Carbon\",\"first_base_resource_quantity\":1,\"second_base_resource_quantity\":1,\"base_price\":120,\"added_value\":55},{\"id\":\"34\",\"name\":\"Fertilizer\",\"raw_material\":\"false\",\"first_resource\":\"Sulfur\",\"second_resource\":\"Water\",\"first_base_resource_quantity\":2,\"second_base_resource_quantity\":1,\"base_price\":210,\"added_value\":80},{\"id\":\"35\",\"name\":\"Luxury Fabrics\",\"raw_material\":\"false\",\"first_resource\":\"Cotton\",\"second_resource\":\"Spices\",\"first_base_resource_quantity\":1,\"second_base_resource_quantity\":1,\"base_price\":400,\"added_value\":330},{\"id\":\"36\",\"name\":\"Nuclear Fuel\",\"raw_material\":\"false\",\"first_resource\":\"Uranium\",\"second_resource\":\"Helium-3\",\"first_base_resource_quantity\":1,\"second_base_resource_quantity\":1,\"base_price\":1900,\"added_value\":1200},{\"id\":\"37\",\"name\":\"Synthetic Fiber\",\"raw_material\":\"false\",\"first_resource\":\"Oil\",\"second_resource\":\"Cotton\",\"first_base_resource_quantity\":2,\"second_base_resource_quantity\":1,\"base_price\":350,\"added_value\":225},{\"id\":\"38\",\"name\":\"Carbon Fiber\",\"raw_material\":\"false\",\"first_resource\":\"Carbon\",\"second_resource\":\"Oil\",\"first_base_resource_quantity\":1,\"second_base_resource_quantity\":1,\"base_price\":1000,\"added_value\":875},{\"id\":\"39\",\"name\":\"Optical Lenses\",\"raw_material\":\"false\",\"first_resource\":\"Quartz\",\"second_resource\":\"Carbon\",\"first_base_resource_quantity\":1,\"second_base_resource_quantity\":1,\"base_price\":700,\"added_value\":635},{\"id\":\"40\",\"name\":\"Advanced Alloys\",\"raw_material\":\"false\",\"first_resource\":\"Tantalum\",\"second_resource\":\"Osmium\",\"first_base_resource_quantity\":1,\"second_base_resource_quantity\":1,\"base_price\":1800,\"added_value\":940},{\"id\":\"41\",\"name\":\"Energy Cells\",\"raw_material\":\"false\",\"first_resource\":\"Lithium\",\"second_resource\":\"Helium-3\",\"first_base_resource_quantity\":1,\"second_base_resource_quantity\":1,\"base_price\":1200,\"added_value\":350}]",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Ship's Available.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/ships\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/ships\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Returns the list of the available ships for purchase.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "[\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Explorer Mk I\",\r\n        \"description\": \"A versatile exploration ship designed for long-range surveys and resource scouting. Popular among independent prospectors.\",\r\n        \"price\": 15000,\r\n        \"hull\": 250,\r\n        \"damage\": 50,\r\n        \"survey\": 90,\r\n        \"mining_speed\": 5,\r\n        \"cargo\": 100,\r\n        \"cargo_speed\": 50,\r\n        \"speed\": 80,\r\n        \"fuel_capacity\": 100,\r\n        \"fuel_distance_ratio\": 10,\r\n        \"created_at\": null,\r\n        \"updated_at\": null\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"name\": \"Hauler XL\",\r\n        \"description\": \"A heavy-duty cargo ship built for massive transport operations. Its robust cargo hold comes at the expense of speed.\",\r\n        \"price\": 40000,\r\n        \"hull\": 500,\r\n        \"damage\": 30,\r\n        \"survey\": 0,\r\n        \"mining_speed\": 0,\r\n        \"cargo\": 1000,\r\n        \"cargo_speed\": 20,\r\n        \"speed\": 40,\r\n        \"fuel_capacity\": 100,\r\n        \"fuel_distance_ratio\": 25,\r\n        \"created_at\": null,\r\n        \"updated_at\": null\r\n    },\r\n    {\r\n        \"id\": 3,\r\n        \"name\": \"Starlight Cruiser\",\r\n        \"description\": \"A multi-role cruiser with balanced stats, capable of light combat and resource transportation.\",\r\n        \"price\": 30000,\r\n        \"hull\": 400,\r\n        \"damage\": 100,\r\n        \"survey\": 10,\r\n        \"mining_speed\": 30,\r\n        \"cargo\": 200,\r\n        \"cargo_speed\": 40,\r\n        \"speed\": 70,\r\n        \"fuel_capacity\": 100,\r\n        \"fuel_distance_ratio\": 20,\r\n        \"created_at\": null,\r\n        \"updated_at\": null\r\n    },\r\n    {\r\n        \"id\": 4,\r\n        \"name\": \"Battlehawk\",\r\n        \"description\": \"A high-speed combat ship with enhanced hull strength and advanced weaponry systems.\",\r\n        \"price\": 50000,\r\n        \"hull\": 600,\r\n        \"damage\": 250,\r\n        \"survey\": 1,\r\n        \"mining_speed\": 0,\r\n        \"cargo\": 50,\r\n        \"cargo_speed\": 10,\r\n        \"speed\": 90,\r\n        \"fuel_capacity\": 100,\r\n        \"fuel_distance_ratio\": 30,\r\n        \"created_at\": null,\r\n        \"updated_at\": null\r\n    },\r\n    {\r\n        \"id\": 5,\r\n        \"name\": \"Surveyor Alpha\",\r\n        \"description\": \"A specialized ship for planetary surveys, ideal for discovering new resources and anomalies.\",\r\n        \"price\": 18000,\r\n        \"hull\": 200,\r\n        \"damage\": 20,\r\n        \"survey\": 120,\r\n        \"mining_speed\": 10,\r\n        \"cargo\": 80,\r\n        \"cargo_speed\": 30,\r\n        \"speed\": 60,\r\n        \"fuel_capacity\": 100,\r\n        \"fuel_distance_ratio\": 12,\r\n        \"created_at\": null,\r\n        \"updated_at\": null\r\n    },\r\n    {\r\n        \"id\": 6,\r\n        \"name\": \"Titan Cargo Master\",\r\n        \"description\": \"The ultimate cargo hauler, designed for maximum load capacity and interstellar trading.\",\r\n        \"price\": 80000,\r\n        \"hull\": 700,\r\n        \"damage\": 20,\r\n        \"survey\": 5,\r\n        \"mining_speed\": 10,\r\n        \"cargo\": 5000,\r\n        \"cargo_speed\": 15,\r\n        \"speed\": 30,\r\n        \"fuel_capacity\": 100,\r\n        \"fuel_distance_ratio\": 50,\r\n        \"created_at\": null,\r\n        \"updated_at\": null\r\n    },\r\n    {\r\n        \"id\": 7,\r\n        \"name\": \"Astro Miner X\",\r\n        \"description\": \"A premium mining ship capable of handling extreme environments and extracting rare materials.\",\r\n        \"price\": 45000,\r\n        \"hull\": 400,\r\n        \"damage\": 50,\r\n        \"survey\": 15,\r\n        \"mining_speed\": 150,\r\n        \"cargo\": 400,\r\n        \"cargo_speed\": 35,\r\n        \"speed\": 60,\r\n        \"fuel_capacity\": 100,\r\n        \"fuel_distance_ratio\": 18,\r\n        \"created_at\": null,\r\n        \"updated_at\": null\r\n    },\r\n    {\r\n        \"id\": 8,\r\n        \"name\": \"GeoScanner Pro-7\",\r\n        \"description\": \"An advanced prospecting vessel equipped with high-precision sensors to locate rare resources with unparalleled efficiency.\",\r\n        \"price\": 120000,\r\n        \"hull\": 400,\r\n        \"damage\": 20,\r\n        \"survey\": 300,\r\n        \"mining_speed\": 50,\r\n        \"cargo\": 150,\r\n        \"cargo_speed\": 40,\r\n        \"speed\": 60,\r\n        \"fuel_capacity\": 100,\r\n        \"fuel_distance_ratio\": 20,\r\n        \"created_at\": null,\r\n        \"updated_at\": null\r\n    },\r\n    {\r\n        \"id\": 9,\r\n        \"name\": \"Miner's Edge XL\",\r\n        \"description\": \"A hybrid ship designed for both resource prospection and efficient mining in hostile environments.\",\r\n        \"price\": 150000,\r\n        \"hull\": 500,\r\n        \"damage\": 40,\r\n        \"survey\": 250,\r\n        \"mining_speed\": 150,\r\n        \"cargo\": 300,\r\n        \"cargo_speed\": 45,\r\n        \"speed\": 55,\r\n        \"fuel_capacity\": 100,\r\n        \"fuel_distance_ratio\": 25,\r\n        \"created_at\": null,\r\n        \"updated_at\": null\r\n    },\r\n    {\r\n        \"id\": 10,\r\n        \"name\": \"OreSeeker Elite\",\r\n        \"description\": \"A high-end prospecting ship tailored for deep space surveys and exploration of untapped resource deposits.\",\r\n        \"price\": 180000,\r\n        \"hull\": 450,\r\n        \"damage\": 30,\r\n        \"survey\": 350,\r\n        \"mining_speed\": 60,\r\n        \"cargo\": 200,\r\n        \"cargo_speed\": 50,\r\n        \"speed\": 70,\r\n        \"fuel_capacity\": 100,\r\n        \"fuel_distance_ratio\": 22,\r\n        \"created_at\": null,\r\n        \"updated_at\": null\r\n    },\r\n    {\r\n        \"id\": 11,\r\n        \"name\": \"Terra Extractor T-9\",\r\n        \"description\": \"A specialized mining vessel with unparalleled resource extraction capabilities, ideal for large-scale operations.\",\r\n        \"price\": 200000,\r\n        \"hull\": 600,\r\n        \"damage\": 50,\r\n        \"survey\": 200,\r\n        \"mining_speed\": 300,\r\n        \"cargo\": 500,\r\n        \"cargo_speed\": 30,\r\n        \"speed\": 50,\r\n        \"fuel_capacity\": 100,\r\n        \"fuel_distance_ratio\": 30,\r\n        \"created_at\": null,\r\n        \"updated_at\": null\r\n    },\r\n    {\r\n        \"id\": 12,\r\n        \"name\": \"Lunar Digger 5000\",\r\n        \"description\": \"A robust mining ship designed for surface and subsurface resource extraction on planets and moons.\",\r\n        \"price\": 175000,\r\n        \"hull\": 550,\r\n        \"damage\": 25,\r\n        \"survey\": 150,\r\n        \"mining_speed\": 250,\r\n        \"cargo\": 400,\r\n        \"cargo_speed\": 35,\r\n        \"speed\": 45,\r\n        \"fuel_capacity\": 100,\r\n        \"fuel_distance_ratio\": 28,\r\n        \"created_at\": null,\r\n        \"updated_at\": null\r\n    },\r\n    {\r\n        \"id\": 13,\r\n        \"name\": \"DeepCore Surveyor\",\r\n        \"description\": \"The ultimate prospecting ship, capable of scanning entire planetary systems for rare minerals.\",\r\n        \"price\": 220000,\r\n        \"hull\": 500,\r\n        \"damage\": 10,\r\n        \"survey\": 500,\r\n        \"mining_speed\": 100,\r\n        \"cargo\": 250,\r\n        \"cargo_speed\": 50,\r\n        \"speed\": 65,\r\n        \"fuel_capacity\": 100,\r\n        \"fuel_distance_ratio\": 24,\r\n        \"created_at\": null,\r\n        \"updated_at\": null\r\n    },\r\n    {\r\n        \"id\": 14,\r\n        \"name\": \"Asteroid Miner Titan\",\r\n        \"description\": \"A massive ship optimized for mining asteroids and extracting valuable minerals at unmatched speeds.\",\r\n        \"price\": 250000,\r\n        \"hull\": 800,\r\n        \"damage\": 70,\r\n        \"survey\": 100,\r\n        \"mining_speed\": 400,\r\n        \"cargo\": 1000,\r\n        \"cargo_speed\": 20,\r\n        \"speed\": 40,\r\n        \"fuel_capacity\": 100,\r\n        \"fuel_distance_ratio\": 35,\r\n        \"created_at\": null,\r\n        \"updated_at\": null\r\n    }\r\n]",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Handle the ship purchase request.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/ships\/buy",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/ships\/buy"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"ship_id\":\"rerum\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/v1\/ships\/status",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/ships\/status",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/ships\/status"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"error\":\"Provide authentication token in the authorization header, format should be \\\"Bearer <auth_token>\\\"\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Handle the ship purchase request.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/ships\/refuel",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/ships\/refuel"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"ship_id\":\"ullam\",\"amount\":13}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "extract resources",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/ships\/mine",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/ships\/mine"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"ship_id\":\"dolor\",\"amount\":47,\"deposit_id\":\"ut\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/v1\/market\/buy",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/market\/buy",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/market\/buy"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_ship_id\":\"quos\",\"resource_id\":\"expedita\",\"quantity\":90}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/v1\/market\/sell",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/market\/sell",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/market\/sell"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_ship_id\":\"reprehenderit\",\"resource_id\":\"incidunt\",\"quantity\":29}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/v1\/travels\/land",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/travels\/land",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/travels\/land"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_ship_id\":\"quia\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/v1\/travels\/takeoff",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/travels\/takeoff",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/travels\/takeoff"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_ship_id\":\"quasi\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/v1\/travels\/info",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/travels\/info",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/travels\/info"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_ship_id\":\"aut\",\"planet_id\":\"aliquid\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"error\":\"Provide authentication token in the authorization header, format should be \\\"Bearer <auth_token>\\\"\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "Authorization",
+                "type": "string"
+            }
+        ]
+    }
+}

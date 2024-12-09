@@ -32,10 +32,10 @@ class RefuelShipController extends Controller
             'amount' => 'required|integer|min:1'
         ]);
         $user_ship = UserShip::where('id', $validated['ship_id'])->where('user_id', $user->id)->first();
-        $ship_model = Ship::find($user_ship->ship_id);
         if($user_ship == null) {
             return response()->json(['error' => 'No ship found'], 404);
         }
+        $ship_model = Ship::find($user_ship->ship_id);
         if($validated['amount'] > ($ship_model->fuel_capacity - $user_ship->fuel)) {
             return response()->json(['error' => 'Fuel capacity exceeded'], 422);
         }

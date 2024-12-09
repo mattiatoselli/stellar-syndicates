@@ -16,12 +16,19 @@ class StarDetailsController extends Controller
         $this->travelService = $travelService;
     }
 
+    /**
+     * Star's details.
+     * Returns the star's details with the planets orbiting around the star.
+     * @urlParam $id required. Star's Id. Example: 71ff81a3-47e5-426e-892f-553517c18c8c
+     * @responseFile storage/responses/star_details.json
+     */
     public function __invoke(string $id)
     {
         $star = Star::with('planets')->find($id);
 
-        if (!$star) { return response()->json([], 404); }
+        if (!$star) { return response()->json(["message" => "Not found."], 404); }
 
+        /*
         $otherStars = Star::where('id', '!=', $id)
             ->withCount(['planets as terrestrial_planets_count' => function ($query) {
                 $query->where('type', 'Terrestrial Planet');
@@ -34,10 +41,12 @@ class StarDetailsController extends Controller
         foreach ($otherStars as &$item) {
             $item->distance = $this->travelService->calculateDistance($item, $star);
         }
+            */
 
-        return array(
+        return $star;
+        /*array(
             "star" => $star,
-            "other_star" =>  $otherStars->sortBy('distance')->values(),
-        );
+            //"other_star" =>  $otherStars->sortBy('distance')->values(),
+        );*/
     }
 }

@@ -1,0 +1,571 @@
+{
+    "id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+    "star_id": "cdd5bc22-a483-4b0c-b969-9af98ad3483b",
+    "name": "Alpha Centauri Bb",
+    "distance_from_star": 0.04,
+    "type": "Rocky",
+    "population": 5408310956,
+    "market": [
+        {
+            "resource_id": "1",
+            "resource": "Gold",
+            "stock": 107,
+            "production": 1623,
+            "consume": 1623,
+            "buy": 581,
+            "sell": 575
+        },
+        {
+            "resource_id": "2",
+            "resource": "Silver",
+            "stock": 690,
+            "production": 4868,
+            "consume": 4868,
+            "buy": 419,
+            "sell": 414
+        },
+        {
+            "resource_id": "3",
+            "resource": "Tantalum",
+            "stock": 353,
+            "production": 1623,
+            "consume": 1623,
+            "buy": 321,
+            "sell": 318
+        },
+        {
+            "resource_id": "4",
+            "resource": "Osmium",
+            "stock": 845,
+            "production": 2164,
+            "consume": 2164,
+            "buy": 403,
+            "sell": 399
+        },
+        {
+            "resource_id": "5",
+            "resource": "Palladium",
+            "stock": 708,
+            "production": 723,
+            "consume": 1082,
+            "buy": 269,
+            "sell": 266
+        },
+        {
+            "resource_id": "6",
+            "resource": "Iron Ore",
+            "stock": 391,
+            "production": 21634,
+            "consume": 21634,
+            "buy": 90,
+            "sell": 89
+        },
+        {
+            "resource_id": "7",
+            "resource": "Copper",
+            "stock": 131,
+            "production": 16225,
+            "consume": 16225,
+            "buy": 100,
+            "sell": 99
+        },
+        {
+            "resource_id": "8",
+            "resource": "Uranium",
+            "stock": 906,
+            "production": 3955,
+            "consume": 4327,
+            "buy": 282,
+            "sell": 279
+        },
+        {
+            "resource_id": "9",
+            "resource": "Lithium",
+            "stock": 838,
+            "production": 11752,
+            "consume": 8113,
+            "buy": 326,
+            "sell": 323
+        },
+        {
+            "resource_id": "10",
+            "resource": "Platinum",
+            "stock": 545,
+            "production": 36267,
+            "consume": 27042,
+            "buy": 410,
+            "sell": 406
+        },
+        {
+            "resource_id": "11",
+            "resource": "Oil",
+            "stock": 193,
+            "production": 13081,
+            "consume": 9735,
+            "buy": 82,
+            "sell": 82
+        },
+        {
+            "resource_id": "12",
+            "resource": "Water",
+            "stock": 924,
+            "production": 38638,
+            "consume": 54084,
+            "buy": 91,
+            "sell": 90
+        },
+        {
+            "resource_id": "13",
+            "resource": "Nickel",
+            "stock": 429,
+            "production": 78,
+            "consume": 13521,
+            "buy": 149,
+            "sell": 147
+        },
+        {
+            "resource_id": "14",
+            "resource": "Cobalt",
+            "stock": 730,
+            "production": 5409,
+            "consume": 5409,
+            "buy": 327,
+            "sell": 324
+        },
+        {
+            "resource_id": "15",
+            "resource": "Zinc",
+            "stock": 425,
+            "production": 6490,
+            "consume": 6490,
+            "buy": 117,
+            "sell": 115
+        },
+        {
+            "resource_id": "16",
+            "resource": "Titanium",
+            "stock": 230,
+            "production": 4042,
+            "consume": 2705,
+            "buy": 178,
+            "sell": 176
+        },
+        {
+            "resource_id": "17",
+            "resource": "Quartz",
+            "stock": 995,
+            "production": 5280,
+            "consume": 8113,
+            "buy": 45,
+            "sell": 45
+        },
+        {
+            "resource_id": "18",
+            "resource": "Sulfur",
+            "stock": 134,
+            "production": 13467,
+            "consume": 10817,
+            "buy": 44,
+            "sell": 44
+        },
+        {
+            "resource_id": "19",
+            "resource": "Salt",
+            "stock": 830,
+            "production": 11899,
+            "consume": 11899,
+            "buy": 15,
+            "sell": 15
+        },
+        {
+            "resource_id": "20",
+            "resource": "Bauxite",
+            "stock": 618,
+            "production": 9256,
+            "consume": 11899,
+            "buy": 163,
+            "sell": 162
+        },
+        {
+            "resource_id": "21",
+            "resource": "Helium-3",
+            "stock": 418,
+            "production": 618,
+            "consume": 541,
+            "buy": 218,
+            "sell": 216
+        },
+        {
+            "resource_id": "22",
+            "resource": "Carbon",
+            "stock": 696,
+            "production": 27042,
+            "consume": 27042,
+            "buy": 25,
+            "sell": 25
+        },
+        {
+            "resource_id": "23",
+            "resource": "Cotton",
+            "stock": 787,
+            "production": 2801,
+            "consume": 27042,
+            "buy": 36,
+            "sell": 36
+        },
+        {
+            "resource_id": "24",
+            "resource": "Coffee Beans",
+            "stock": 340,
+            "production": 10817,
+            "consume": 10817,
+            "buy": 50,
+            "sell": 49
+        },
+        {
+            "resource_id": "25",
+            "resource": "Tobacco",
+            "stock": 229,
+            "production": 8113,
+            "consume": 8113,
+            "buy": 35,
+            "sell": 35
+        },
+        {
+            "resource_id": "26",
+            "resource": "Algae",
+            "stock": 353,
+            "production": 13435,
+            "consume": 13521,
+            "buy": 20,
+            "sell": 20
+        },
+        {
+            "resource_id": "27",
+            "resource": "Spices",
+            "stock": 517,
+            "production": 284,
+            "consume": 1623,
+            "buy": 57,
+            "sell": 56
+        },
+        {
+            "resource_id": "28",
+            "resource": "Steel",
+            "stock": 662,
+            "production": 13521,
+            "consume": 13521,
+            "buy": 391,
+            "sell": 387
+        },
+        {
+            "resource_id": "29",
+            "resource": "Aluminum",
+            "stock": 461,
+            "production": 33733,
+            "consume": 29746,
+            "buy": 556,
+            "sell": 550
+        },
+        {
+            "resource_id": "30",
+            "resource": "Plastic",
+            "stock": 377,
+            "production": 27042,
+            "consume": 27042,
+            "buy": 249,
+            "sell": 246
+        },
+        {
+            "resource_id": "31",
+            "resource": "Jewelry",
+            "stock": 756,
+            "production": 1102,
+            "consume": 4327,
+            "buy": 2571,
+            "sell": 2545
+        },
+        {
+            "resource_id": "32",
+            "resource": "Electronics",
+            "stock": 641,
+            "production": 27042,
+            "consume": 27042,
+            "buy": 1186,
+            "sell": 1174
+        },
+        {
+            "resource_id": "33",
+            "resource": "Glass",
+            "stock": 222,
+            "production": 30287,
+            "consume": 30287,
+            "buy": 120,
+            "sell": 119
+        },
+        {
+            "resource_id": "34",
+            "resource": "Fertilizer",
+            "stock": 187,
+            "production": 42440,
+            "consume": 43267,
+            "buy": 212,
+            "sell": 210
+        },
+        {
+            "resource_id": "35",
+            "resource": "Luxury Fabrics",
+            "stock": 966,
+            "production": 6638,
+            "consume": 8113,
+            "buy": 413,
+            "sell": 409
+        },
+        {
+            "resource_id": "36",
+            "resource": "Nuclear Fuel",
+            "stock": 903,
+            "production": 54084,
+            "consume": 54084,
+            "buy": 1885,
+            "sell": 1866
+        },
+        {
+            "resource_id": "37",
+            "resource": "Synthetic Fiber",
+            "stock": 518,
+            "production": 27725,
+            "consume": 23256,
+            "buy": 313,
+            "sell": 310
+        },
+        {
+            "resource_id": "38",
+            "resource": "Carbon Fiber",
+            "stock": 239,
+            "production": 11899,
+            "consume": 11899,
+            "buy": 990,
+            "sell": 981
+        },
+        {
+            "resource_id": "39",
+            "resource": "Optical Lenses",
+            "stock": 337,
+            "production": 4868,
+            "consume": 4868,
+            "buy": 676,
+            "sell": 670
+        },
+        {
+            "resource_id": "40",
+            "resource": "Advanced Alloys",
+            "stock": 666,
+            "production": 12980,
+            "consume": 12980,
+            "buy": 1754,
+            "sell": 1737
+        },
+        {
+            "resource_id": "41",
+            "resource": "Energy Cells",
+            "stock": 147,
+            "production": 8113,
+            "consume": 8113,
+            "buy": 1190,
+            "sell": 1178
+        }
+    ],
+    "deposits": [
+        {
+            "id": "b90e61de-ebb6-498b-8013-ffd6caee919b",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 11,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 128819,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "904e4004-953b-440f-8699-79fffd019a2d",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 2,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 768238,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "3787865f-59c1-49c4-ad60-47e630ffb3a5",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 11,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 1024133,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "554f27da-cad2-4226-b876-f13e5fbd267b",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 11,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 248746,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "577c9ae1-7660-4774-84b3-b5fe369b9f6b",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 21,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 54834,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "343ccad2-3b75-44ac-8cba-9ca48497fece",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 6,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 994620,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "7e1529d4-6b24-4086-a846-4a2571517f38",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 26,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 756712,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "179ebe59-36e6-49c2-94d8-97dcdc1aa848",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 20,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 1006239,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "3c2f2d78-9294-429b-af2c-d245d4500829",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 24,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 1301944,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "49270d7b-29c5-48f6-ac14-3643a503e440",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 17,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 736622,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "d9db3edf-e27b-40e0-8415-bae84c4ed9b3",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 21,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 65980,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "b468ac4a-b098-47ca-a7e3-156b42963619",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 20,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 838428,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "40d91599-d180-4caa-8d6b-edebbbc4b03d",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 24,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 1066638,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "d3226741-89ec-4df5-98c9-66a0e2edc848",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 1,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 334877,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "49123bc7-15e9-47e3-b08e-79f25bdc1c88",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 10,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 448572,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "d2bd21d3-d1bc-4e51-bcb6-cdbc8a0e565a",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 19,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 352891,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "afb03483-f932-4734-b256-2dd3773c0066",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 19,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 2123773,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "9b70771a-f522-42c2-b134-a8224ffea49e",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 21,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 34729,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": "b6d04e32-58c6-426d-b8eb-87c2ef5893d3",
+            "planet_id": "a6863bac-d92f-4500-942f-9c04e4528a2e",
+            "resource_id": 21,
+            "status": "discovered",
+            "discovered_by": null,
+            "quantity": 10174,
+            "created_at": null,
+            "updated_at": null
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+{
+    "id": "71ff81a3-47e5-426e-892f-553517c18c8c",
+    "name": "Sun",
+    "spectrum": "G2V",
+    "color": "Yellow",
+    "temperature": 5778,
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "planets": [
+        {
+            "id": "ca6850ce-dae8-44d3-bd5c-45fbc0d52b20",
+            "star_id": "71ff81a3-47e5-426e-892f-553517c18c8c",
+            "name": "Mercury",
+            "distance_from_star": 0.39,
+            "type": "Rocky",
+            "population": 0
+        },
+        {
+            "id": "1fe7c9c5-586f-4a34-b6b8-2b4a9d2ba6ee",
+            "star_id": "71ff81a3-47e5-426e-892f-553517c18c8c",
+            "name": "Venus",
+            "distance_from_star": 0.72,
+            "type": "Rocky",
+            "population": 0
+        },
+        {
+            "id": "fcc94a4e-3b46-4432-9615-430a4f6a5364",
+            "star_id": "71ff81a3-47e5-426e-892f-553517c18c8c",
+            "name": "Earth",
+            "distance_from_star": 1,
+            "type": "Terrestrial Planet",
+            "population": 5332283954
+        },
+        {
+            "id": "11ee7208-7044-47af-bef2-71b5832e4d89",
+            "star_id": "71ff81a3-47e5-426e-892f-553517c18c8c",
+            "name": "Mars",
+            "distance_from_star": 1.52,
+            "type": "Rocky",
+            "population": 331790370
+        },
+        {
+            "id": "26f5e1dd-aa8a-4445-8750-1d9aae04d68a",
+            "star_id": "71ff81a3-47e5-426e-892f-553517c18c8c",
+            "name": "Jupiter",
+            "distance_from_star": 5.2,
+            "type": "Gas giant",
+            "population": 0
+        },
+        {
+            "id": "da567bc8-8cc8-4c95-8d32-cafb6eb18bee",
+            "star_id": "71ff81a3-47e5-426e-892f-553517c18c8c",
+            "name": "Saturn",
+            "distance_from_star": 9.58,
+            "type": "Gas giant",
+            "population": 0
+        },
+        {
+            "id": "2f6fe7a4-6b4a-4a57-9fe7-e73b9f5382f9",
+            "star_id": "71ff81a3-47e5-426e-892f-553517c18c8c",
+            "name": "Uranus",
+            "distance_from_star": 19.22,
+            "type": "Ice giant",
+            "population": 0
+        },
+        {
+            "id": "ab6a547e-7036-47ca-8a53-86237cb339db",
+            "star_id": "71ff81a3-47e5-426e-892f-553517c18c8c",
+            "name": "Neptune",
+            "distance_from_star": 30.05,
+            "type": "Ice giant",
+            "population": 0
+        }
+    ]
+}

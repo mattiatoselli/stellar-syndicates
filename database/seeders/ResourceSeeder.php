@@ -30,6 +30,7 @@ class ResourceSeeder extends Seeder
                 "first_base_resource_id" =>  $item['first_base_resource_id'],
                 "second_base_resource_id" =>  $item['second_base_resource_id'],
                 "first_base_resource_quantity" =>  $item['first_base_resource_quantity'],
+                "second_base_resource_quantity" =>  $item['second_base_resource_quantity'],
                 "rate_per_100k_population" => $item["rate_per_100k_population"],
             ]);
         }
